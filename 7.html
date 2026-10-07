@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1: Kolaborasi dan Komunikasi dalam DKV - Pertemuan 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-navy: #1a1a2e;
+            --light-navy: #16213e;
+            --white: #ffffff;
+            --cream: #f9f9f7;
+            --gray: #e8e8e8;
+            --text-dark: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--dark-navy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
+            color: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-body { padding: 40px; }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            color: var(--light-navy);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p { margin-bottom: 15px; text-align: justify; }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study {
+            background: var(--cream);
+            border: 1px solid var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .case-study h4 {
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        th {
+            background: var(--dark-navy);
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        tr:hover { background: rgba(212, 175, 55, 0.05); }
+
+        .video-placeholder {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-primary:hover { background: var(--secondary-gold); transform: translateY(-2px); }
+        .btn-outline { border: 2px solid var(--dark-navy); color: var(--dark-navy); }
+        .btn-outline:hover { background: var(--dark-navy); color: var(--white); }
+
+        .quiz-section {
+            background: var(--cream);
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .quiz-header { text-align: center; margin-bottom: 30px; }
+        .quiz-header h2 { border: none; margin-top: 0; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-navy);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .question-block {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray);
+        }
+
+        .question-block p { font-weight: 600; margin-bottom: 15px; text-align: left; }
+
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 400;
+        }
+
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 10px; }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .quiz-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-submit { background: var(--dark-navy); color: var(--primary-gold); }
+        .btn-print { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-email { background: #25D366; color: white; }
+        .btn-reset { background: #e74c3c; color: white; }
+        .btn-action:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        .result-box {
+            display: none;
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .result-box h3 { color: var(--primary-gold); font-size: 2em; margin-bottom: 10px; }
+
+        @media print {
+            .navbar, .nav-buttons, .quiz-actions, .no-print { display: none !important; }
+            body { background: white; color: black; }
+            .container { box-shadow: none; max-width: 100%; }
+            .quiz-section { page-break-before: always; }
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h1 { font-size: 1.8em; }
+            .content-body { padding: 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">DKV Kelas X</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#kontak">Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="top">
+        <div class="chapter-header">
+            <span class="chapter-badge">BAB 1 - PERTEMUAN 7</span>
+            <h1>Kolaborasi dan Komunikasi dalam DKV</h1>
+            <p>Membangun kerja sama tim yang solid, memahami brief desain, dan menguasai seni komunikasi visual serta kritik konstruktif di industri kreatif.</p>
+        </div>
+
+        <div class="content-body">
+            <div class="nav-buttons no-print">
+                <a href="6.html" class="btn btn-outline">← Pertemuan 6</a>
+                <a href="#sub1" class="btn btn-primary">Mulai Membaca</a>
+                <a href="8.html" class="btn btn-outline">Pertemuan 8 (UTS) →</a>
+            </div>
+
+            <h2 id="sub1">Pendahuluan</h2>
+            <p>Banyak orang beranggapan bahwa desainer adalah sosok penyendiri yang bekerja di balik layar komputer. Padahal, dalam dunia profesional Desain Komunikasi Visual (DKV), hampir tidak ada proyek besar yang diselesaikan sendirian. Industri kreatif sangat mengandalkan <strong>kolaborasi tim</strong> yang solid dan <strong>komunikasi yang efektif</strong> untuk mengubah ide abstrak menjadi produk visual yang nyata dan berdampak.</p>
+            <p>Keterampilan teknis mendesain (hard skill) memang penting, tetapi tanpa kemampuan berkomunikasi, memahami brief klien, bekerja dalam tim, dan menerima kritik (soft skill), seorang desainer akan sulit berkembang. Pertemuan ini akan membekali siswa dengan prinsip-prinsip kolaborasi dan komunikasi profesional yang menjadi standar di industri DKV global.</p>
+
+            <div class="highlight-box">
+                <strong>🔑 Konsep Kunci:</strong><br>
+                • <strong>Kolaborasi Kreatif:</strong> Proses kerja sama antara berbagai individu dengan keahlian berbeda (desainer, copywriter, developer, project manager) untuk mencapai tujuan visual yang sama.<br>
+                • <strong>Design Brief:</strong> Dokumen atau panduan singkat dari klien yang berisi tujuan, target audiens, batasan, dan ekspektasi dari sebuah proyek desain.<br>
+                • <strong>Kritik Konstruktif:</strong> Umpan balik yang diberikan secara objektif terhadap karya desain untuk tujuan perbaikan, bukan untuk menjatuhkan pribadi pembuatnya.
+            </div>
+
+            <h2>7.1 Pentingnya Kolaborasi dalam Industri Kreatif</h2>
+            <p>Proyek DKV modern seringkali bersifat multidisiplin. Sebuah kampanye iklan digital, misalnya, tidak hanya membutuhkan graphic designer, tetapi juga ilustrator, motion graphic artist, UI/UX designer, copywriter, hingga marketing strategist. Kolaborasi memungkinkan penggabungan berbagai perspektif dan keahlian untuk menghasilkan solusi yang lebih komprehensif dan inovatif.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Peran dalam Tim Kreatif</th>
+                        <th>Tanggung Jawab Utama</th>
+                        <th>Kontribusi terhadap Proyek</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Art Director / Creative Director</strong></td>
+                        <td>Menentukan visi visual dan mengarahkan tim.</td>
+                        <td>Memastikan semua elemen desain selaras dengan brand identity.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Graphic / UI Designer</strong></td>
+                        <td>Mengeksekusi desain visual dan antarmuka.</td>
+                        <td>Menciptakan estetika dan fungsionalitas produk.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Copywriter</strong></td>
+                        <td>Menulis teks, slogan, dan narasi.</td>
+                        <td>Menyampaikan pesan verbal yang mendukung visual.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Project Manager</strong></td>
+                        <td>Mengatur timeline, budget, dan komunikasi.</td>
+                        <td>Memastikan proyek selesai tepat waktu dan sesuai brief.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="video-placeholder">
+                <h3>🎥 Video: Dinamika Kerja dalam Agensi Kreatif</h3>
+                <p>Simak bagaimana sebuah tim di agensi desain profesional berkolaborasi dari tahap brainstorming hingga finalisasi proyek.</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">(Sumber: Youtube / Kanal Behind The Design)</p>
+            </div>
+
+            <h2>7.2 Memahami dan Menerjemahkan Design Brief</h2>
+            <p>Langkah pertama dalam setiap kolaborasi profesional adalah memahami <em>Design Brief</em>. Brief adalah peta jalan proyek. Kesalahan dalam memahami brief akan berakibat fatal, seperti revisi tanpa akhir atau penolakan dari klien.</p>
+            
+            <h3>Elemen Penting dalam Design Brief:</h3>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Latar Belakang Perusahaan/Brand:</strong> Siapa mereka dan apa nilai-nilai mereka?</li>
+                <li><strong>Tujuan Proyek:</strong> Apa yang ingin dicapai? (Misal: meningkatkan penjualan, rebranding, edukasi).</li>
+                <li><strong>Target Audiens:</strong> Siapa yang akan melihat desain ini? (Usia, gender, minat, perilaku).</li>
+                <li><strong>Deliverables:</strong> Apa saja yang harus diserahkan? (Logo, feed Instagram, brosur, website).</li>
+                <li><strong>Timeline & Budget:</strong> Kapan deadline dan berapa anggarannya?</li>
+                <li><strong>Competitor:</strong> Siapa pesaing mereka dan bagaimana cara membedakan diri?</li>
+            </ul>
+
+            <div class="case-study">
+                <h4>📖 Studi Kasus: Kegagalan karena Miskomunikasi Brief</h4>
+                <p><strong>Kasus:</strong> Sebuah tim siswa DKV mendapat tugas membuat logo untuk UMKM Kopi. Mereka langsung mendesain logo bergaya minimalis modern tanpa bertanya lebih lanjut. Saat presentasi, klien kecewa karena target pasar mereka adalah ibu-ibu di pedesaan yang lebih menyukai gaya ilustrasi tradisional dan warna-warna hangat. Tim tersebut harus mengulang dari nol.</p>
+                <p><strong>Pembelajaran:</strong> Jangan pernah berasumsi. Selalu ajukan pertanyaan klarifikasi (5W+1H) kepada klien atau pemangku kepentingan sebelum mulai membuat sketsa.</p>
+            </div>
+
+            <h2>7.3 Seni Memberi dan Menerima Kritik (Feedback)</h2>
+            <p>Dalam dunia desain, kritik adalah makanan sehari-hari. Desainer yang profesional tidak menganggap kritik sebagai serangan pribadi, melainkan sebagai peluang untuk menyempurnakan karya. Berikut adalah etika dan cara menangani feedback:</p>
+
+            <h3>Cara Menerima Kritik:</h3>
+            <ol style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Dengarkan Secara Aktif:</strong> Jangan memotong pembicaraan. Catat poin-poin penting.</li>
+                <li><strong>Pisahkan Ego dari Karya:</strong> Ingat, mereka mengkritik desainmu, bukan kepribadianmu.</li>
+                <li><strong>Ajukan Pertanyaan Klarifikasi:</strong> "Bisa dijelaskan bagian mana yang terasa kurang seimbang?"</li>
+                <li><strong>Ucapkan Terima Kasih:</strong> Apresiasi waktu dan usaha mereka untuk memberikan masukan.</li>
+            </ol>
+
+            <h3>Cara Memberi Kritik yang Konstruktif:</h3>
+            <p>Gunakan metode <strong>"I Like, I Wish, I Wonder"</strong>:</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><em>"I like..."</em> (Saya suka...) - Sebutkan apa yang sudah bagus. "Saya suka pemilihan palet warnanya."</li>
+                <li><em>"I wish..."</em> (Saya berharap...) - Sebutkan area perbaikan. "Saya berharap tipografinya lebih mudah dibaca."</li>
+                <li><em>"I wonder..."</em> (Saya bertanya-tanya...) - Berikan saran eksplorasi. "Saya bertanya-tanya bagaimana jika kita tambahkan lebih banyak ruang kosong (white space)?"</li>
+            </ul>
+
+            <h2>7.4 Tools Kolaborasi Digital untuk Desainer</h2>
+            <p>Di era kerja remote dan hybrid, penguasaan tools kolaborasi digital sama pentingnya dengan software desain itu sendiri.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kategori</th>
+                        <th>Contoh Tools</th>
+                        <th>Fungsi dalam Tim DKV</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desain Real-time</strong></td>
+                        <td>Figma, Canva Teams</td>
+                        <td>Bekerja pada satu file desain secara bersamaan dari lokasi berbeda.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Manajemen Proyek</strong></td>
+                        <td>Trello, Asana, Notion</td>
+                        <td>Melacak progres tugas, deadline, dan pembagian peran.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Komunikasi Tim</strong></td>
+                        <td>Slack, Discord, Microsoft Teams</td>
+                        <td>Diskusi cepat, berbagi file, dan meeting virtual.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Penyimpanan Aset</strong></td>
+                        <td>Google Drive, Dropbox, Behance</td>
+                        <td>Menyimpan dan berbagi file besar (font, gambar, vektor) secara terpusat.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <strong>💡 Refleksi untuk Siswa Indonesia:</strong><br>
+                Budaya "sungkan" atau tidak enak hati sering kali menjadi penghambat komunikasi di Indonesia. Dalam dunia profesional DKV, "sungkan" untuk bertanya saat brief tidak jelas, atau "sungkan" memberikan kritik pada karya teman, justru akan merusak hasil akhir proyek. Belajarlah untuk berkomunikasi secara asertif, sopan, namun tegas dan berorientasi pada solusi.
+            </div>
+
+            <h2>Kesimpulan</h2>
+            <p>Kolaborasi dan komunikasi adalah tulang punggung industri Desain Komunikasi Visual. Kemampuan untuk memahami brief, bekerja sama dalam tim yang beragam, menggunakan tools kolaborasi modern, serta memberi dan menerima kritik secara profesional akan membedakan seorang "tukang gambar" dengan seorang "desainer profesional". Mulailah melatih keterampilan ini sejak dari tugas-tugas kelompok di sekolah.</p>
+
+            <div class="highlight-box">
+                <strong> Daftar Pustaka:</strong><br>
+                • Lupton, E. (2014). <em>Graphic Design: The New Basics</em>. Princeton Architectural Press.<br>
+                • Heller, S., & Vienne, V. (2012). <em>100 Ideas That Changed Graphic Design</em>. Laurence King Publishing.<br>
+                • Kemendikbudristek. (2022). <em>Capaian Pembelajaran Dasar-Dasar Desain Komunikasi Visual</em>.<br>
+                • Supriadi. (2024). <em>Soft Skill dan Etika Profesional di Industri Kreatif</em>. Bukittinggi: FTIK UIN Bukittinggi.
+            </div>
+
+            <div class="nav-buttons no-print">
+                <a href="6.html" class="btn btn-outline">← Pertemuan 6</a>
+                <a href="#top" class="btn btn-outline">↑ Ke Atas</a>
+                <a href="8.html" class="btn btn-primary">Pertemuan 8: UTS →</a>
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="quiz-section" id="quiz">
+            <div class="quiz-header">
+                <span class="chapter-badge">EVALUASI PEMBELAJARAN</span>
+                <h2>📋 Uji Formatif 7: Kolaborasi dan Komunikasi dalam DKV</h2>
+                <p>️ Mohon lengkapi semua data dan jawaban terlebih dahulu sebelum mengirim!</p>
+            </div>
+
+            <form id="quizForm">
+                <h3>📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Ujian *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas *</label>
+                        <input type="text" id="kelas" required placeholder="Contoh: X DKV 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester *</label>
+                        <select id="semester" required>
+                            <option value="">Pilih Semester</option>
+                            <option value="1" selected>Semester 1 (Ganjil)</option>
+                            <option value="2">Semester 2 (Genap)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">📋 Bagian A – Pilihan Ganda (Skor 10/soal)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                <div id="pg-questions">
+                    <div class="question-block">
+                        <p>1. Dalam industri kreatif profesional, mengapa kolaborasi tim sangat penting?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> a. Agar beban kerja bisa dilempar ke orang lain</label>
+                            <label><input type="radio" name="q1" value="b"> b. Untuk menggabungkan berbagai keahlian dan perspektif demi solusi yang lebih komprehensif</label>
+                            <label><input type="radio" name="q1" value="c"> c. Karena desainer tidak bisa bekerja sendirian di depan komputer</label>
+                            <label><input type="radio" name="q1" value="d"> d. Agar bisa menyalin ide satu sama lain dengan cepat</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>2. Apa yang dimaksud dengan "Design Brief" dalam sebuah proyek DKV?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> a. Dokumen pedoman yang berisi tujuan, target audiens, dan ekspektasi proyek dari klien</label>
+                            <label><input type="radio" name="q2" value="b"> b. Sketsa kasar pertama yang dibuat desainer</label>
+                            <label><input type="radio" name="q2" value="c"> c. Tagihan atau invoice untuk klien</label>
+                            <label><input type="radio" name="q2" value="d"> d. Kontrak kerja sama antar desainer</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>3. Software yang paling populer untuk kolaborasi desain UI/UX secara real-time adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> a. Microsoft Word</label>
+                            <label><input type="radio" name="q3" value="b"> b. Adobe Photoshop</label>
+                            <label><input type="radio" name="q3" value="c"> c. Figma</label>
+                            <label><input type="radio" name="q3" value="d"> d. VLC Media Player</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>4. Sikap profesional seorang desainer saat menerima kritik terhadap karyanya adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> a. Marah dan membela diri secara emosional</label>
+                            <label><input type="radio" name="q4" value="b"> b. Mendengarkan secara aktif, memisahkan ego dari karya, dan mengevaluasi secara objektif</label>
+                            <label><input type="radio" name="q4" value="c"> c. Mengabaikan semua masukan dan tetap pada pendirian sendiri</label>
+                            <label><input type="radio" name="q4" value="d"> d. Menyerang balik karya orang yang mengkritik</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>5. Peran "Art Director" dalam sebuah tim kreatif adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> a. Menentukan visi visual dan mengarahkan tim agar selaras dengan brand identity</label>
+                            <label><input type="radio" name="q5" value="b"> b. Hanya bertugas membuat kopi untuk tim</label>
+                            <label><input type="radio" name="q5" value="c"> c. Menulis semua teks dan slogan iklan</label>
+                            <label><input type="radio" name="q5" value="d"> d. Mengatur keuangan dan gaji karyawan</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>6. Metode "I Like, I Wish, I Wonder" digunakan untuk...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> a. Membuat moodboard</label>
+                            <label><input type="radio" name="q6" value="b"> b. Mencari inspirasi di Pinterest</label>
+                            <label><input type="radio" name="q6" value="c"> c. Memberikan kritik yang konstruktif terhadap karya desain</label>
+                            <label><input type="radio" name="q6" value="d"> d. Menghitung budget proyek</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>7. Apa risiko terbesar jika seorang desainer tidak memahami Design Brief dengan baik?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> a. Desain akan terlalu bagus sehingga klien bingung</label>
+                            <label><input type="radio" name="q7" value="b"> b. Terjadi revisi tanpa akhir, pemborosan waktu, dan penolakan dari klien</label>
+                            <label><input type="radio" name="q7" value="c"> c. Desainer akan dipromosikan menjadi manager</label>
+                            <label><input type="radio" name="q7" value="d"> d. Proyek akan selesai lebih cepat dari jadwal</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>8. Hambatan utama dalam kolaborasi tim kreatif sering kali disebabkan oleh...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> a. Ego sektoral, miskomunikasi, dan kurangnya transparansi</label>
+                            <label><input type="radio" name="q8" value="b"> b. Terlalu banyak menggunakan software canggih</label>
+                            <label><input type="radio" name="q8" value="c"> c. Terlalu sering memberikan pujian satu sama lain</label>
+                            <label><input type="radio" name="q8" value="d"> d. Memiliki target audiens yang jelas</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>9. Manfaat utama menggunakan tools manajemen proyek seperti Trello atau Asana dalam tim DKV adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> a. Untuk mengedit foto secara bersama-sama</label>
+                            <label><input type="radio" name="q9" value="b"> b. Melacak progres tugas, deadline, dan pembagian peran dengan jelas</label>
+                            <label><input type="radio" name="q9" value="c"> c. Mengganti peran seorang Art Director</label>
+                            <label><input type="radio" name="q9" value="d"> d. Menyimpan file vektor beresolusi tinggi</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>10. Dalam budaya kerja profesional, komunikasi yang asertif berarti...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> a. Berbicara sekeras mungkin agar didengar</label>
+                            <label><input type="radio" name="q10" value="b"> b. Diam dan menuruti semua perintah tanpa bertanya</label>
+                            <label><input type="radio" name="q10" value="c"> c. Menyampaikan pendapat atau klarifikasi secara sopan, tegas, dan berorientasi pada solusi</label>
+                            <label><input type="radio" name="q10" value="d"> d. Hanya berkomunikasi melalui perantara pihak ketiga</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">✍️ Bagian B – Essay (Skor ditentukan oleh Guru)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon isi semua 5 soal essay dengan jelas dan runtut!</p>
+
+                <div class="question-block">
+                    <p>1. Jelaskan mengapa bidang Desain Komunikasi Visual sangat mengandalkan kolaborasi tim dibandingkan bekerja secara individual (solo)! Berikan contoh peran yang saling melengkapi dalam sebuah proyek kampanye iklan!</p>
+                    <textarea name="essay1" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>2. Apa yang dimaksud dengan "Design Brief"? Sebutkan minimal 4 elemen penting yang harus ada dalam sebuah brief, dan jelaskan mengapa pemahaman terhadap brief sangat krusial sebelum mulai mendesain!</p>
+                    <textarea name="essay2" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>3. Bagaimana cara kamu memberikan kritik yang konstruktif terhadap karya desain teman tanpa menyakiti perasaannya? Jelaskan dan berikan contoh kalimat menggunakan metode "I Like, I Wish, I Wonder"!</p>
+                    <textarea name="essay3" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>4. Sebutkan dan jelaskan 3 (tiga) aplikasi/tools digital yang dapat mendukung kolaborasi tim desain secara remote/online! Bagaimana cara kerja masing-masing tools tersebut?</p>
+                    <textarea name="essay4" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>5. Ceritakan sebuah skenario (nyata atau imajinatif) di mana miskomunikasi dalam tim menyebabkan kegagalan proyek desain! Analisis apa penyebabnya dan bagaimana cara mencegahnya berdasarkan materi yang telah dipelajari!</p>
+                    <textarea name="essay5" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn-action btn-print" onclick="cetakPDF()">📥 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn-action btn-email" onclick="kirimEmail()"> KIRIM EMAIL KE GURU</button>
+                    <button type="button" class="btn-action btn-reset" onclick="resetForm()">🔄 MULAI ULANG</button>
+                </div>
+            </form>
+
+            <div class="result-box" id="resultBox">
+                <h3>Hasil Uji Formatif 7</h3>
+                <p id="studentInfoResult" style="margin-bottom: 20px; font-size: 1.1em;"></p>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian A (Pilihan Ganda)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);" id="scorePG">0/100</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian B (Essay)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);">Menunggu Penilaian Guru</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">*Nilai akhir akan dihitung setelah guru menilai bagian Essay.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--dark-navy); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p>&copy; 2024 Surti Meli Hidayanti, S.Pd - SMK Negeri 1 Koto Balingka</p>
+        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">Email: surtimelihidayanti35@gmail.com</p>
+    </footer>
+
+    <script>
+        const kunciJawaban = {
+            q1: 'b', q2: 'a', q3: 'c', q4: 'b', q5: 'a',
+            q6: 'c', q7: 'b', q8: 'a', q9: 'b', q10: 'c'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) {
+                alert("⚠️ Mohon lengkapi Data Siswa terlebih dahulu!");
+                return;
+            }
+
+            let semuaTerjawab = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    semuaTerjawab = false;
+                    break;
+                }
+            }
+
+            if (!semuaTerjawab) {
+                alert("⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!");
+                return;
+            }
+
+            let skor = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skor += 10;
+                }
+            }
+
+            document.getElementById('studentInfoResult').innerHTML = 
+                `<strong>${nama}</strong> (NIS: ${nis})<br>Kelas: ${kelas} | Tanggal: ${tanggal}`;
+            document.getElementById('scorePG').innerText = `${skor}/100`;
+            
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil diproses!\nNilai Pilihan Ganda Anda: ${skor}/100\n\nSilakan unduh PDF atau kirim email ke guru sebagai bukti pengerjaan.`);
+        }
+
+        function cetakPDF() {
+            if (!document.getElementById('nama').value) {
+                alert("️ Mohon isi data diri dan kerjakan soal terlebih dahulu sebelum mengunduh PDF.");
+                return;
+            }
+            if (document.getElementById('resultBox').style.display === 'none' || document.getElementById('resultBox').style.display === '') {
+                hitungNilai();
+            }
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !nis) {
+                alert("️ Mohon lengkapi data diri terlebih dahulu!");
+                return;
+            }
+
+            const skorText = document.getElementById('scorePG').innerText;
+            const skor = skorText !== '0/100' ? skorText : 'Belum dihitung';
+
+            const subject = `Hasil Uji Formatif 7 (Kolaborasi & Komunikasi DKV) - ${nama} - Kelas ${kelas}`;
+            const body = `Yth. Ibu Surti Meli Hidayanti, S.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 7 (Kolaborasi dan Komunikasi dalam DKV):\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${skor}\nNilai Essay: Menunggu penilaian guru\n\nTerima kasih.\n\nHormat saya,\n${nama}`;
+
+            const mailtoLink = `mailto:surtimelihidayanti35@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        function resetForm() {
+            if (confirm("️ Apakah Anda yakin ingin mengosongkan semua jawaban? Tindakan ini tidak dapat dibatalkan.")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('quiz').offsetTop, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

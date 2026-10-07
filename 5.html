@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1: Peta Konsep dan Apersepsi DKV - Pertemuan 5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-navy: #1a1a2e;
+            --light-navy: #16213e;
+            --white: #ffffff;
+            --cream: #f9f9f7;
+            --gray: #e8e8e8;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--dark-navy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
+            color: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-body {
+            padding: 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            color: var(--light-navy);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study {
+            background: var(--cream);
+            border: 1px solid var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .case-study h4 {
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        th {
+            background: var(--dark-navy);
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .video-placeholder {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--dark-navy);
+            color: var(--dark-navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--dark-navy);
+            color: var(--white);
+        }
+
+        .quiz-section {
+            background: var(--cream);
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quiz-header h2 {
+            border: none;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-navy);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .question-block {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray);
+        }
+
+        .question-block p {
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 400;
+        }
+
+        .options label:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .quiz-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-submit { background: var(--dark-navy); color: var(--primary-gold); }
+        .btn-print { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-email { background: #25D366; color: white; }
+        .btn-reset { background: #e74c3c; color: white; }
+
+        .btn-action:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .result-box {
+            display: none;
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .result-box h3 {
+            color: var(--primary-gold);
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            .navbar, .nav-buttons, .quiz-actions, .no-print {
+                display: none !important;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .quiz-section {
+                page-break-before: always;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h1 { font-size: 1.8em; }
+            .content-body { padding: 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">DKV Kelas X</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#kontak">Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="top">
+        <div class="chapter-header">
+            <span class="chapter-badge">BAB 1 - PERTEMUAN 5</span>
+            <h1>Peta Konsep dan Apersepsi DKV</h1>
+            <p>Memahami cara memvisualisasikan struktur materi Desain Komunikasi Visual dan membangun jembatan pengetahuan awal siswa untuk pembelajaran yang bermakna.</p>
+        </div>
+
+        <div class="content-body">
+            <div class="nav-buttons no-print">
+                <a href="4.html" class="btn btn-outline">← Pertemuan 4</a>
+                <a href="#sub1" class="btn btn-primary">Mulai Membaca</a>
+                <a href="6.html" class="btn btn-outline">Pertemuan 6 →</a>
+            </div>
+
+            <h2 id="sub1">Pendahuluan</h2>
+            <p>Dalam pembelajaran yang kompleks seperti Desain Komunikasi Visual (DKV), siswa sering kali merasa kebingungan karena banyaknya konsep, unsur, prinsip, dan teknik yang harus dipelajari secara bersamaan. Di sinilah peran <strong>Peta Konsep</strong> menjadi sangat krusial. Peta konsep berfungsi sebagai "peta jalan" visual yang membantu siswa melihat hubungan hierarkis dan keterkaitan antar ide, sehingga materi yang abstrak menjadi lebih terstruktur dan mudah dipahami.</p>
+            <p>Selain itu, sebelum masuk ke dalam materi inti, guru perlu membangun jembatan antara apa yang sudah diketahui siswa dengan apa yang akan dipelajari. Proses ini disebut <strong>Apersepsi</strong>. Apersepsi yang efektif akan mengaktifkan skema kognitif siswa, meningkatkan motivasi, dan menciptakan fondasi yang kokoh untuk <em>meaningful learning</em> (pembelajaran bermakna) sebagaimana dikemukakan oleh David Ausubel.</p>
+
+            <div class="highlight-box">
+                <strong>🔑 Konsep Kunci:</strong><br>
+                • <strong>Peta Konsep (Concept Map):</strong> Diagram atau bagan yang menggambarkan hubungan antar konsep secara hierarkis, biasanya menggunakan kata-kata penghubung untuk menjelaskan relasi tersebut.<br>
+                • <strong>Apersepsi:</strong> Kegiatan awal pembelajaran yang bertujuan mengaitkan pengetahuan atau pengalaman yang sudah dimiliki siswa dengan materi baru yang akan dipelajari.
+            </div>
+
+            <h2>5.1 Pengertian dan Fungsi Peta Konsep dalam DKV</h2>
+            <p>Peta konsep pertama kali dikembangkan oleh Joseph Novak pada tahun 1970-an berdasarkan teori belajar bermakna Ausubel. Berbeda dengan <em>mind mapping</em> yang lebih bebas dan berpusat pada satu ide dengan cabang-cabang asosiatif, peta konsep dalam konteks akademik DKV lebih terstruktur, menekankan pada hubungan logis dan hierarki dari konsep yang paling umum (inklusif) ke konsep yang paling spesifik.</p>
+            
+            <h3>Fungsi Utama Peta Konsep bagi Siswa DKV:</h3>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Organisasi Pengetahuan:</strong> Membantu siswa mengategorikan unsur, prinsip, dan elemen desain ke dalam struktur yang logis.</li>
+                <li><strong>Visualisasi Hubungan:</strong> Menunjukkan bagaimana "Warna" berhubungan dengan "Psikologi Desain" atau bagaimana "Tipografi" mendukung "Hierarki Visual".</li>
+                <li><strong>Alat Evaluasi Diri:</strong> Siswa dapat mengidentifikasi bagian mana dari materi yang masih kosong atau belum dipahami dalam peta konsep mereka.</li>
+                <li><strong>Panduan Belajar:</strong> Menjadi ringkasan visual yang efektif untuk persiapan ujian atau pengerjaan proyek desain.</li>
+            </ul>
+
+            <div class="video-placeholder">
+                <h3>🎥 Video: Cara Membuat Peta Konsep yang Efektif</h3>
+                <p>Pelajari langkah-langkah menyusun peta konsep dari konsep utama hingga detail spesifik menggunakan alat digital atau manual.</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">(Sumber: Youtube / Kanal Strategi Belajar)</p>
+            </div>
+
+            <h2>5.2 Menyusun Peta Konsep Dasar-Dasar DKV</h2>
+            <p>Untuk mata pelajaran Dasar-Dasar DKV, peta konsep dapat disusun dengan "Desain Komunikasi Visual" sebagai konsep sentral di bagian atas, kemudian bercabang ke konsep-konsep utama berikut:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tingkatan Konsep</th>
+                        <th>Contoh Konsep dalam DKV</th>
+                        <th>Kata Penghubung (Linking Words)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Konsep Utama (Paling Umum)</strong></td>
+                        <td>Desain Komunikasi Visual</td>
+                        <td>"terdiri dari", "bertujuan untuk"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Konsek Sekunder</strong></td>
+                        <td>Unsur Desain, Prinsip Desain, Media, Proses Kreatif</td>
+                        <td>"meliputi", "menggunakan", "melalui"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Konsep Tersier (Spesifik)</strong></td>
+                        <td>Titik, Garis, Warna, Keseimbangan, Kontras, Sketsa, Digital</td>
+                        <td>"seperti", "contohnya", "menghasilkan"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contoh Konkret</strong></td>
+                        <td>Logo, Poster, UI Website, Kemasan Produk</td>
+                        <td>"diwujudkan dalam", "misalnya"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>5.3 Apersepsi: Membangun Jembatan Pengetahuan</h2>
+            <p>Apersepsi bukan sekadar absensi atau salam pembuka. Ini adalah strategi kognitif untuk mengaktifkan <em>prior knowledge</em> (pengetahuan awal). Tanpa apersepsi, informasi baru hanya akan dihafal secara mekanis (<em>rote learning</em>) dan mudah dilupakan.</p>
+
+            <div class="case-study">
+                <h4>📖 Studi Kasus: Apersepsi yang Gagal vs. Berhasil</h4>
+                <p><strong>Skenario A (Gagal):</strong> Guru langsung masuk ke kelas, menulis "Hari ini kita belajar Teori Warna" di papan tulis, dan mulai menjelaskan roda warna. Siswa terlihat pasif dan banyak yang menguap.</p>
+                <p><strong>Skenario B (Berhasil):</strong> Guru menampilkan dua gambar kemasan makanan yang identik, satu dengan warna merah-kuning, satu lagi dengan warna biru-abu-abu. Guru bertanya, "Kemasan mana yang menurut kalian lebih membuat kalian lapar? Mengapa?" Siswa berdiskusi aktif. Guru kemudian mengaitkan jawaban mereka: "Nah, itulah yang akan kita pelajari hari ini: Psikologi Warna dalam Desain."</p>
+                <p><strong>Pembelajaran:</strong> Apersepsi yang memicu rasa ingin tahu dan mengaitkan materi dengan pengalaman sehari-hari jauh lebih efektif dalam mempersiapkan otak siswa untuk menerima informasi baru.</p>
+            </div>
+
+            <h3>Strategi Apersepsi yang Efektif dalam DKV:</h3>
+            <ol style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Tanya Jawab Terarah:</strong> Mengajukan pertanyaan yang jawabannya sudah diketahui siswa, yang menjadi prasyarat materi baru.</li>
+                <li><strong>Brainstorming (Curah Pendapat):</strong> Menuliskan kata kunci di papan tulis dan meminta siswa mengasosiasikannya.</li>
+                <li><strong>Menampilkan Stimulus Visual:</strong> Menunjukkan gambar, video pendek, atau objek nyata yang relevan dengan topik.</li>
+                <li><strong>Cerita atau Analogi:</strong> Menggunakan analogi sederhana (misalnya: "Unsur desain itu seperti bahan masakan, prinsip desain adalah resepnya").</li>
+                <li><strong>Kuis Kilat (Quick Review):</strong> 2-3 pertanyaan singkat tentang materi pertemuan sebelumnya yang menjadi dasar materi hari ini.</li>
+            </ol>
+
+            <h2>5.4 Integrasi Peta Konsep dan Apersepsi dalam Pembelajaran</h2>
+            <p>Kedua elemen ini saling melengkapi. Apersepsi dapat digunakan untuk <em>mengungkap</em> peta konsep awal yang ada di pikiran siswa (miskonsepsi atau pengetahuan parsial). Setelah pembelajaran berlangsung, siswa dapat diminta untuk <em>menyempurnakan</em> atau <em>membuat ulang</em> peta konsep tersebut dengan pengetahuan baru yang lebih lengkap. Ini adalah bentuk penilaian autentik yang sangat powerful.</p>
+
+            <div class="highlight-box">
+                <strong>💡 Refleksi untuk Siswa:</strong><br>
+                Coba ingat kembali materi DKV yang paling kamu sukai. Apakah kamu bisa menggambar peta konsep sederhana dari materi tersebut di kertas? Jika ya, itu tandanya kamu telah memahaminya secara bermakna, bukan sekadar menghafal.
+            </div>
+
+            <h2>Kesimpulan</h2>
+            <p>Peta konsep dan apersepsi adalah dua strategi pedagogis yang saling bersinergi dalam pembelajaran DKV. Peta konsep memberikan kerangka visual yang terstruktur untuk memahami kompleksitas materi desain, sementara apersepsi memastikan bahwa kerangka tersebut dibangun di atas fondasi pengetahuan awal siswa yang kuat. Penguasaan kedua hal ini oleh guru, dan pemahaman oleh siswa, akan secara signifikan meningkatkan kualitas <em>meaningful learning</em> di kelas.</p>
+
+            <div class="highlight-box">
+                <strong>📚 Daftar Pustaka:</strong><br>
+                • Novak, J. D., & Gowin, D. B. (1984). <em>Learning How to Learn</em>. Cambridge University Press.<br>
+                • Ausubel, D. P. (1968). <em>Educational Psychology: A Cognitive View</em>. Holt, Rinehart and Winston.<br>
+                • Kemendikbudristek. (2022). <em>Panduan Pembelajaran dan Asesmen Kurikulum Merdeka</em>.<br>
+                • Supriadi. (2024). <em>Strategi Pembelajaran Aktif di SMK</em>. Bukittinggi: FTIK UIN Bukittinggi.
+            </div>
+
+            <div class="nav-buttons no-print">
+                <a href="4.html" class="btn btn-outline">← Pertemuan 4</a>
+                <a href="#top" class="btn btn-outline">↑ Ke Atas</a>
+                <a href="6.html" class="btn btn-primary">Pertemuan 6: Menjelajah Internet →</a>
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="quiz-section" id="quiz">
+            <div class="quiz-header">
+                <span class="chapter-badge">EVALUASI PEMBELAJARAN</span>
+                <h2>📋 Uji Formatif 5: Peta Konsep dan Apersepsi DKV</h2>
+                <p>⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu sebelum mengirim!</p>
+            </div>
+
+            <form id="quizForm">
+                <h3>📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Ujian *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas *</label>
+                        <input type="text" id="kelas" required placeholder="Contoh: X DKV 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester *</label>
+                        <select id="semester" required>
+                            <option value="">Pilih Semester</option>
+                            <option value="1" selected>Semester 1 (Ganjil)</option>
+                            <option value="2">Semester 2 (Genap)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">📋 Bagian A – Pilihan Ganda (Skor 10/soal)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                <div id="pg-questions">
+                    <div class="question-block">
+                        <p>1. Tujuan utama penggunaan peta konsep dalam pembelajaran DKV adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> a. Menghias buku catatan agar terlihat indah</label>
+                            <label><input type="radio" name="q1" value="b"> b. Memvisualisasikan hubungan hierarkis antar konsep secara terstruktur</label>
+                            <label><input type="radio" name="q1" value="c"> c. Menggantikan peran guru dalam menjelaskan materi</label>
+                            <label><input type="radio" name="q1" value="d"> d. Membuat siswa menghafal definisi tanpa memahami konteks</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>2. Apersepsi dalam pembelajaran berfungsi untuk...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> a. Mengaitkan pengetahuan awal siswa dengan materi baru yang akan dipelajari</label>
+                            <label><input type="radio" name="q2" value="b"> b. Memberikan nilai akhir kepada siswa</label>
+                            <label><input type="radio" name="q2" value="c"> c. Menutup pelajaran dengan kesimpulan</label>
+                            <label><input type="radio" name="q2" value="d"> d. Mengabsen kehadiran siswa satu per satu</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>3. Dalam menyusun peta konsep, konsep yang paling umum atau inklusif sebaiknya diletakkan di...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> a. Bagian paling bawah atau pojok</label>
+                            <label><input type="radio" name="q3" value="b"> b. Bagian tengah secara acak</label>
+                            <label><input type="radio" name="q3" value="c"> c. Bagian atas atau tengah sebagai pusat/puncak hierarki</label>
+                            <label><input type="radio" name="q3" value="d"> d. Di luar area kertas</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>4. Teori belajar yang sangat mendukung penggunaan peta konsep dan apersepsi adalah teori... dari David Ausubel.</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> a. Belajar Behavioristik</label>
+                            <label><input type="radio" name="q4" value="b"> b. Belajar Bermakna (Meaningful Learning)</label>
+                            <label><input type="radio" name="q4" value="c"> c. Belajar Sosial</label>
+                            <label><input type="radio" name="q4" value="d"> d. Belajar Koneksionisme</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>5. Perbedaan utama antara peta konsep (concept map) dan mind mapping adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> a. Peta konsep lebih menekankan pada hubungan hierarkis dan kata penghubung yang logis</label>
+                            <label><input type="radio" name="q5" value="b"> b. Mind mapping lebih kaku dan formal daripada peta konsep</label>
+                            <label><input type="radio" name="q5" value="c"> c. Peta konsep tidak menggunakan gambar sama sekali</label>
+                            <label><input type="radio" name="q5" value="d"> d. Tidak ada perbedaan, keduanya adalah hal yang sama</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>6. Contoh kegiatan apersepsi yang relevan dan aktif untuk membuka materi "Desain Logo" adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> a. Langsung menyuruh siswa menggambar logo di kertas</label>
+                            <label><input type="radio" name="q6" value="b"> b. Menampilkan logo merek terkenal dan bertanya apa yang dirasakan siswa saat melihatnya</label>
+                            <label><input type="radio" name="q6" value="c"> c. Membacakan definisi logo dari buku selama 15 menit</label>
+                            <label><input type="radio" name="q6" value="d"> d. Memberikan tugas rumah tentang sejarah logo</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>7. Manfaat peta konsep bagi siswa dalam menghadapi ujian adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> a. Memudahkan menghafal kata demi kata tanpa paham</label>
+                            <label><input type="radio" name="q7" value="b"> b. Sebagai ringkasan visual yang membantu mengingat struktur materi secara holistik</label>
+                            <label><input type="radio" name="q7" value="c"> c. Mengganti kewajiban belajar sama sekali</label>
+                            <label><input type="radio" name="q7" value="d"> d. Membuat materi terlihat lebih banyak dan menakutkan</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>8. Jika siswa menunjukkan kesulitan memahami materi baru, strategi apersepsi yang paling tepat dilakukan guru adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> a. Mengulang penjelasan dengan suara lebih keras</label>
+                            <label><input type="radio" name="q8" value="b"> b. Mengingatkan kembali dan mengaitkan dengan materi prasyarat yang sudah dikuasai siswa</label>
+                            <label><input type="radio" name="q8" value="c"> c. Langsung memberikan soal yang lebih sulit</label>
+                            <label><input type="radio" name="q8" value="d"> d. Melewati materi tersebut dan lanjut ke bab berikutnya</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>9. Unsur dasar DKV yang sering menjadi fondasi dalam peta konsep materi desain adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> a. Anggaran dan biaya produksi</label>
+                            <label><input type="radio" name="q9" value="b"> b. Titik, garis, bidang, warna, dan tekstur</label>
+                            <label><input type="radio" name="q9" value="c"> c. Sejarah komputer dan internet</label>
+                            <label><input type="radio" name="q9" value="d"> d. Aturan administrasi sekolah</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>10. Proses di mana siswa diminta untuk menyempurnakan peta konsep awal mereka setelah pembelajaran selesai merupakan bentuk...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> a. Penilaian sumatif akhir tahun</label>
+                            <label><input type="radio" name="q10" value="b"> b. Penilaian autentik untuk mengukur perkembangan pemahaman bermakna</label>
+                            <label><input type="radio" name="q10" value="c"> c. Hukuman bagi siswa yang tidak memperhatikan</label>
+                            <label><input type="radio" name="q10" value="d"> d. Kegiatan yang tidak memiliki tujuan pedagogis</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">✍️ Bagian B – Essay (Skor ditentukan oleh Guru)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon isi semua 5 soal essay dengan jelas dan runtut!</p>
+
+                <div class="question-block">
+                    <p>1. Jelaskan pengertian dan fungsi utama peta konsep dalam pembelajaran Dasar-Dasar DKV! Mengapa peta konsep lebih disarankan daripada sekadar ringkasan teks biasa?</p>
+                    <textarea name="essay1" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>2. Jelaskan langkah-langkah sistematis untuk menyusun peta konsep yang efektif untuk materi "Unsur dan Prinsip Desain"! Sertakan contoh konsep utama dan konsep turunannya!</p>
+                    <textarea name="essay2" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>3. Apa yang dimaksud dengan apersepsi? Mengapa apersepsi sangat penting dilakukan di awal setiap pertemuan DKV untuk mencegah terjadinya "rote learning" (belajar menghafal)?</p>
+                    <textarea name="essay3" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>4. Berikan contoh konkret skenario kegiatan apersepsi (durasi 5-7 menit) yang dapat Anda lakukan untuk membuka materi "Desain Kemasan Produk" agar siswa langsung tertarik dan terhubung dengan materi!</p>
+                    <textarea name="essay4" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>5. Analisislah hubungan sinergis antara peta konsep dan apersepsi dalam menciptakan pembelajaran yang bermakna (meaningful learning) menurut teori Ausubel! Bagaimana keduanya saling melengkapi?</p>
+                    <textarea name="essay5" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn-action btn-print" onclick="cetakPDF()">📥 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn-action btn-email" onclick="kirimEmail()">📧 KIRIM EMAIL KE GURU</button>
+                    <button type="button" class="btn-action btn-reset" onclick="resetForm()">🔄 MULAI ULANG</button>
+                </div>
+            </form>
+
+            <div class="result-box" id="resultBox">
+                <h3>Hasil Uji Formatif 5</h3>
+                <p id="studentInfoResult" style="margin-bottom: 20px; font-size: 1.1em;"></p>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian A (Pilihan Ganda)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);" id="scorePG">0/100</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian B (Essay)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);">Menunggu Penilaian Guru</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">*Nilai akhir akan dihitung setelah guru menilai bagian Essay.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--dark-navy); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p>&copy; 2024 Surti Meli Hidayanti, S.Pd - SMK Negeri 1 Koto Balingka</p>
+        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">Email: surtimelihidayanti35@gmail.com</p>
+    </footer>
+
+    <script>
+        const kunciJawaban = {
+            q1: 'b', q2: 'a', q3: 'c', q4: 'b', q5: 'a',
+            q6: 'b', q7: 'b', q8: 'b', q9: 'b', q10: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) {
+                alert("⚠️ Mohon lengkapi Data Siswa terlebih dahulu!");
+                return;
+            }
+
+            let semuaTerjawab = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    semuaTerjawab = false;
+                    break;
+                }
+            }
+
+            if (!semuaTerjawab) {
+                alert("⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!");
+                return;
+            }
+
+            let skor = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skor += 10;
+                }
+            }
+
+            document.getElementById('studentInfoResult').innerHTML = 
+                `<strong>${nama}</strong> (NIS: ${nis})<br>Kelas: ${kelas} | Tanggal: ${tanggal}`;
+            document.getElementById('scorePG').innerText = `${skor}/100`;
+            
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil diproses!\nNilai Pilihan Ganda Anda: ${skor}/100\n\nSilakan unduh PDF atau kirim email ke guru sebagai bukti pengerjaan.`);
+        }
+
+        function cetakPDF() {
+            if (!document.getElementById('nama').value) {
+                alert("⚠️ Mohon isi data diri dan kerjakan soal terlebih dahulu sebelum mengunduh PDF.");
+                return;
+            }
+            if (document.getElementById('resultBox').style.display === 'none' || document.getElementById('resultBox').style.display === '') {
+                hitungNilai();
+            }
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !nis) {
+                alert("⚠️ Mohon lengkapi data diri terlebih dahulu!");
+                return;
+            }
+
+            const skorText = document.getElementById('scorePG').innerText;
+            const skor = skorText !== '0/100' ? skorText : 'Belum dihitung';
+
+            const subject = `Hasil Uji Formatif 5 (Peta Konsep & Apersepsi DKV) - ${nama} - Kelas ${kelas}`;
+            const body = `Yth. Ibu Surti Meli Hidayanti, S.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 5 (Peta Konsep dan Apersepsi DKV):\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${skor}\nNilai Essay: Menunggu penilaian guru\n\nTerima kasih.\n\nHormat saya,\n${nama}`;
+
+            const mailtoLink = `mailto:surtimelihidayanti35@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        function resetForm() {
+            if (confirm("⚠️ Apakah Anda yakin ingin mengosongkan semua jawaban? Tindakan ini tidak dapat dibatalkan.")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('quiz').offsetTop, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

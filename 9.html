@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2: Proses Bisnis di Industri DKV - Pertemuan 9</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-navy: #1a1a2e;
+            --light-navy: #16213e;
+            --white: #ffffff;
+            --cream: #f9f9f7;
+            --gray: #e8e8e8;
+            --text-dark: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--dark-navy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
+            color: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-body { padding: 40px; }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            color: var(--light-navy);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p { margin-bottom: 15px; text-align: justify; }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study {
+            background: var(--cream);
+            border: 1px solid var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .case-study h4 {
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        th {
+            background: var(--dark-navy);
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        tr:hover { background: rgba(212, 175, 55, 0.05); }
+
+        .video-placeholder {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-primary:hover { background: var(--secondary-gold); transform: translateY(-2px); }
+        .btn-outline { border: 2px solid var(--dark-navy); color: var(--dark-navy); }
+        .btn-outline:hover { background: var(--dark-navy); color: var(--white); }
+
+        .quiz-section {
+            background: var(--cream);
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .quiz-header { text-align: center; margin-bottom: 30px; }
+        .quiz-header h2 { border: none; margin-top: 0; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-navy);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .question-block {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray);
+        }
+
+        .question-block p { font-weight: 600; margin-bottom: 15px; text-align: left; }
+
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 400;
+        }
+
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 10px; }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .quiz-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-submit { background: var(--dark-navy); color: var(--primary-gold); }
+        .btn-print { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-email { background: #25D366; color: white; }
+        .btn-reset { background: #e74c3c; color: white; }
+        .btn-action:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        .result-box {
+            display: none;
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .result-box h3 { color: var(--primary-gold); font-size: 2em; margin-bottom: 10px; }
+
+        @media print {
+            .navbar, .nav-buttons, .quiz-actions, .no-print { display: none !important; }
+            body { background: white; color: black; }
+            .container { box-shadow: none; max-width: 100%; }
+            .quiz-section { page-break-before: always; }
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h1 { font-size: 1.8em; }
+            .content-body { padding: 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">DKV Kelas X</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#kontak">Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="top">
+        <div class="chapter-header">
+            <span class="chapter-badge">BAB 2 - PERTEMUAN 9</span>
+            <h1>Proses Bisnis di Industri Desain Komunikasi Visual</h1>
+            <p>Memahami alur kerja profesional, tahapan produksi, dan manajemen proyek dari konsep awal hingga serah terima karya desain.</p>
+        </div>
+
+        <div class="content-body">
+            <div class="nav-buttons no-print">
+                <a href="8.html" class="btn btn-outline">← UTS (Pertemuan 8)</a>
+                <a href="#sub1" class="btn btn-primary">Mulai Membaca</a>
+                <a href="10.html" class="btn btn-outline">Pertemuan 10 →</a>
+            </div>
+
+            <h2 id="sub1">Pendahuluan</h2>
+            <p>Desain Komunikasi Visual (DKV) bukan hanya tentang kreativitas semata, tetapi juga tentang bagaimana kreativitas tersebut dikelola dalam sebuah kerangka bisnis yang profesional. Sebuah karya desain yang indah tidak akan memiliki nilai komersial jika tidak melalui proses bisnis yang terstruktur, mulai dari pemahaman kebutuhan klien hingga serah terima produk akhir.</p>
+            <p>Memahami proses bisnis di industri DKV sangat penting bagi siswa SMK agar memiliki gambaran nyata tentang bagaimana dunia kerja sesungguhnya beroperasi. Pengetahuan ini membekali siswa tidak hanya dengan keterampilan teknis (hard skill), tetapi juga keterampilan manajerial dan profesionalisme (soft skill) yang sangat dihargai di industri kreatif.</p>
+
+            <div class="highlight-box">
+                <strong>🔑 Konsep Kunci:</strong><br>
+                • <strong>Proses Bisnis DKV:</strong> Rangkaian aktivitas terstruktur yang mengubah kebutuhan klien menjadi solusi visual yang bernilai, dimulai dari inisiasi hingga serah terima.<br>
+                • <strong>Workflow (Alur Kerja):</strong> Urutan langkah-langkah sistematis yang dilalui tim kreatif untuk menyelesaikan proyek desain secara efisien.<br>
+                • <strong>Deliverables:</strong> Hasil akhir atau produk yang harus diserahkan kepada klien sesuai dengan kesepakatan dalam kontrak atau brief.
+            </div>
+
+            <h2>9.1 Tahapan Utama Proses Bisnis DKV</h2>
+            <p>Secara umum, proses bisnis dalam industri DKV mengikuti lima tahapan utama yang saling berkaitan. Penguasaan setiap tahapan ini menjamin kualitas hasil akhir dan kepuasan klien.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tahapan</th>
+                        <th>Aktivitas Utama</th>
+                        <th>Output / Hasil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Inisiasi & Briefing</strong></td>
+                        <td>Diskusi dengan klien, memahami kebutuhan, target audiens, dan batasan proyek.</td>
+                        <td>Dokumen Design Brief dan Penawaran Harga (Quotation).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Riset & Konseptualisasi</strong></td>
+                        <td>Melakukan riset pasar, kompetitor, tren desain, dan pembuatan moodboard atau sketsa awal.</td>
+                        <td>Moodboard, Sketsa Kasar, atau Konsep Awal.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Eksekusi & Produksi Desain</strong></td>
+                        <td>Proses pembuatan desain digital menggunakan software, pemilihan tipografi, warna, dan layout.</td>
+                        <td>Desain Draft (Low-res atau Watermarked).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Review & Revisi</strong></td>
+                        <td>Presentasi desain kepada klien, menerima feedback, dan melakukan perbaikan sesuai kesepakatan.</td>
+                        <td>Desain Final yang telah disetujui (Approved).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Finalisasi & Serah Terima</strong></td>
+                        <td>Penyiapan file final (high-resolution, siap cetak/web), pembuatan panduan penggunaan (brand guideline), dan invoicing.</td>
+                        <td>File Master, Deliverables, dan Tanda Terima.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="video-placeholder">
+                <h3>🎥 Video: Alur Kerja Profesional di Agensi Desain</h3>
+                <p>Simak bagaimana sebuah proyek branding dijalankan dari tahap pertemuan pertama dengan klien hingga file final diserahkan.</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">(Sumber: Youtube / Kanal Behind The Design)</p>
+            </div>
+
+            <h2>9.2 Peran dan Tanggung Jawab dalam Tim Proyek DKV</h2>
+            <p>Dalam proyek DKV berskala menengah hingga besar, pekerjaan tidak dilakukan oleh satu orang saja. Terdapat pembagian peran yang jelas untuk memastikan efisiensi dan kualitas:</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Account Manager / Project Manager:</strong> Menjadi penghubung utama antara klien dan tim kreatif, mengelola timeline, budget, dan komunikasi.</li>
+                <li><strong>Creative Director:</strong> Bertanggung jawab atas visi kreatif keseluruhan, memastikan desain selaras dengan strategi brand klien.</li>
+                <li><strong>Graphic / UI Designer:</strong> Eksekutor utama yang menerjemahkan konsep menjadi karya visual menggunakan perangkat lunak desain.</li>
+                <li><strong>Copywriter:</strong> Bertugas merumuskan kata-kata, slogan, atau teks yang mendukung pesan visual.</li>
+                <li><strong>Vendor / Printer:</strong> Pihak eksternal yang memproduksi hasil desain ke dalam bentuk fisik (misalnya: percetakan, produsen merchandise).</li>
+            </ul>
+
+            <div class="case-study">
+                <h4>📖 Studi Kasus: Kegagalan Akibat Melewati Tahapan Briefing</h4>
+                <p><strong>Kasus:</strong> Seorang desainer freelance menerima pesanan pembuatan logo untuk kedai kopi baru. Karena merasa sudah paham, ia langsung mengerjakan desain tanpa membuat dokumen brief tertulis atau menanyakan detail target pasar. Setelah 3 hari, ia mempresentasikan desain bergaya futuristik dan neon. Klien menolak mentah-mentah karena target pasar mereka adalah kalangan usia 40+ yang menyukai kesan klasik dan hangat. Desainer harus mengulang dari nol tanpa tambahan biaya.</p>
+                <p><strong>Pembelajaran:</strong> Tahap inisiasi dan briefing yang terdokumentasi dengan baik adalah fondasi untuk mencegah salah persepsi, pemborosan waktu, dan kerugian finansial.</p>
+            </div>
+
+            <h2>9.3 Pentingnya Kontrak dan Hak Kekayaan Intelektual (HKI)</h2>
+            <p>Proses bisnis yang profesional selalu diawali dengan kesepakatan tertulis. Kontrak kerja dalam DKV berfungsi untuk melindungi kedua belah pihak. Poin-poin krusial yang harus ada dalam kontrak meliputi:</p>
+            <ol style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Ruang Lingkup Pekerjaan (Scope of Work):</strong> Menjelaskan secara detail apa yang akan dibuat (misal: 1 logo, 3 konsep awal, 2x revisi).</li>
+                <li><strong>Timeline:</strong> Tanggal mulai, tanggal presentasi, dan deadline final.</li>
+                <li><strong>Biaya dan Termin Pembayaran:</strong> Total harga, uang muka (DP), dan pelunasan.</li>
+                <li><strong>Hak Cipta:</strong> Kapan hak cipta berpindah dari desainer ke klien (biasanya setelah pelunasan penuh).</li>
+                <li><strong>Klausul Revisi:</strong> Batasan jumlah revisi gratis dan biaya untuk revisi tambahan di luar kesepakatan.</li>
+            </ol>
+
+            <div class="highlight-box">
+                <strong>💡 Refleksi untuk Siswa Indonesia:</strong><br>
+                Di Indonesia, masih banyak praktisi DKV (terutama pemula) yang bekerja hanya berdasarkan "janji lisan" atau chat WhatsApp. Meskipun terlihat lebih santai, hal ini sangat berisiko. Membiasakan diri membuat brief sederhana dan kesepakatan tertulis, sekecil apapun proyeknya, adalah langkah pertama menuju profesionalisme sejati.
+            </div>
+
+            <h2>Kesimpulan</h2>
+            <p>Proses bisnis di industri DKV adalah jembatan yang menghubungkan kreativitas dengan nilai ekonomi. Dengan memahami tahapan workflow yang terstruktur, peran masing-masing stakeholder, serta pentingnya dokumentasi dan kontrak, siswa SMK dapat mempersiapkan diri tidak hanya sebagai pekerja teknis, tetapi sebagai mitra bisnis yang profesional dan dapat diandalkan oleh klien.</p>
+
+            <div class="highlight-box">
+                <strong>📚 Daftar Pustaka:</strong><br>
+                • Wheeler, A. (2017). <em>Designing Brand Identity: An Essential Guide for the Whole Branding Team</em>. Wiley.<br>
+                • Heller, S., & Vienne, V. (2012). <em>100 Ideas That Changed Graphic Design</em>. Laurence King Publishing.<br>
+                • Kemendikbudristek. (2022). <em>Capaian Pembelajaran Dasar-Dasar Desain Komunikasi Visual</em>.<br>
+                • Supriadi. (2024). <em>Manajemen Proyek Kreatif untuk Siswa SMK</em>. Bukittinggi: FTIK UIN Bukittinggi.
+            </div>
+
+            <div class="nav-buttons no-print">
+                <a href="8.html" class="btn btn-outline">← UTS (Pertemuan 8)</a>
+                <a href="#top" class="btn btn-outline">↑ Ke Atas</a>
+                <a href="10.html" class="btn btn-primary">Pertemuan 10: Analisis Industri Kreatif →</a>
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="quiz-section" id="quiz">
+            <div class="quiz-header">
+                <span class="chapter-badge">EVALUASI PEMBELAJARAN</span>
+                <h2>📋 Uji Formatif 9: Proses Bisnis di Industri DKV</h2>
+                <p>⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu sebelum mengirim!</p>
+            </div>
+
+            <form id="quizForm">
+                <h3>📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Ujian *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas *</label>
+                        <input type="text" id="kelas" required placeholder="Contoh: X DKV 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester *</label>
+                        <select id="semester" required>
+                            <option value="">Pilih Semester</option>
+                            <option value="1" selected>Semester 1 (Ganjil)</option>
+                            <option value="2">Semester 2 (Genap)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">📋 Bagian A – Pilihan Ganda (Skor 10/soal)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                <div id="pg-questions">
+                    <div class="question-block">
+                        <p>1. Tahap pertama yang paling krusial dalam proses bisnis DKV sebelum mulai mendesain adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> a. Inisiasi dan Briefing</label>
+                            <label><input type="radio" name="q1" value="b"> b. Eksekusi Desain</label>
+                            <label><input type="radio" name="q1" value="c"> c. Mencetak hasil akhir</label>
+                            <label><input type="radio" name="q1" value="d"> d. Menagih pembayaran penuh</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>2. Dokumen tertulis yang berisi permintaan, ekspektasi, dan batasan proyek dari klien disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> a. Invoice</label>
+                            <label><input type="radio" name="q2" value="b"> b. Design Brief</label>
+                            <label><input type="radio" name="q2" value="c"> c. Kontrak Kerja</label>
+                            <label><input type="radio" name="q2" value="d"> d. Moodboard</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>3. Pihak dalam tim kreatif yang bertanggung jawab mengawasi keseluruhan visi dan arah kreatif proyek adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> a. Project Manager</label>
+                            <label><input type="radio" name="q3" value="b"> b. Copywriter</label>
+                            <label><input type="radio" name="q3" value="c"> c. Creative Director</label>
+                            <label><input type="radio" name="q3" value="d"> d. Vendor Percetakan</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>4. Tahap di mana desainer membuat sketsa kasar, wireframe, atau eksplorasi visual awal disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> a. Finalisasi</label>
+                            <label><input type="radio" name="q4" value="b"> b. Riset dan Konseptualisasi</label>
+                            <label><input type="radio" name="q4" value="c"> c. Serah Terima</label>
+                            <label><input type="radio" name="q4" value="d"> d. Invoicing</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>5. Tujuan utama dari tahap review dan revisi dalam proses bisnis DKV adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> a. Menambah biaya proyek secara sepihak</label>
+                            <label><input type="radio" name="q5" value="b"> b. Menyempurnakan desain agar sesuai dengan feedback dan kebutuhan klien</label>
+                            <label><input type="radio" name="q5" value="c"> c. Mengganti desainer utama</label>
+                            <label><input type="radio" name="q5" value="d"> d. Menghapus semua konsep awal</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>6. Format file yang paling umum diserahkan sebagai "deliverables" final untuk kebutuhan cetak profesional adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> a. JPG resolusi rendah</label>
+                            <label><input type="radio" name="q6" value="b"> b. Screenshot dari layar</label>
+                            <label><input type="radio" name="q6" value="c"> c. PDF High-Resolution atau AI/EPS</label>
+                            <label><input type="radio" name="q6" value="d"> d. File mentah yang belum di-save</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>7. Dalam konteks proyek DKV, istilah "stakeholder" merujuk pada...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> a. Hanya klien yang membayar</label>
+                            <label><input type="radio" name="q7" value="b"> b. Semua pihak yang berkepentingan atau terdampak oleh proyek (klien, tim, vendor)</label>
+                            <label><input type="radio" name="q7" value="c"> c. Software yang digunakan untuk mendesain</label>
+                            <label><input type="radio" name="q7" value="d"> d. Kompetitor bisnis klien</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>8. Mengapa kontrak kerja tertulis sangat penting sebelum memulai proyek desain?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> a. Agar terlihat profesional di depan teman</label>
+                            <label><input type="radio" name="q8" value="b"> b. Untuk melindungi hak, kewajiban, dan ekspektasi kedua belah pihak secara hukum</label>
+                            <label><input type="radio" name="q8" value="c"> c. Agar desainer bisa bekerja semaunya</label>
+                            <label><input type="radio" name="q8" value="d"> d. Kontrak tidak penting, janji lisan sudah cukup</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>9. Apa yang dimaksud dengan "deliverables" dalam proses bisnis DKV?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> a. Proses pengiriman barang via kurir</label>
+                            <label><input type="radio" name="q9" value="b"> b. Alat-alat yang digunakan desainer</label>
+                            <label><input type="radio" name="q9" value="c"> c. Hasil akhir atau produk yang harus diserahkan kepada klien sesuai kesepakatan</label>
+                            <label><input type="radio" name="q9" value="d"> d. Tagihan yang dikirim ke klien</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>10. Jika klien meminta revisi besar di luar jumlah yang telah disepakati dalam kontrak awal, langkah profesional yang harus diambil desainer adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> a. Mengerjakannya secara gratis agar klien senang</label>
+                            <label><input type="radio" name="q10" value="b"> b. Menolak dengan kasar dan membatalkan proyek</label>
+                            <label><input type="radio" name="q10" value="c"> c. Mengkomunikasikan adanya tambahan biaya atau waktu sesuai klausul kontrak</label>
+                            <label><input type="radio" name="q10" value="d"> d. Mengerjakannya secara diam-diam tanpa memberitahu klien</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">✍️ Bagian B – Essay (Skor ditentukan oleh Guru)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon isi semua 5 soal essay dengan jelas dan runtut!</p>
+
+                <div class="question-block">
+                    <p>1. Jelaskan 5 (lima) tahapan utama dalam proses bisnis Desain Komunikasi Visual, mulai dari inisiasi hingga serah terima! Berikan contoh aktivitas di setiap tahapannya!</p>
+                    <textarea name="essay1" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>2. Mengapa tahap "Briefing" atau pengumpulan informasi awal dianggap sebagai fondasi paling penting dalam sebuah proyek DKV? Apa risiko jika tahap ini dilewatkan atau dilakukan dengan buruk?</p>
+                    <textarea name="essay2" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>3. Sebutkan dan jelaskan minimal 3 (tiga) peran atau posisi penting dalam sebuah tim kreatif agensi desain, serta bagaimana mereka saling berkolaborasi!</p>
+                    <textarea name="essay3" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>4. Analisislah pentingnya memiliki kontrak kerja tertulis dalam proyek desain! Sebutkan minimal 4 poin krusial yang wajib ada di dalam kontrak tersebut untuk melindungi desainer!</p>
+                    <textarea name="essay4" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>5. Berdasarkan studi kasus yang diberikan dalam materi, bagaimana kamu akan menangani situasi di mana klien tidak puas dengan hasil desain karena ternyata tidak sesuai dengan ekspektasi mereka, padahal kamu merasa sudah mengikuti instruksi awal?</p>
+                    <textarea name="essay5" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn-action btn-print" onclick="cetakPDF()">📥 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn-action btn-email" onclick="kirimEmail()">📧 KIRIM EMAIL KE GURU</button>
+                    <button type="button" class="btn-action btn-reset" onclick="resetForm()">🔄 MULAI ULANG</button>
+                </div>
+            </form>
+
+            <div class="result-box" id="resultBox">
+                <h3>Hasil Uji Formatif 9</h3>
+                <p id="studentInfoResult" style="margin-bottom: 20px; font-size: 1.1em;"></p>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian A (Pilihan Ganda)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);" id="scorePG">0/100</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian B (Essay)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);">Menunggu Penilaian Guru</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">*Nilai akhir akan dihitung setelah guru menilai bagian Essay.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--dark-navy); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p>&copy; 2024 Surti Meli Hidayanti, S.Pd - SMK Negeri 1 Koto Balingka</p>
+        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">Email: surtimelihidayanti35@gmail.com</p>
+    </footer>
+
+    <script>
+        const kunciJawaban = {
+            q1: 'a', q2: 'b', q3: 'c', q4: 'b', q5: 'b',
+            q6: 'c', q7: 'b', q8: 'b', q9: 'c', q10: 'c'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) {
+                alert("⚠️ Mohon lengkapi Data Siswa terlebih dahulu!");
+                return;
+            }
+
+            let semuaTerjawab = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    semuaTerjawab = false;
+                    break;
+                }
+            }
+
+            if (!semuaTerjawab) {
+                alert("⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!");
+                return;
+            }
+
+            let skor = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skor += 10;
+                }
+            }
+
+            document.getElementById('studentInfoResult').innerHTML = 
+                `<strong>${nama}</strong> (NIS: ${nis})<br>Kelas: ${kelas} | Tanggal: ${tanggal}`;
+            document.getElementById('scorePG').innerText = `${skor}/100`;
+            
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil diproses!\nNilai Pilihan Ganda Anda: ${skor}/100\n\nSilakan unduh PDF atau kirim email ke guru sebagai bukti pengerjaan.`);
+        }
+
+        function cetakPDF() {
+            if (!document.getElementById('nama').value) {
+                alert("⚠️ Mohon isi data diri dan kerjakan soal terlebih dahulu sebelum mengunduh PDF.");
+                return;
+            }
+            if (document.getElementById('resultBox').style.display === 'none' || document.getElementById('resultBox').style.display === '') {
+                hitungNilai();
+            }
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !nis) {
+                alert("⚠️ Mohon lengkapi data diri terlebih dahulu!");
+                return;
+            }
+
+            const skorText = document.getElementById('scorePG').innerText;
+            const skor = skorText !== '0/100' ? skorText : 'Belum dihitung';
+
+            const subject = `Hasil Uji Formatif 9 (Proses Bisnis DKV) - ${nama} - Kelas ${kelas}`;
+            const body = `Yth. Ibu Surti Meli Hidayanti, S.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 9 (Proses Bisnis di Industri DKV):\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${skor}\nNilai Essay: Menunggu penilaian guru\n\nTerima kasih.\n\nHormat saya,\n${nama}`;
+
+            const mailtoLink = `mailto:surtimelihidayanti35@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        function resetForm() {
+            if (confirm("⚠️ Apakah Anda yakin ingin mengosongkan semua jawaban? Tindakan ini tidak dapat dibatalkan.")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('quiz').offsetTop, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

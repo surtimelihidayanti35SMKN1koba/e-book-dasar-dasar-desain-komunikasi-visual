@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 3: Perkembangan Teknologi di Industri DKV - Pertemuan 12</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-navy: #1a1a2e;
+            --light-navy: #16213e;
+            --white: #ffffff;
+            --cream: #f9f9f7;
+            --gray: #e8e8e8;
+            --text-dark: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--dark-navy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
+            color: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-body { padding: 40px; }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            color: var(--light-navy);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p { margin-bottom: 15px; text-align: justify; }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study {
+            background: var(--cream);
+            border: 1px solid var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .case-study h4 {
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        th {
+            background: var(--dark-navy);
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        tr:hover { background: rgba(212, 175, 55, 0.05); }
+
+        .video-placeholder {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-primary:hover { background: var(--secondary-gold); transform: translateY(-2px); }
+        .btn-outline { border: 2px solid var(--dark-navy); color: var(--dark-navy); }
+        .btn-outline:hover { background: var(--dark-navy); color: var(--white); }
+
+        .quiz-section {
+            background: var(--cream);
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .quiz-header { text-align: center; margin-bottom: 30px; }
+        .quiz-header h2 { border: none; margin-top: 0; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-navy);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .question-block {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray);
+        }
+
+        .question-block p { font-weight: 600; margin-bottom: 15px; text-align: left; }
+
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 400;
+        }
+
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 10px; }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .quiz-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-submit { background: var(--dark-navy); color: var(--primary-gold); }
+        .btn-print { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-email { background: #25D366; color: white; }
+        .btn-reset { background: #e74c3c; color: white; }
+        .btn-action:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        .result-box {
+            display: none;
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .result-box h3 { color: var(--primary-gold); font-size: 2em; margin-bottom: 10px; }
+
+        @media print {
+            .navbar, .nav-buttons, .quiz-actions, .no-print { display: none !important; }
+            body { background: white; color: black; }
+            .container { box-shadow: none; max-width: 100%; }
+            .quiz-section { page-break-before: always; }
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h1 { font-size: 1.8em; }
+            .content-body { padding: 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">DKV Kelas X</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#kontak">Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="top">
+        <div class="chapter-header">
+            <span class="chapter-badge">BAB 3 - PERTEMUAN 12</span>
+            <h1>Perkembangan Teknologi di Industri DKV</h1>
+            <p>Menganalisis disrupsi teknologi, kecerdasan buatan (AI), realitas virtual (VR/AR), dan dampaknya terhadap masa depan profesi Desain Komunikasi Visual.</p>
+        </div>
+
+        <div class="content-body">
+            <div class="nav-buttons no-print">
+                <a href="11.html" class="btn btn-outline">← Pertemuan 11</a>
+                <a href="#sub1" class="btn btn-primary">Mulai Membaca</a>
+                <a href="13.html" class="btn btn-outline">Pertemuan 13 →</a>
+            </div>
+
+            <h2 id="sub1">Pendahuluan</h2>
+            <p>Industri Desain Komunikasi Visual (DKV) sedang mengalami transformasi paling radikal dalam sejarahnya. Jika sebelumnya revolusi terjadi saat peralihan dari desain manual ke digital (desktop publishing), kini kita berada di era <strong>Disrupsi Kecerdasan Buatan (AI)</strong> dan <strong>Komputasi Spasial (VR/AR)</strong>. Teknologi tidak lagi hanya menjadi "alat bantu", tetapi telah menjadi "mitra kreatif" yang mampu menghasilkan karya visual dalam hitungan detik.</p>
+            <p>Bagi siswa SMK DKV, memahami perkembangan ini bukan pilihan, melainkan keharusan. Ketakutan akan "digantikan oleh AI" harus diubah menjadi strategi untuk "berkolaborasi dengan AI". Pertemuan ini akan membedah teknologi terkini yang mengubah lanskap industri DKV dan bagaimana siswa dapat memposisikan diri agar tetap relevan di masa depan.</p>
+
+            <div class="highlight-box">
+                <strong>🔑 Konsep Kunci:</strong><br>
+                • <strong>Generative AI:</strong> Kecerdasan buatan yang mampu menciptakan konten baru (gambar, teks, video) berdasarkan prompt atau perintah teks, contoh: Midjourney, DALL-E, Adobe Firefly.<br>
+                • <strong>Augmented Reality (AR):</strong> Teknologi yang menambahkan elemen digital (gambar, suara) ke dunia nyata secara real-time melalui perangkat seperti smartphone.<br>
+                • <strong>Virtual Reality (VR):</strong> Teknologi yang menciptakan lingkungan simulasi tiga dimensi yang sepenuhnya imersif, memisahkan pengguna dari dunia fisik.
+            </div>
+
+            <h2>12.1 Revolusi Teknologi dalam DKV</h2>
+            <p>Beberapa teknologi utama yang saat ini mendisrupsi dan membentuk ulang industri kreatif meliputi:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Teknologi</th>
+                        <th>Contoh Tools/Platform</th>
+                        <th>Aplikasi dalam DKV</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Generative AI (Teks-ke-Gambar)</strong></td>
+                        <td>Midjourney, DALL-E 3, Stable Diffusion</td>
+                        <td>Membuat moodboard instan, eksplorasi konsep visual, ilustrasi cepat, dan aset background.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI-Assisted Design</strong></td>
+                        <td>Adobe Firefly, Canva Magic Studio</td>
+                        <td>Menghapus background otomatis, generative fill (memperluas gambar), dan penyesuaian warna cerdas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AR & VR (Realitas Tertambah/Maya)</strong></td>
+                        <td>Spark AR, Unity, Unreal Engine</td>
+                        <td>Desain filter Instagram/TikTok, kemasan interaktif, virtual showroom, dan pengalaman brand imersif.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3D & Motion Real-time</strong></td>
+                        <td>Blender, Spline, Cinema 4D</td>
+                        <td>Pembuatan aset 3D untuk web, motion graphics, dan desain produk virtual.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cloud Collaboration</strong></td>
+                        <td>Figma, Notion, Frame.io</td>
+                        <td>Kerja sama tim desain secara real-time dari lokasi berbeda dengan umpan balik langsung.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="video-placeholder">
+                <h3>🎥 Video: Dampak AI terhadap Industri Desain Grafis</h3>
+                <p>Simak bagaimana para profesional industri melihat kedatangan AI: apakah sebagai ancaman atau peluang emas?</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">(Sumber: Youtube / Kanal Tech & Design)</p>
+            </div>
+
+            <h2>12.2 Dampak Teknologi terhadap Profesi dan Dunia Kerja</h2>
+            <p>Kedatangan teknologi otomatisasi dan AI menggeser peran tradisional seorang desainer. Pekerjaan yang bersifat repetitif dan teknis (seperti memotong background, membuat variasi warna, atau layout dasar) semakin diambil alih oleh mesin. Namun, ini memunculkan peluang peran baru:</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Dari Executor menjadi Curator/Director:</strong> Desainer tidak lagi hanya "menggambar", tetapi lebih banyak "mengarahkan" AI, memilih hasil terbaik, dan menyempurnakannya.</li>
+                <li><strong>Munculnya Profesi Baru:</strong> <em>AI Prompt Engineer</em> (ahli merintah AI), <em>AR Filter Designer</em>, <em>3D Web Designer</em>, dan <em>UX Writer for AI</em>.</li>
+                <li><strong>Permintaan Skill Hybrid:</strong> Perusahaan kini mencari desainer yang tidak hanya mahir Adobe, tetapi juga memahami dasar logika AI, 3D, dan analisis data pengguna.</li>
+            </ul>
+
+            <div class="case-study">
+                <h4>📖 Studi Kasus: Agensi Iklan yang Mengadopsi AI</h4>
+                <p><strong>Kasus:</strong> Sebuah agensi iklan kecil di Bandung dulunya membutuhkan waktu 3 hari untuk membuat 10 variasi konsep visual kampanye media sosial. Setelah mengintegrasikan Midjourney dan Adobe Firefly ke dalam workflow mereka, proses eksplorasi konsep awal hanya memakan waktu 3 jam. Desainer di agensi tersebut tidak di-PHK, melainkan dialihkan fokusnya untuk mengerjakan strategi kreatif, copywriting, dan penyempurnaan detail akhir yang tidak bisa dilakukan AI.</p>
+                <p><strong>Pembelajaran:</strong> Teknologi mempercepat proses produksi, sehingga desainer memiliki lebih banyak waktu untuk fokus pada aspek strategis, emosional, dan humanis dari sebuah desain.</p>
+            </div>
+
+            <h2>12.3 Etika dan Tantangan Penggunaan Teknologi</h2>
+            <p>Di balik kemudahan yang ditawarkan, penggunaan teknologi canggih dalam DKV membawa tantangan etis yang serius:</p>
+            <ol style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Hak Cipta dan Orisinalitas:</strong> AI dilatih menggunakan miliaran gambar dari internet, seringkali tanpa izin seniman asli. Apakah karya yang dihasilkan AI bisa diklaim hak ciptanya?</li>
+                <li><strong>Deepfake dan Misinformasi:</strong> Kemampuan AI membuat gambar atau video hiper-realistis berpotensi disalahgunakan untuk hoaks, penipuan, atau manipulasi opini publik.</li>
+                <li><strong>Homogenisasi Gaya Desain:</strong> Karena AI cenderung menghasilkan gambar yang "rata-rata sempurna", banyak karya mulai terlihat serupa dan kehilangan sentuhan manusia yang tidak sempurna namun berkarakter.</li>
+                <li><strong>Kesenjangan Digital:</strong> Tidak semua siswa atau profesional memiliki akses ke perangkat keras (GPU kuat) atau langganan software AI yang mahal.</li>
+            </ol>
+
+            <div class="highlight-box">
+                <strong>💡 Refleksi untuk Siswa Indonesia:</strong><br>
+                Indonesia memiliki kekayaan budaya visual yang sangat unik. AI global mungkin bisa meniru motif batik secara umum, tetapi hanya desainer manusia Indonesia yang memahami filosofi, makna sakral, dan konteks budaya di balik setiap motif. Gunakan teknologi untuk mendokumentasikan dan memodernisasi budaya lokal, bukan untuk membiarkan algoritma asing yang mendefinisikan identitas visual bangsa kita.
+            </div>
+
+            <h2>Kesimpulan</h2>
+            <p>Perkembangan teknologi dalam DKV adalah pedang bermata dua. Di satu sisi, ia mendemokratisasi desain dan mempercepat produksi. Di sisi lain, ia menuntut desainer untuk terus berevolusi dari sekadar operator software menjadi pemikir strategis dan kurator kreatif. Siswa SMK yang hari ini membekali diri dengan literasi digital, etika teknologi, dan kepekaan humanis akan menjadi pemimpin industri kreatif di masa depan.</p>
+
+            <div class="highlight-box">
+                <strong>📚 Daftar Pustaka:</strong><br>
+                • Manovich, L. (2020). <em>AI Aesthetics</em>. Strelka Press.<br>
+                • Russill, C. (2023). <em>The Age of AI and the Future of Design</em>. MIT Press.<br>
+                • Kemenparekraf. (2023). <em>Peta Jalan Ekonomi Kreatif Indonesia 2024-2029</em>.<br>
+                • Supriadi. (2024). <em>Etika Digital dan Masa Depan Profesi DKV</em>. Bukittinggi: FTIK UIN Bukittinggi.
+            </div>
+
+            <div class="nav-buttons no-print">
+                <a href="11.html" class="btn btn-outline">← Pertemuan 11</a>
+                <a href="#top" class="btn btn-outline">↑ Ke Atas</a>
+                <a href="13.html" class="btn btn-primary">Pertemuan 13: Dunia Kerja & Isu Global →</a>
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="quiz-section" id="quiz">
+            <div class="quiz-header">
+                <span class="chapter-badge">EVALUASI PEMBELAJARAN</span>
+                <h2> Uji Formatif 12: Perkembangan Teknologi di Industri DKV</h2>
+                <p>⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu sebelum mengirim!</p>
+            </div>
+
+            <form id="quizForm">
+                <h3>📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Ujian *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas *</label>
+                        <input type="text" id="kelas" required placeholder="Contoh: X DKV 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester *</label>
+                        <select id="semester" required>
+                            <option value="">Pilih Semester</option>
+                            <option value="1" selected>Semester 1 (Ganjil)</option>
+                            <option value="2">Semester 2 (Genap)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">📋 Bagian A – Pilihan Ganda (Skor 10/soal)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                <div id="pg-questions">
+                    <div class="question-block">
+                        <p>1. Teknologi AI yang mampu menghasilkan gambar baru berdasarkan perintah teks (prompt) disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> a. Spreadsheet AI</label>
+                            <label><input type="radio" name="q1" value="b"> b. Generative AI (Teks-ke-Gambar)</label>
+                            <label><input type="radio" name="q1" value="c"> c. Antivirus AI</label>
+                            <label><input type="radio" name="q1" value="d"> d. Database AI</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>2. Perbedaan utama antara Augmented Reality (AR) dan Virtual Reality (VR) adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> a. AR menambahkan elemen digital ke dunia nyata, sedangkan VR menciptakan lingkungan simulasi yang sepenuhnya imersif</label>
+                            <label><input type="radio" name="q2" value="b"> b. VR menambahkan elemen digital ke dunia nyata, sedangkan AR hanya untuk bermain game</label>
+                            <label><input type="radio" name="q2" value="c"> c. AR hanya bisa digunakan di komputer, VR hanya di HP</label>
+                            <label><input type="radio" name="q2" value="d"> d. Tidak ada perbedaan, keduanya adalah teknologi yang sama</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>3. Bagaimana dampak utama AI terhadap peran tradisional seorang desainer grafis?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> a. Desainer akan sepenuhnya digantikan dan tidak dibutuhkan lagi</label>
+                            <label><input type="radio" name="q3" value="b"> b. Desainer tidak perlu belajar software lagi</label>
+                            <label><input type="radio" name="q3" value="c"> c. Peran desainer bergeser dari sekadar executor (pengerja) menjadi curator dan director kreatif</label>
+                            <label><input type="radio" name="q3" value="d"> d. Gaji desainer akan otomatis naik tanpa perlu meningkatkan skill</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>4. Platform yang memungkinkan kolaborasi desain UI/UX secara real-time berbasis cloud adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> a. Microsoft Paint</label>
+                            <label><input type="radio" name="q4" value="b"> b. Figma</label>
+                            <label><input type="radio" name="q4" value="c"> c. Notepad</label>
+                            <label><input type="radio" name="q4" value="d"> d. VLC Player</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>5. Tantangan etis terbesar dalam penggunaan Generative AI untuk desain komersial adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> a. AI terlalu lambat dalam merender gambar</label>
+                            <label><input type="radio" name="q5" value="b"> b. AI hanya bisa membuat gambar hitam putih</label>
+                            <label><input type="radio" name="q5" value="c"> c. AI tidak bisa diinstal di laptop gaming</label>
+                            <label><input type="radio" name="q5" value="d"> d. Isu hak cipta, orisinalitas, dan penggunaan data seniman tanpa izin</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>6. Salah satu profesi baru yang muncul di industri kreatif akibat perkembangan AI adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> a. Tukang Ketik Manual</label>
+                            <label><input type="radio" name="q6" value="b"> b. Operator Mesin Cetak Offset</label>
+                            <label><input type="radio" name="q6" value="c"> c. AI Prompt Engineer</label>
+                            <label><input type="radio" name="q6" value="d"> d. Pengantar Surat</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>7. Software open-source yang saat ini sangat populer untuk pembuatan aset 3D dan animasi adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> a. Microsoft Word</label>
+                            <label><input type="radio" name="q7" value="b"> b. Blender</label>
+                            <label><input type="radio" name="q7" value="c"> c. Adobe Acrobat</label>
+                            <label><input type="radio" name="q7" value="d"> d. WinRAR</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>8. Fitur "Generative Fill" pada Adobe Photoshop berfungsi untuk...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> a. Menghapus file secara permanen</label>
+                            <label><input type="radio" name="q8" value="b"> b. Menambah atau mengubah bagian gambar secara cerdas menggunakan AI berdasarkan prompt</label>
+                            <label><input type="radio" name="q8" value="c"> c. Mengubah format file dari JPG ke PDF</label>
+                            <label><input type="radio" name="q8" value="d"> d. Mencetak gambar ke printer</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>9. Mengapa sentuhan manusia (human touch) tetap tidak bisa digantikan sepenuhnya oleh AI dalam DKV?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> a. Karena AI tidak bisa menghasilkan gambar berwarna</label>
+                            <label><input type="radio" name="q9" value="b"> b. Karena AI tidak memiliki empati, pengalaman hidup, dan pemahaman konteks budaya yang mendalam</label>
+                            <label><input type="radio" name="q9" value="c"> c. Karena AI terlalu mahal untuk digunakan</label>
+                            <label><input type="radio" name="q9" value="d"> d. Karena AI hanya bisa bekerja di malam hari</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>10. Keterampilan paling krusial yang harus dikembangkan siswa DKV untuk bertahan di era disrupsi teknologi adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> a. Menghafal semua shortcut keyboard</label>
+                            <label><input type="radio" name="q10" value="b"> b. Menolak mempelajari teknologi baru</label>
+                            <label><input type="radio" name="q10" value="c"> c. Hanya fokus pada menggambar manual</label>
+                            <label><input type="radio" name="q10" value="d"> d. Berpikir kritis, adaptabilitas, dan kepekaan humanis</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">✍️ Bagian B – Essay (Skor ditentukan oleh Guru)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon isi semua 5 soal essay dengan jelas dan runtut!</p>
+
+                <div class="question-block">
+                    <p>1. Jelaskan perbedaan mendasar antara Augmented Reality (AR) dan Virtual Reality (VR)! Berikan masing-masing satu contoh penerapan teknologi tersebut dalam proyek Desain Komunikasi Visual!</p>
+                    <textarea name="essay1" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>2. Bagaimana Generative AI (seperti Midjourney atau DALL-E) mengubah workflow (alur kerja) tradisional seorang desainer grafis? Jelaskan pergeseran peran dari "Executor" menjadi "Curator"!</p>
+                    <textarea name="essay2" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>3. Analisislah tantangan etis dan hukum terkait penggunaan AI dalam desain komersial! Mengapa isu hak cipta menjadi perdebatan hangat di kalangan seniman dan desainer global?</p>
+                    <textarea name="essay3" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>4. Sebutkan 3 (tiga) profesi baru di bidang DKV yang muncul akibat perkembangan teknologi! Jelaskan tugas utama dari masing-masing profesi tersebut!</p>
+                    <textarea name="essay4" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>5. Sebagai siswa DKV di Indonesia, bagaimana strategi Anda dalam memanfaatkan teknologi AI untuk melestarikan dan memodernisasi budaya lokal, tanpa kehilangan identitas dan "jiwa" karya manusia?</p>
+                    <textarea name="essay5" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn-action btn-print" onclick="cetakPDF()"> UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn-action btn-email" onclick="kirimEmail()">📧 KIRIM EMAIL KE GURU</button>
+                    <button type="button" class="btn-action btn-reset" onclick="resetForm()">🔄 MULAI ULANG</button>
+                </div>
+            </form>
+
+            <div class="result-box" id="resultBox">
+                <h3>Hasil Uji Formatif 12</h3>
+                <p id="studentInfoResult" style="margin-bottom: 20px; font-size: 1.1em;"></p>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian A (Pilihan Ganda)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);" id="scorePG">0/100</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian B (Essay)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);">Menunggu Penilaian Guru</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">*Nilai akhir akan dihitung setelah guru menilai bagian Essay.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--dark-navy); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p>&copy; 2024 Surti Meli Hidayanti, S.Pd - SMK Negeri 1 Koto Balingka</p>
+        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">Email: surtimelihidayanti35@gmail.com</p>
+    </footer>
+
+    <script>
+        const kunciJawaban = {
+            q1: 'b', q2: 'a', q3: 'c', q4: 'b', q5: 'd',
+            q6: 'c', q7: 'b', q8: 'b', q9: 'b', q10: 'd'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) {
+                alert("⚠️ Mohon lengkapi Data Siswa terlebih dahulu!");
+                return;
+            }
+
+            let semuaTerjawab = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    semuaTerjawab = false;
+                    break;
+                }
+            }
+
+            if (!semuaTerjawab) {
+                alert("⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!");
+                return;
+            }
+
+            let skor = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skor += 10;
+                }
+            }
+
+            document.getElementById('studentInfoResult').innerHTML = 
+                `<strong>${nama}</strong> (NIS: ${nis})<br>Kelas: ${kelas} | Tanggal: ${tanggal}`;
+            document.getElementById('scorePG').innerText = `${skor}/100`;
+            
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil diproses!\nNilai Pilihan Ganda Anda: ${skor}/100\n\nSilakan unduh PDF atau kirim email ke guru sebagai bukti pengerjaan.`);
+        }
+
+        function cetakPDF() {
+            if (!document.getElementById('nama').value) {
+                alert("⚠️ Mohon isi data diri dan kerjakan soal terlebih dahulu sebelum mengunduh PDF.");
+                return;
+            }
+            if (document.getElementById('resultBox').style.display === 'none' || document.getElementById('resultBox').style.display === '') {
+                hitungNilai();
+            }
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !nis) {
+                alert("⚠️ Mohon lengkapi data diri terlebih dahulu!");
+                return;
+            }
+
+            const skorText = document.getElementById('scorePG').innerText;
+            const skor = skorText !== '0/100' ? skorText : 'Belum dihitung';
+
+            const subject = `Hasil Uji Formatif 12 (Perkembangan Teknologi DKV) - ${nama} - Kelas ${kelas}`;
+            const body = `Yth. Ibu Surti Meli Hidayanti, S.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 12 (Perkembangan Teknologi di Industri DKV):\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${skor}\nNilai Essay: Menunggu penilaian guru\n\nTerima kasih.\n\nHormat saya,\n${nama}`;
+
+            const mailtoLink = `mailto:surtimelihidayanti35@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        function resetForm() {
+            if (confirm("️ Apakah Anda yakin ingin mengosongkan semua jawaban? Tindakan ini tidak dapat dibatalkan.")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('quiz').offsetTop, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

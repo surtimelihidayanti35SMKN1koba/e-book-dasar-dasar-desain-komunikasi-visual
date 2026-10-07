@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 3: Dunia Kerja dan Isu Global DKV - Pertemuan 13</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-navy: #1a1a2e;
+            --light-navy: #16213e;
+            --white: #ffffff;
+            --cream: #f9f9f7;
+            --gray: #e8e8e8;
+            --text-dark: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--dark-navy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
+            color: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-body { padding: 40px; }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            color: var(--light-navy);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p { margin-bottom: 15px; text-align: justify; }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study {
+            background: var(--cream);
+            border: 1px solid var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .case-study h4 {
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        th {
+            background: var(--dark-navy);
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        tr:hover { background: rgba(212, 175, 55, 0.05); }
+
+        .video-placeholder {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-primary:hover { background: var(--secondary-gold); transform: translateY(-2px); }
+        .btn-outline { border: 2px solid var(--dark-navy); color: var(--dark-navy); }
+        .btn-outline:hover { background: var(--dark-navy); color: var(--white); }
+
+        .quiz-section {
+            background: var(--cream);
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .quiz-header { text-align: center; margin-bottom: 30px; }
+        .quiz-header h2 { border: none; margin-top: 0; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-navy);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .question-block {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray);
+        }
+
+        .question-block p { font-weight: 600; margin-bottom: 15px; text-align: left; }
+
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 400;
+        }
+
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 10px; }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .quiz-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-submit { background: var(--dark-navy); color: var(--primary-gold); }
+        .btn-print { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-email { background: #25D366; color: white; }
+        .btn-reset { background: #e74c3c; color: white; }
+        .btn-action:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        .result-box {
+            display: none;
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .result-box h3 { color: var(--primary-gold); font-size: 2em; margin-bottom: 10px; }
+
+        @media print {
+            .navbar, .nav-buttons, .quiz-actions, .no-print { display: none !important; }
+            body { background: white; color: black; }
+            .container { box-shadow: none; max-width: 100%; }
+            .quiz-section { page-break-before: always; }
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h1 { font-size: 1.8em; }
+            .content-body { padding: 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">DKV Kelas X</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#kontak">Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="top">
+        <div class="chapter-header">
+            <span class="chapter-badge">BAB 3 - PERTEMUAN 13</span>
+            <h1>Dunia Kerja dan Isu Global pada Bidang Desain Komunikasi Visual</h1>
+            <p>Memahami lanskar karier global, tren kerja jarak jauh, dan isu-isu strategis seperti keberlanjutan (sustainability) serta inklusivitas dalam desain modern.</p>
+        </div>
+
+        <div class="content-body">
+            <div class="nav-buttons no-print">
+                <a href="12.html" class="btn btn-outline">← Pertemuan 12</a>
+                <a href="#sub1" class="btn btn-primary">Mulai Membaca</a>
+                <a href="14.html" class="btn btn-outline">Pertemuan 14 →</a>
+            </div>
+
+            <h2 id="sub1">Pendahuluan</h2>
+            <p>Industri Desain Komunikasi Visual (DKV) saat ini tidak lagi dibatasi oleh batas-batas geografis. Seorang desainer di Indonesia dapat bekerja sama dengan klien di Amerika Serikat, berkolaborasi dengan ilustrator di Jepang, dan menyerahkan proyek ke agensi di Eropa—semuanya dari kamar tidur mereka. Fenomena ini menciptakan <strong>dunia kerja global</strong> yang penuh peluang namun juga penuh tantangan.</p>
+            <p>Selain perubahan cara kerja, industri DKV global juga sedang digerakkan oleh isu-isu strategis yang menuntut tanggung jawab moral dari para desainer. Isu seperti <strong>keberlanjutan lingkungan (sustainability)</strong>, <strong>inklusi dan diversitas</strong>, serta <strong>etika desain</strong> kini menjadi standar baru yang wajib dipahami oleh setiap profesional kreatif. Pertemuan ini akan membuka wawasan siswa tentang bagaimana menjadi desainer yang tidak hanya mahir secara teknis, tetapi juga berwawasan global dan bertanggung jawab secara sosial.</p>
+
+            <div class="highlight-box">
+                <strong>🔑 Konsep Kunci:</strong><br>
+                • <strong>Global Creative Economy:</strong> Ekosistem ekonomi di mana produk dan jasa kreatif diperdagangkan dan dikolaborasikan melintasi batas negara, sering kali secara digital.<br>
+                • <strong>Sustainable Design (Desain Berkelanjutan):</strong> Pendekatan desain yang mempertimbangkan dampak lingkungan, sosial, dan ekonomi jangka panjang dari sebuah produk atau komunikasi visual.<br>
+                • <strong>Inclusive Design (Desain Inklusif):</strong> Desain yang dapat diakses dan digunakan oleh sebanyak mungkin orang, termasuk mereka yang memiliki disabilitas atau berasal dari latar belakang budaya yang beragam.
+            </div>
+
+            <h2>13.1 Lanskap Dunia Kerja DKV Global</h2>
+            <p>Revolusi digital dan pandemi global telah mempercepat pergeseran cara kerja di industri kreatif. Berikut adalah karakteristik utama dunia kerja DKV saat ini:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Karakteristik</th>
+                        <th>Deskripsi</th>
+                        <th>Implikasi bagi Siswa DKV</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Remote Work & Digital Nomad</strong></td>
+                        <td>Bekerja dari mana saja tanpa terikat lokasi fisik kantor.</td>
+                        <td>Siswa harus mahir menggunakan tools kolaborasi online (Figma, Slack, Zoom) dan memiliki disiplin diri tinggi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Global Freelance Marketplace</strong></td>
+                        <td>Platform seperti Upwork, Fiverr, dan 99designs menghubungkan desainer dengan klien global.</td>
+                        <td>Siswa perlu membangun portofolio berbahasa Inggris dan memahami standar kualitas internasional.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gig Economy</strong></td>
+                        <td>Sistem kerja berbasis proyek jangka pendek atau kontrak, bukan karyawan tetap.</td>
+                        <td>Siswa harus memiliki keterampilan manajemen keuangan, negosiasi, dan personal branding yang kuat.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cross-Cultural Collaboration</strong></td>
+                        <td>Bekerja dalam tim yang terdiri dari berbagai latar belakang budaya.</td>
+                        <td>Siswa perlu mengembangkan kecerdasan budaya (cultural intelligence) dan kemampuan komunikasi lintas bahasa.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="video-placeholder">
+                <h3>🎥 Video: Menjadi Desainer Global dari Indonesia</h3>
+                <p>Simak kisah sukses desainer Indonesia yang berhasil menembus pasar global dan bekerja dengan klien internasional.</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">(Sumber: Youtube / Kanal Kreator Indonesia)</p>
+            </div>
+
+            <h2>13.2 Isu-Isu Global dalam Desain</h2>
+            <p>Sebagai desainer masa depan, Anda tidak hanya dituntut untuk membuat karya yang "indah", tetapi juga karya yang "bertanggung jawab". Berikut adalah isu-isu global yang sedang membentuk ulang industri DKV:</p>
+
+            <h3>1. Sustainable Design (Desain Berkelanjutan)</h3>
+            <p>Industri kreatif adalah salah satu penyumbang limbah, terutama dari kemasan dan materi cetak. Desainer kini dituntut untuk memikirkan siklus hidup produk mereka. Ini mencakup pemilihan material ramah lingkungan, desain kemasan yang minim limbah (minimalist packaging), dan penggunaan palet warna yang hemat tinta (eco-friendly printing).</p>
+
+            <h3>2. Inclusive & Accessible Design</h3>
+            <p>Desain yang baik adalah desain yang bisa dinikmati oleh semua orang, termasuk penyandang disabilitas. Dalam desain digital, ini berarti memastikan kontras warna yang cukup untuk pengguna dengan gangguan penglihatan, menyediakan teks alternatif (alt-text) untuk gambar, dan navigasi yang ramah untuk pembaca layar (screen reader).</p>
+
+            <h3>3. Ethical Design & Data Privacy</h3>
+            <p>Desainer UI/UX memiliki kekuatan untuk memengaruhi perilaku pengguna. <em>Dark patterns</em> (pola desain yang menipu pengguna, seperti tombol berlangganan yang tersembunyi atau sulit dibatalkan) kini menjadi sorotan global. Desainer etis harus memprioritaskan kesejahteraan pengguna di atas metrik bisnis semata.</p>
+
+            <div class="case-study">
+                <h4>📖 Studi Kasus: Rebranding dengan Prinsip Inklusivitas</h4>
+                <p><strong>Kasus:</strong> Sebuah merek kosmetik global melakukan rebranding. Mereka tidak hanya mengubah logo, tetapi juga memperluas palet warnafoundation mereka dari 10 menjadi 40 warna untuk mewakili berbagai warna kulit di seluruh dunia. Mereka juga mendesain kemasan dengan tulisan Braille untuk pengguna tunanetra.</p>
+                <p><strong>Hasil:</strong> Kampanye ini mendapat pujian global karena menunjukkan komitmen nyata terhadap diversitas dan inklusivitas, yang pada akhirnya meningkatkan loyalitas merek secara signifikan.</p>
+            </div>
+
+            <h2>13.3 Desain Lintas Budaya (Cross-Cultural Design)</h2>
+            <p>Ketika mendesain untuk audiens global, desainer harus sangat sensitif terhadap perbedaan budaya. Warna, simbol, tipografi, dan bahkan tata letak dapat memiliki makna yang sangat berbeda di berbagai negara.</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Warna:</strong> Warna putih melambangkan kesucian di Barat, tetapi sering dikaitkan dengan kematian dan berkabung di beberapa budaya Asia Timur.</li>
+                <li><strong>Simbol:</strong> Gestur tangan "OK" (ibu jari dan telunjuk membentuk lingkaran) berarti "baik" di AS, tetapi bisa dianggap ofensif di beberapa negara Eropa dan Amerika Latin.</li>
+                <li><strong>Tipografi:</strong> Beberapa font tidak mendukung karakter khusus (seperti aksara Arab atau Hanzi), yang dapat merusak estetika dan keterbacaan desain.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>💡 Refleksi untuk Siswa Indonesia:</strong><br>
+                Indonesia adalah negara dengan kekayaan budaya luar biasa. Tantangan bagi desainer muda Indonesia adalah: bagaimana kita bisa membawa identitas lokal (seperti motif batik, wayang, atau filosofi lokal) ke panggung global tanpa terjebak dalam stereotip? Kuncinya adalah melakukan riset mendalam dan berkolaborasi dengan ahli budaya untuk memastikan representasi yang otentik dan menghormati.
+            </div>
+
+            <h2>Kesimpulan</h2>
+            <p>Dunia kerja DKV telah berubah menjadi arena global yang dinamis. Peluang untuk bekerja dengan klien internasional sangat terbuka lebar, namun persaingannya juga ketat. Untuk berhasil, siswa DKV tidak hanya perlu mengasah keterampilan teknis, tetapi juga harus memahami isu-isu global seperti keberlanjutan, inklusivitas, dan etika desain. Dengan wawasan yang luas dan kepekaan terhadap budaya, desainer Indonesia dapat bersaing dan memberikan dampak positif di panggung dunia.</p>
+
+            <div class="highlight-box">
+                <strong>📚 Daftar Pustaka:</strong><br>
+                • Norman, D. (2013). <em>The Design of Everyday Things</em>. Basic Books.<br>
+                • Heller, S. (2012). <em>Graphic Design and Social Responsibility</em>. Wiley.<br>
+                • Kemenparekraf. (2023). <em>Peta Jalan Ekonomi Kreatif Indonesia 2024-2029</em>.<br>
+                • Supriadi. (2024). <em>Desain Berkelanjutan dan Etika Global untuk Siswa SMK</em>. Bukittinggi: FTIK UIN Bukittinggi.
+            </div>
+
+            <div class="nav-buttons no-print">
+                <a href="12.html" class="btn btn-outline">← Pertemuan 12</a>
+                <a href="#top" class="btn btn-outline">↑ Ke Atas</a>
+                <a href="14.html" class="btn btn-primary">Pertemuan 14: Tren Teknologi →</a>
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="quiz-section" id="quiz">
+            <div class="quiz-header">
+                <span class="chapter-badge">EVALUASI PEMBELAJARAN</span>
+                <h2>📋 Uji Formatif 13: Dunia Kerja dan Isu Global DKV</h2>
+                <p>⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu sebelum mengirim!</p>
+            </div>
+
+            <form id="quizForm">
+                <h3>📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Ujian *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas *</label>
+                        <input type="text" id="kelas" required placeholder="Contoh: X DKV 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester *</label>
+                        <select id="semester" required>
+                            <option value="">Pilih Semester</option>
+                            <option value="1" selected>Semester 1 (Ganjil)</option>
+                            <option value="2">Semester 2 (Genap)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">📋 Bagian A – Pilihan Ganda (Skor 10/soal)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                <div id="pg-questions">
+                    <div class="question-block">
+                        <p>1. Istilah untuk bekerja dari mana saja tanpa terikat lokasi fisik kantor, sering kali sambil bepergian, disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> a. Work From Office (WFO)</label>
+                            <label><input type="radio" name="q1" value="b"> b. Digital Nomad</label>
+                            <label><input type="radio" name="q1" value="c"> c. Shift Kerja Pabrik</label>
+                            <label><input type="radio" name="q1" value="d"> d. Magang Lokal</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>2. Platform global yang umum digunakan freelancer DKV untuk mencari klien internasional adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> a. WhatsApp dan Telegram</label>
+                            <label><input type="radio" name="q2" value="b"> b. Upwork dan Fiverr</label>
+                            <label><input type="radio" name="q2" value="c"> c. Microsoft Excel dan Word</label>
+                            <label><input type="radio" name="q2" value="d"> d. TikTok dan Instagram (hanya untuk hiburan)</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>3. Desain yang mempertimbangkan dampak lingkungan, sosial, dan ekonomi jangka panjang disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> a. Sustainable Design</label>
+                            <label><input type="radio" name="q3" value="b"> b. Destructive Design</label>
+                            <label><input type="radio" name="q3" value="c"> c. Fast Fashion Design</label>
+                            <label><input type="radio" name="q3" value="d"> d. Disposable Design</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>4. Mengapa Inclusive Design (Desain Inklusif) sangat penting dalam era digital saat ini?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> a. Agar desain terlihat lebih rumit dan mahal</label>
+                            <label><input type="radio" name="q4" value="b"> b. Agar produk digital dapat diakses dan digunakan oleh sebanyak mungkin orang, termasuk penyandang disabilitas</label>
+                            <label><input type="radio" name="q4" value="c"> c. Agar hanya orang tertentu yang bisa menggunakan aplikasi</label>
+                            <label><input type="radio" name="q4" value="d"> d. Karena diwajibkan oleh hukum internasional tanpa alasan jelas</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>5. Dalam desain UI/UX, "Dark Patterns" merujuk pada...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> a. Desain dengan tema warna gelap yang elegan</label>
+                            <label><input type="radio" name="q5" value="b"> b. Pola desain yang menipu atau memanipulasi pengguna untuk melakukan tindakan yang tidak mereka inginkan</label>
+                            <label><input type="radio" name="q5" value="c"> c. Desain yang hanya bisa dilihat di malam hari</label>
+                            <label><input type="radio" name="q5" value="d"> d. Penggunaan font yang sangat kecil</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>6. Ketika mendesain untuk audiens global, mengapa riset lintas budaya sangat penting?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> a. Agar bisa meniru desain negara lain secara persis</label>
+                            <label><input type="radio" name="q6" value="b"> b. Karena warna, simbol, dan gestur bisa memiliki makna yang sangat berbeda atau bahkan ofensif di budaya lain</label>
+                            <label><input type="radio" name="q6" value="c"> c. Agar bisa menggunakan bahasa asing yang rumit</label>
+                            <label><input type="radio" name="q6" value="d"> d. Riset budaya tidak penting, yang penting desainnya bagus</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>7. Salah satu cara menerapkan prinsip Sustainable Design dalam desain kemasan produk adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> a. Menggunakan lapisan plastik berlebih agar terlihat mewah</label>
+                            <label><input type="radio" name="q7" value="b"> b. Menggunakan material daur ulang dan desain minimalis yang hemat tinta</label>
+                            <label><input type="radio" name="q7" value="c"> c. Menggunakan bahan yang sulit terurai di alam</label>
+                            <label><input type="radio" name="q7" value="d"> d. Membuat kemasan sekali pakai yang langsung dibuang</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>8. Apa yang dimaksud dengan "Gig Economy" dalam konteks dunia kerja kreatif?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> a. Sistem kerja berbasis proyek jangka pendek atau kontrak, bukan karyawan tetap</label>
+                            <label><input type="radio" name="q8" value="b"> b. Bekerja di pabrik dengan shift malam</label>
+                            <label><input type="radio" name="q8" value="c"> c. Menjadi pegawai negeri seumur hidup</label>
+                            <label><input type="radio" name="q8" value="d"> d. Bekerja hanya di akhir pekan</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>9. Bagaimana cara terbaik bagi desainer Indonesia untuk membawa identitas lokal ke panggung global?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> a. Mengklaim budaya negara lain sebagai milik sendiri</label>
+                            <label><input type="radio" name="q9" value="b"> b. Melakukan riset mendalam dan berkolaborasi dengan ahli budaya untuk representasi yang otentik</label>
+                            <label><input type="radio" name="q9" value="c"> c. Menghilangkan semua unsur lokal agar terlihat "internasional"</label>
+                            <label><input type="radio" name="q9" value="d"> d. Hanya meniru tren dari luar negeri</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>10. Mengapa kemampuan bahasa Inggris dan komunikasi lintas budaya menjadi keterampilan wajib bagi desainer yang ingin bersaing di pasar global?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> a. Agar bisa bekerja di luar negeri secara ilegal</label>
+                            <label><input type="radio" name="q10" value="b"> b. Untuk bernegosiasi dengan klien internasional, memahami brief, dan berkolaborasi dalam tim global</label>
+                            <label><input type="radio" name="q10" value="c"> c. Karena bahasa daerah sudah tidak berguna</label>
+                            <label><input type="radio" name="q10" value="d"> d. Agar bisa menonton film tanpa subtitle</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">✍️ Bagian B – Essay (Skor ditentukan oleh Guru)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon isi semua 5 soal essay dengan jelas dan runtut!</p>
+
+                <div class="question-block">
+                    <p>1. Jelaskan apa yang dimaksud dengan "Gig Economy" dan "Digital Nomad"! Bagaimana kedua fenomena ini mengubah cara kerja tradisional di industri Desain Komunikasi Visual?</p>
+                    <textarea name="essay1" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>2. Analisislah pentingnya penerapan "Sustainable Design" (Desain Berkelanjutan) dalam industri kreatif! Berikan 3 contoh konkret bagaimana seorang desainer grafis dapat mengurangi dampak negatif terhadap lingkungan melalui karyanya!</p>
+                    <textarea name="essay2" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>3. Apa yang dimaksud dengan "Inclusive Design" (Desain Inklusif)? Mengapa desain yang inklusif dan aksesibel sangat penting, terutama dalam pengembangan produk digital (aplikasi/website)?</p>
+                    <textarea name="essay3" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>4. Jelaskan tantangan "Cross-Cultural Design" (Desain Lintas Budaya)! Berikan contoh kasus di mana sebuah desain bisa gagal atau menyinggung karena tidak memperhatikan perbedaan budaya!</p>
+                    <textarea name="essay4" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>5. Sebagai siswa DKV di Indonesia, strategi apa yang akan Anda terapkan untuk mempersiapkan diri bersaing di pasar kerja global tanpa kehilangan identitas dan nilai-nilai lokal?</p>
+                    <textarea name="essay5" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn-action btn-print" onclick="cetakPDF()">📥 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn-action btn-email" onclick="kirimEmail()">📧 KIRIM EMAIL KE GURU</button>
+                    <button type="button" class="btn-action btn-reset" onclick="resetForm()">🔄 MULAI ULANG</button>
+                </div>
+            </form>
+
+            <div class="result-box" id="resultBox">
+                <h3>Hasil Uji Formatif 13</h3>
+                <p id="studentInfoResult" style="margin-bottom: 20px; font-size: 1.1em;"></p>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian A (Pilihan Ganda)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);" id="scorePG">0/100</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian B (Essay)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);">Menunggu Penilaian Guru</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">*Nilai akhir akan dihitung setelah guru menilai bagian Essay.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--dark-navy); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p>&copy; 2024 Surti Meli Hidayanti, S.Pd - SMK Negeri 1 Koto Balingka</p>
+        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">Email: surtimelihidayanti35@gmail.com</p>
+    </footer>
+
+    <script>
+        const kunciJawaban = {
+            q1: 'b', q2: 'b', q3: 'a', q4: 'b', q5: 'b',
+            q6: 'b', q7: 'b', q8: 'a', q9: 'b', q10: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) {
+                alert("️ Mohon lengkapi Data Siswa terlebih dahulu!");
+                return;
+            }
+
+            let semuaTerjawab = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    semuaTerjawab = false;
+                    break;
+                }
+            }
+
+            if (!semuaTerjawab) {
+                alert("⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!");
+                return;
+            }
+
+            let skor = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skor += 10;
+                }
+            }
+
+            document.getElementById('studentInfoResult').innerHTML = 
+                `<strong>${nama}</strong> (NIS: ${nis})<br>Kelas: ${kelas} | Tanggal: ${tanggal}`;
+            document.getElementById('scorePG').innerText = `${skor}/100`;
+            
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil diproses!\nNilai Pilihan Ganda Anda: ${skor}/100\n\nSilakan unduh PDF atau kirim email ke guru sebagai bukti pengerjaan.`);
+        }
+
+        function cetakPDF() {
+            if (!document.getElementById('nama').value) {
+                alert("⚠️ Mohon isi data diri dan kerjakan soal terlebih dahulu sebelum mengunduh PDF.");
+                return;
+            }
+            if (document.getElementById('resultBox').style.display === 'none' || document.getElementById('resultBox').style.display === '') {
+                hitungNilai();
+            }
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !nis) {
+                alert("⚠️ Mohon lengkapi data diri terlebih dahulu!");
+                return;
+            }
+
+            const skorText = document.getElementById('scorePG').innerText;
+            const skor = skorText !== '0/100' ? skorText : 'Belum dihitung';
+
+            const subject = `Hasil Uji Formatif 13 (Dunia Kerja & Isu Global DKV) - ${nama} - Kelas ${kelas}`;
+            const body = `Yth. Ibu Surti Meli Hidayanti, S.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 13 (Dunia Kerja dan Isu Global pada Bidang Desain Komunikasi Visual):\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${skor}\nNilai Essay: Menunggu penilaian guru\n\nTerima kasih.\n\nHormat saya,\n${nama}`;
+
+            const mailtoLink = `mailto:surtimelihidayanti35@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        function resetForm() {
+            if (confirm("⚠️ Apakah Anda yakin ingin mengosongkan semua jawaban? Tindakan ini tidak dapat dibatalkan.")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('quiz').offsetTop, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

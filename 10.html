@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2: Analisis Berbagai Industri Kreatif - Pertemuan 10</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-navy: #1a1a2e;
+            --light-navy: #16213e;
+            --white: #ffffff;
+            --cream: #f9f9f7;
+            --gray: #e8e8e8;
+            --text-dark: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--dark-navy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
+            color: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-body { padding: 40px; }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            color: var(--light-navy);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p { margin-bottom: 15px; text-align: justify; }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study {
+            background: var(--cream);
+            border: 1px solid var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .case-study h4 {
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        th {
+            background: var(--dark-navy);
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        tr:hover { background: rgba(212, 175, 55, 0.05); }
+
+        .video-placeholder {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-primary:hover { background: var(--secondary-gold); transform: translateY(-2px); }
+        .btn-outline { border: 2px solid var(--dark-navy); color: var(--dark-navy); }
+        .btn-outline:hover { background: var(--dark-navy); color: var(--white); }
+
+        .quiz-section {
+            background: var(--cream);
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .quiz-header { text-align: center; margin-bottom: 30px; }
+        .quiz-header h2 { border: none; margin-top: 0; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-navy);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .question-block {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray);
+        }
+
+        .question-block p { font-weight: 600; margin-bottom: 15px; text-align: left; }
+
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 400;
+        }
+
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 10px; }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .quiz-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-submit { background: var(--dark-navy); color: var(--primary-gold); }
+        .btn-print { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-email { background: #25D366; color: white; }
+        .btn-reset { background: #e74c3c; color: white; }
+        .btn-action:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        .result-box {
+            display: none;
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .result-box h3 { color: var(--primary-gold); font-size: 2em; margin-bottom: 10px; }
+
+        @media print {
+            .navbar, .nav-buttons, .quiz-actions, .no-print { display: none !important; }
+            body { background: white; color: black; }
+            .container { box-shadow: none; max-width: 100%; }
+            .quiz-section { page-break-before: always; }
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h1 { font-size: 1.8em; }
+            .content-body { padding: 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">DKV Kelas X</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#kontak">Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="top">
+        <div class="chapter-header">
+            <span class="chapter-badge">BAB 2 - PERTEMUAN 10</span>
+            <h1>Analisis Berbagai Industri Kreatif</h1>
+            <p>Memahami ekosistem, subsektor, dan rantai nilai dalam industri ekonomi kreatif serta peran strategis Desain Komunikasi Visual di dalamnya.</p>
+        </div>
+
+        <div class="content-body">
+            <div class="nav-buttons no-print">
+                <a href="9.html" class="btn btn-outline">← Pertemuan 9</a>
+                <a href="#sub1" class="btn btn-primary">Mulai Membaca</a>
+                <a href="11.html" class="btn btn-outline">Pertemuan 11 →</a>
+            </div>
+
+            <h2 id="sub1">Pendahuluan</h2>
+            <p>Indonesia memiliki potensi luar biasa dalam bidang ekonomi kreatif. Berdasarkan data Kementerian Pariwisata dan Ekonomi Kreatif (Kemenparekraf), sektor ini terus menunjukkan pertumbuhan yang signifikan dan menjadi salah satu tulang punggung perekonomian nasional. Namun, "kreatif" saja tidak cukup. Agar sebuah ide kreatif dapat bernilai ekonomi, ia harus dikelola dalam sebuah sistem yang terstruktur, yang kita kenal sebagai <strong>Industri Kreatif</strong>.</p>
+            <p>Bagi siswa Desain Komunikasi Visual (DKV), memahami peta industri kreatif sangat penting. DKV bukan berdiri sendiri, melainkan menjadi "nyawa" atau elemen penggerak yang beririsan dengan hampir seluruh subsektor industri kreatif, mulai dari kuliner, fashion, kriya, hingga film dan aplikasi. Analisis yang baik terhadap industri ini akan membuka peluang karier dan bisnis yang lebih luas.</p>
+
+            <div class="highlight-box">
+                <strong>🔑 Konsep Kunci:</strong><br>
+                • <strong>Industri Kreatif:</strong> Industri yang berasal dari pemanfaatan kreativitas, keterampilan, serta bakat individu untuk menciptakan kesejahteraan serta lapangan pekerjaan melalui penciptaan dan pemanfaatan daya kreasi dan daya cipta individu tersebut.<br>
+                • <strong>Rantai Nilai (Value Chain):</strong> Serangkaian aktivitas yang menambah nilai pada produk, mulai dari ideasi, produksi, distribusi, hingga konsumsi.<br>
+                • <strong>Subsektor DKV:</strong> Salah satu dari 17 subsektor ekonomi kreatif yang secara khusus berfokus pada komunikasi visual, branding, dan desain grafis.
+            </div>
+
+            <h2>10.1 Peta 17 Subsektor Ekonomi Kreatif Indonesia</h2>
+            <p>Pemerintah Indonesia, melalui Bekraf (yang kini melebur ke Kemenparekraf), mengklasifikasikan ekonomi kreatif ke dalam 17 subsektor. Sebagai siswa DKV, penting untuk mengetahui di mana posisi keahlianmu dan bagaimana ia berkolaborasi dengan subsektor lain.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subsektor Terkait DKV</th>
+                        <th>Deskripsi Singkat</th>
+                        <th>Peran DKV di Dalamnya</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Desain Komunikasi Visual</strong></td>
+                        <td>Jasa desain komunikasi yang mencakup desain grafis, ilustrasi, dan multimedia.</td>
+                        <td>Inti dari subsektor ini: pembuatan logo, branding, layout, dan materi promosi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Desain Produk</strong></td>
+                        <td>Pengembangan konsep dan perancangan produk barang/jasa (industrial design).</td>
+                        <td>Desain kemasan, estetika produk, dan user interface (UI) produk fisik.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Fashion</strong></td>
+                        <td>Industri pakaian, alas kaki, dan aksesori.</td>
+                        <td>Desain label, lookbook, kampanye visual, dan desain pola (pattern).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Kuliner</strong></td>
+                        <td>Industri makanan dan minuman.</td>
+                        <td>Desain kemasan yang menarik, fotografi makanan, dan desain interior restoran.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Film, Animasi, dan Video</strong></td>
+                        <td>Pengembangan konten film, animasi, dan video kreatif.</td>
+                        <td>Storyboard, motion graphics, title sequence, dan poster film.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Aplikasi dan Permainan Interaktif</strong></td>
+                        <td>Pengembangan software, aplikasi mobile, dan game.</td>
+                        <td>User Interface (UI) dan User Experience (UX) design, aset visual game.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7. Periklanan</strong></td>
+                        <td>Jasa periklanan dan komunikasi pemasaran.</td>
+                        <td>Visualisasi konsep iklan, copywriting visual, dan art direction.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="video-placeholder">
+                <h3>🎥 Video: Ekosistem Ekonomi Kreatif Indonesia</h3>
+                <p>Simak bagaimana 17 subsektor ekonomi kreatif saling terhubung dan berkontribusi terhadap PDB Indonesia.</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">(Sumber: Youtube / Kanal Kemenparekraf RI)</p>
+            </div>
+
+            <h2>10.2 Analisis Rantai Nilai (Value Chain) Industri Kreatif</h2>
+            <p>Sebuah produk kreatif tidak muncul begitu saja. Ia melalui serangkaian tahapan yang disebut rantai nilai. Memahami rantai nilai membantu desainer mengetahui di titik mana mereka dapat memberikan kontribusi terbesar.</p>
+
+            <ol style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Ideasi (Ideation):</strong> Tahap pencarian dan pengembangan gagasan. <em>Peran DKV:</em> Brainstorming visual, sketsa konsep, dan moodboard.</li>
+                <li><strong>Produksi (Production):</strong> Tahap eksekusi atau pembuatan produk. <em>Peran DKV:</em> Digitalisasi desain, ilustrasi, editing video, atau pembuatan prototipe kemasan.</li>
+                <li><strong>Distribusi (Distribution):</strong> Tahap penyaluran produk ke pasar. <em>Peran DKV:</em> Desain materi promosi, konten media sosial, dan desain booth pameran.</li>
+                <li><strong>Konsumsi (Consumption):</strong> Tahap di mana produk digunakan atau dinikmati oleh audiens. <em>Peran DKV:</em> Memastikan pengalaman visual (user experience) yang memuaskan dan membangun loyalitas merek melalui desain yang konsisten.</li>
+            </ol>
+
+            <div class="case-study">
+                <h4>📖 Studi Kasus: Transformasi UMKM Kriya melalui DKV</h4>
+                <p><strong>Kasus:</strong> "Batik Pak Darmo" adalah UMKM di Solo yang memproduksi batik tulis berkualitas tinggi. Namun, penjualannya stagnan karena dikemas dalam plastik bening polos dengan label tulisan tangan yang sulit dibaca. Seorang siswa DKV magang di sana dan melakukan intervensi: mendesain ulang logo, membuat kemasan box eksklusif dengan pola batik modern, dan memotret produk untuk katalog Instagram.</p>
+                <p><strong>Hasil Analisis:</strong> Dalam 3 bulan, nilai jual produk naik 40% karena persepsi konsumen berubah dari "produk biasa" menjadi "produk premium berkelas". Ini membuktikan bahwa DKV adalah pengganda nilai (value multiplier) dalam rantai nilai industri kreatif.</p>
+            </div>
+
+            <h2>10.3 Tantangan dan Peluang Industri Kreatif di Era Digital</h2>
+            <p>Industri kreatif saat ini menghadapi disrupsi teknologi yang masif. Di satu sisi, ini adalah tantangan, di sisi lain adalah peluang emas bagi lulusan DKV.</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Tantangan:</strong> Persaingan global yang ketat, ancaman pembajakan (piracy), dan perubahan selera konsumen yang sangat cepat.</li>
+                <li><strong>Peluang:</strong> Pasar digital yang tanpa batas (e-commerce, marketplace global seperti Etsy/Behance), kemudahan kolaborasi lintas negara, dan munculnya profesi baru seperti NFT Artist atau Metaverse Designer.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>💡 Refleksi untuk Siswa Indonesia:</strong><br>
+                Indonesia kaya akan budaya lokal yang bisa menjadi "modal intelektual" tak terbatas. Tantangannya adalah: bagaimana mengemas kekayaan budaya (seperti motif tenun, cerita rakyat, atau kuliner tradisional) ke dalam bahasa desain kontemporer yang bisa diterima oleh pasar global tanpa kehilangan identitas aslinya? Di sinilah peran krusialmu sebagai desainer masa depan.
+            </div>
+
+            <h2>Kesimpulan</h2>
+            <p>Analisis terhadap berbagai industri kreatif menunjukkan bahwa Desain Komunikasi Visual bukanlah entitas yang terisolasi, melainkan infrastruktur pendukung yang vital bagi hampir seluruh subsektor ekonomi kreatif. Dengan memahami peta 17 subsektor, rantai nilai, dan dinamika pasar, siswa DKV dapat memposisikan diri tidak hanya sebagai "tukang gambar", tetapi sebagai mitra strategis yang mampu meningkatkan nilai ekonomi sebuah produk atau jasa.</p>
+
+            <div class="highlight-box">
+                <strong>📚 Daftar Pustaka:</strong><br>
+                • Howkins, J. (2001). <em>The Creative Economy: How People Make Money from Ideas</em>. Penguin.<br>
+                • Kemenparekraf. (2023). <em>Statistik Ekonomi Kreatif Indonesia 2023</em>. Jakarta: Kementerian Pariwisata dan Ekonomi Kreatif.<br>
+                • Porter, M. E. (1985). <em>Competitive Advantage: Creating and Sustaining Superior Performance</em>. Free Press.<br>
+                • Supriadi. (2024). <em>Ekonomi Kreatif dan Peran DKV di Indonesia</em>. Bukittinggi: FTIK UIN Bukittinggi.
+            </div>
+
+            <div class="nav-buttons no-print">
+                <a href="9.html" class="btn btn-outline">← Pertemuan 9</a>
+                <a href="#top" class="btn btn-outline">↑ Ke Atas</a>
+                <a href="11.html" class="btn btn-primary">Pertemuan 11: Model Bisnis →</a>
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="quiz-section" id="quiz">
+            <div class="quiz-header">
+                <span class="chapter-badge">EVALUASI PEMBELAJARAN</span>
+                <h2>📋 Uji Formatif 10: Analisis Berbagai Industri Kreatif</h2>
+                <p>⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu sebelum mengirim!</p>
+            </div>
+
+            <form id="quizForm">
+                <h3>📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Ujian *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas *</label>
+                        <input type="text" id="kelas" required placeholder="Contoh: X DKV 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester *</label>
+                        <select id="semester" required>
+                            <option value="">Pilih Semester</option>
+                            <option value="1" selected>Semester 1 (Ganjil)</option>
+                            <option value="2">Semester 2 (Genap)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">📋 Bagian A – Pilihan Ganda (Skor 10/soal)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                <div id="pg-questions">
+                    <div class="question-block">
+                        <p>1. Berdasarkan klasifikasi pemerintah Indonesia (Kemenparekraf), terdapat berapa subsektor dalam ekonomi kreatif?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> a. 10 subsektor</label>
+                            <label><input type="radio" name="q1" value="b"> b. 15 subsektor</label>
+                            <label><input type="radio" name="q1" value="c"> c. 17 subsektor</label>
+                            <label><input type="radio" name="q1" value="d"> d. 20 subsektor</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>2. Tahap awal dalam rantai nilai (value chain) industri kreatif, di mana gagasan atau ide dicetuskan, disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> a. Produksi</label>
+                            <label><input type="radio" name="q2" value="b"> b. Ideasi</label>
+                            <label><input type="radio" name="q2" value="c"> c. Distribusi</label>
+                            <label><input type="radio" name="q2" value="d"> d. Konsumsi</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>3. Peran utama Desain Komunikasi Visual dalam subsektor Kuliner adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> a. Memasak makanan dengan resep rahasia</label>
+                            <label><input type="radio" name="q3" value="b"> b. Mencari bahan baku di pasar tradisional</label>
+                            <label><input type="radio" name="q3" value="c"> c. Mendesain kemasan, label, dan materi promosi visual</label>
+                            <label><input type="radio" name="q3" value="d"> d. Mengatur keuangan restoran</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>4. Subsektor ekonomi kreatif yang secara spesifik berfokus pada perancangan antarmuka dan pengalaman pengguna dalam game atau aplikasi mobile adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> a. Desain Produk</label>
+                            <label><input type="radio" name="q4" value="b"> b. Aplikasi dan Permainan Interaktif</label>
+                            <label><input type="radio" name="q4" value="c"> c. Seni Rupa</label>
+                            <label><input type="radio" name="q4" value="d"> d. Televisi dan Radio</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>5. Dalam studi kasus "Batik Pak Darmo", intervensi desain yang dilakukan berhasil menaikkan nilai jual produk. Fenomena ini menunjukkan bahwa DKV berfungsi sebagai...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> a. Penghambat produksi massal</label>
+                            <label><input type="radio" name="q5" value="b"> b. Value multiplier (pengganda nilai)</label>
+                            <label><input type="radio" name="q5" value="c"> c. Biaya tambahan yang tidak perlu</label>
+                            <label><input type="radio" name="q5" value="d"> d. Pengganti kualitas bahan baku</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>6. Tahap di mana produk kreatif dipasarkan dan disalurkan kepada konsumen akhir melalui berbagai channel disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> a. Ideasi</label>
+                            <label><input type="radio" name="q6" value="b"> b. Produksi</label>
+                            <label><input type="radio" name="q6" value="c"> c. Distribusi</label>
+                            <label><input type="radio" name="q6" value="d"> d. Evaluasi</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>7. Berikut ini yang BUKAN merupakan subsektor ekonomi kreatif menurut klasifikasi Indonesia adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> a. Fashion</label>
+                            <label><input type="radio" name="q7" value="b"> b. Pertambangan</label>
+                            <label><input type="radio" name="q7" value="c"> c. Kriya</label>
+                            <label><input type="radio" name="q7" value="d"> d. Musik</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>8. Tantangan utama industri kreatif di era digital saat ini adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> a. Kurangnya akses internet</label>
+                            <label><input type="radio" name="q8" value="b"> b. Persaingan global dan ancaman pembajakan (piracy)</label>
+                            <label><input type="radio" name="q8" value="c"> c. Terlalu banyak regulasi yang mempermudah</label>
+                            <label><input type="radio" name="q8" value="d"> d. Tidak adanya minat masyarakat terhadap produk kreatif</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>9. Bagaimana cara terbaik mengemas kekayaan budaya lokal agar dapat bersaing di pasar global tanpa kehilangan identitasnya?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> a. Meniru desain produk luar negeri secara utuh</label>
+                            <label><input type="radio" name="q9" value="b"> b. Menggabungkan elemen budaya lokal dengan bahasa desain kontemporer/modern</label>
+                            <label><input type="radio" name="q9" value="c"> c. Menjual produk mentah tanpa kemasan</label>
+                            <label><input type="radio" name="q9" value="d"> d. Menghindari penggunaan teknologi digital</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>10. Seorang desainer yang membuat storyboard dan motion graphics untuk sebuah film pendek sedang berkontribusi pada subsektor...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> a. Penerbitan</label>
+                            <label><input type="radio" name="q10" value="b"> b. Film, Animasi, dan Video</label>
+                            <label><input type="radio" name="q10" value="c"> c. Arsitektur</label>
+                            <label><input type="radio" name="q10" value="d"> d. Seni Pertunjukan</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">✍️ Bagian B – Essay (Skor ditentukan oleh Guru)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon isi semua 5 soal essay dengan jelas dan runtut!</p>
+
+                <div class="question-block">
+                    <p>1. Jelaskan apa yang dimaksud dengan Industri Kreatif dan sebutkan 5 (lima) subsektor ekonomi kreatif yang paling erat kaitannya dengan bidang Desain Komunikasi Visual!</p>
+                    <textarea name="essay1" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>2. Analisislah 4 tahapan dalam Rantai Nilai (Value Chain) industri kreatif (Ideasi, Produksi, Distribusi, Konsumsi)! Berikan contoh peran konkret seorang desainer DKV di masing-masing tahapan tersebut!</p>
+                    <textarea name="essay2" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>3. Mengapa Desain Komunikasi Visual sering disebut sebagai "Value Multiplier" (pengganda nilai) dalam sebuah produk UMKM? Jelaskan dengan menggunakan logika dan contoh nyata!</p>
+                    <textarea name="essay3" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>4. Identifikasi 2 (dua) tantangan terbesar yang dihadapi oleh pelaku industri kreatif di Indonesia saat ini, dan berikan solusi bagaimana seorang lulusan DKV dapat membantu mengatasi tantangan tersebut!</p>
+                    <textarea name="essay4" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>5. Rancanglah sebuah ide proyek kolaborasi antara subsektor "Kriya" (misalnya: kerajinan anyaman bambu) dengan subsektor "Desain Komunikasi Visual"! Jelaskan bagaimana DKV dapat meningkatkan daya jual produk kriya tersebut di pasar modern!</p>
+                    <textarea name="essay5" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn-action btn-print" onclick="cetakPDF()">📥 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn-action btn-email" onclick="kirimEmail()">📧 KIRIM EMAIL KE GURU</button>
+                    <button type="button" class="btn-action btn-reset" onclick="resetForm()">🔄 MULAI ULANG</button>
+                </div>
+            </form>
+
+            <div class="result-box" id="resultBox">
+                <h3>Hasil Uji Formatif 10</h3>
+                <p id="studentInfoResult" style="margin-bottom: 20px; font-size: 1.1em;"></p>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian A (Pilihan Ganda)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);" id="scorePG">0/100</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian B (Essay)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);">Menunggu Penilaian Guru</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">*Nilai akhir akan dihitung setelah guru menilai bagian Essay.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--dark-navy); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p>&copy; 2024 Surti Meli Hidayanti, S.Pd - SMK Negeri 1 Koto Balingka</p>
+        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">Email: surtimelihidayanti35@gmail.com</p>
+    </footer>
+
+    <script>
+        const kunciJawaban = {
+            q1: 'c', q2: 'b', q3: 'c', q4: 'b', q5: 'b',
+            q6: 'c', q7: 'b', q8: 'b', q9: 'b', q10: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) {
+                alert("⚠️ Mohon lengkapi Data Siswa terlebih dahulu!");
+                return;
+            }
+
+            let semuaTerjawab = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    semuaTerjawab = false;
+                    break;
+                }
+            }
+
+            if (!semuaTerjawab) {
+                alert("⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!");
+                return;
+            }
+
+            let skor = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skor += 10;
+                }
+            }
+
+            document.getElementById('studentInfoResult').innerHTML = 
+                `<strong>${nama}</strong> (NIS: ${nis})<br>Kelas: ${kelas} | Tanggal: ${tanggal}`;
+            document.getElementById('scorePG').innerText = `${skor}/100`;
+            
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil diproses!\nNilai Pilihan Ganda Anda: ${skor}/100\n\nSilakan unduh PDF atau kirim email ke guru sebagai bukti pengerjaan.`);
+        }
+
+        function cetakPDF() {
+            if (!document.getElementById('nama').value) {
+                alert("⚠️ Mohon isi data diri dan kerjakan soal terlebih dahulu sebelum mengunduh PDF.");
+                return;
+            }
+            if (document.getElementById('resultBox').style.display === 'none' || document.getElementById('resultBox').style.display === '') {
+                hitungNilai();
+            }
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !nis) {
+                alert("⚠️ Mohon lengkapi data diri terlebih dahulu!");
+                return;
+            }
+
+            const skorText = document.getElementById('scorePG').innerText;
+            const skor = skorText !== '0/100' ? skorText : 'Belum dihitung';
+
+            const subject = `Hasil Uji Formatif 10 (Analisis Industri Kreatif) - ${nama} - Kelas ${kelas}`;
+            const body = `Yth. Ibu Surti Meli Hidayanti, S.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 10 (Analisis Berbagai Industri Kreatif):\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${skor}\nNilai Essay: Menunggu penilaian guru\n\nTerima kasih.\n\nHormat saya,\n${nama}`;
+
+            const mailtoLink = `mailto:surtimelihidayanti35@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        function resetForm() {
+            if (confirm("⚠️ Apakah Anda yakin ingin mengosongkan semua jawaban? Tindakan ini tidak dapat dibatalkan.")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('quiz').offsetTop, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

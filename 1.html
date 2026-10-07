@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1: Profil Technopreneur - Pengenalan Dunia DKV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-navy: #1a1a2e;
+            --light-navy: #16213e;
+            --white: #ffffff;
+            --cream: #f9f9f7;
+            --gray: #e8e8e8;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--dark-navy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
+            color: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-body {
+            padding: 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            color: var(--light-navy);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study {
+            background: var(--cream);
+            border: 1px solid var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .case-study h4 {
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        th {
+            background: var(--dark-navy);
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .video-placeholder {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--dark-navy);
+            color: var(--dark-navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--dark-navy);
+            color: var(--white);
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            background: var(--cream);
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quiz-header h2 {
+            border: none;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-navy);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .question-block {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray);
+        }
+
+        .question-block p {
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 400;
+        }
+
+        .options label:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .quiz-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-submit { background: var(--dark-navy); color: var(--primary-gold); }
+        .btn-print { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-email { background: #25D366; color: white; }
+        .btn-reset { background: #e74c3c; color: white; }
+
+        .btn-action:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .result-box {
+            display: none;
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .result-box h3 {
+            color: var(--primary-gold);
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        /* Print Styles */
+        @media print {
+            .navbar, .nav-buttons, .quiz-actions, .no-print {
+                display: none !important;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .quiz-section {
+                page-break-before: always;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h1 { font-size: 1.8em; }
+            .content-body { padding: 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">DKV Kelas X</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#kontak">Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container" id="top">
+        <div class="chapter-header">
+            <span class="chapter-badge">BAB 1 - PERTEMUAN 1</span>
+            <h1>Profil Technopreneur: Pengenalan Dunia DKV</h1>
+            <p>Memahami dasar-dasar Desain Komunikasi Visual, karakteristik technopreneur, dan relevansinya dengan Profil Pelajar Pancasila di era digital.</p>
+        </div>
+
+        <div class="content-body">
+            <div class="nav-buttons no-print">
+                <a href="index.html" class="btn btn-outline">← Kembali ke Daftar Bab</a>
+                <a href="#sub1" class="btn btn-primary">Mulai Membaca</a>
+                <a href="2.html" class="btn btn-outline">Bab Selanjutnya →</a>
+            </div>
+
+            <h2 id="sub1">Pendahuluan</h2>
+            <p>Desain Komunikasi Visual (DKV) bukan sekadar tentang membuat gambar yang indah. DKV adalah seni dan ilmu dalam menyampaikan pesan, ide, atau informasi secara visual kepada khalayak tertentu dengan tujuan yang jelas. Di era industri 4.0 dan society 5.0, kemampuan DKV yang dipadukan dengan jiwa kewirausahaan berbasis teknologi menciptakan sebuah profil baru yang sangat dibutuhkan: <strong>Technopreneur</strong>.</p>
+            <p>Seorang technopreneur di bidang DKV tidak hanya mampu mendesain, tetapi juga mampu melihat peluang pasar, memanfaatkan teknologi digital, dan menciptakan nilai ekonomi dari karya kreatifnya. Bab ini akan menjadi fondasi penting bagi siswa SMK untuk memahami lanskap dunia DKV dan menyiapkan diri menjadi lulusan yang tidak hanya siap kerja, tetapi juga siap menciptakan lapangan kerja.</p>
+
+            <div class="highlight-box">
+                <strong>🔑 Konsep Kunci:</strong><br>
+                • <strong>Desain Komunikasi Visual (DKV):</strong> Ilmu yang mempelajari konsep komunikasi dan ungkapan kreatif melalui berbagai media untuk menyampaikan pesan dan gagasan secara visual.<br>
+                • <strong>Technopreneur:</strong> Gabungan dari <em>technology</em> (teknologi) dan <em>entrepreneur</em> (kewirausahaan). Seseorang yang memanfaatkan teknologi untuk menciptakan inovasi dan nilai bisnis.
+            </div>
+
+            <h2>1.1 Mengenal Dunia Desain Komunikasi Visual</h2>
+            <p>DKV memiliki peran strategis dalam berbagai aspek kehidupan, mulai dari branding perusahaan, kampanye sosial, hingga antarmuka aplikasi digital (UI/UX). Unsur-unsur dasar DKV meliputi titik, garis, bidang, bentuk, ruang, warna, dan tekstur. Sementara itu, prinsip-prinsip desain seperti keseimbangan (balance), kesatuan (unity), penekanan (emphasis), dan irama (rhythm) menjadi panduan dalam menciptakan karya yang efektif.</p>
+            
+            <div class="video-placeholder">
+                <h3>🎥 Video: Apa itu Desain Komunikasi Visual?</h3>
+                <p>Simak video pengantar ini untuk memahami ruang lingkup dan peluang di dunia DKV.</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">(Sumber: Youtube / Kanal Pendidikan DKV)</p>
+            </div>
+
+            <h2>1.2 Profil Technopreneur dalam DKV</h2>
+            <p>Menjadi technopreneur di bidang DKV memerlukan kombinasi antara <em>hard skill</em> (penguasaan software desain, teori warna, tipografi) dan <em>soft skill</em> (komunikasi, manajemen waktu, kreativitas, dan ketahanan menghadapi kegagalan).</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Karakteristik Technopreneur</th>
+                        <th>Deskripsi dalam Konteks DKV</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Inovatif & Kreatif</strong></td>
+                        <td>Mampu menghasilkan ide desain yang orisinal dan memecahkan masalah visual dengan cara baru.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Melek Teknologi</strong></td>
+                        <td>Menguasai perangkat lunak desain (Adobe CC, Figma, dll.) dan memahami tren teknologi seperti AI dalam desain.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Berani Mengambil Risiko</strong></td>
+                        <td>Berani mencoba gaya desain baru atau menawarkan jasa ke klien meskipun belum memiliki portofolio yang besar.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Berorientasi pada Pasar</strong></td>
+                        <td>Memahami bahwa desain yang baik adalah desain yang tidak hanya indah, tetapi juga menjual dan sesuai kebutuhan klien.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="case-study">
+                <h4>📖 Studi Kasus: Kesuksesan Technopreneur Muda</h4>
+                <p><strong>Kasus:</strong> Andi, seorang siswa SMK jurusan DKV, memulai usahanya dengan menerima jasa desain logo dan feed Instagram untuk UMKM di kotanya. Ia memanfaatkan Canva dan Adobe Illustrator, serta mempromosikan jasanya melalui TikTok. Dalam 6 bulan, ia telah memiliki 15 klien tetap dan merekrut 2 teman sekelasnya untuk membantunya.</p>
+                <p><strong>Pembelajaran:</strong> Andi menunjukkan bahwa technopreneurship bisa dimulai sejak bangku sekolah. Kunci keberhasilannya adalah memanfaatkan teknologi (media sosial & software), melihat peluang pasar (UMKM butuh branding), dan berani memulai.</p>
+            </div>
+
+            <h2>1.3 Kaitan dengan Profil Pelajar Pancasila</h2>
+            <p>Pembelajaran DKV dan technopreneurship sangat selaras dengan 6 dimensi Profil Pelajar Pancasila:</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Beriman & Bertakwa:</strong> Menggunakan karya desain untuk hal-hal yang positif dan tidak melanggar norma.</li>
+                <li><strong>Berkebinekaan Global:</strong> Mengangkat budaya lokal melalui desain modern yang bisa diterima secara global.</li>
+                <li><strong>Bergotong Royong:</strong> Bekerja sama dalam tim kreatif (misalnya: penulis naskah, ilustrator, dan desainer layout).</li>
+                <li><strong>Mandiri:</strong> Mampu mengelola proyek desain dari awal hingga akhir secara disiplin.</li>
+                <li><strong>Bernalar Kritis:</strong> Menganalisis brief klien dan menentukan solusi visual yang paling efektif.</li>
+                <li><strong>Kreatif:</strong> Menghasilkan gagasan dan karya visual yang orisinal dan bermanfaat.</li>
+            </ul>
+
+            <h2>Kesimpulan</h2>
+            <p>Pertemuan ini menegaskan bahwa DKV adalah bidang yang dinamis dan penuh peluang. Dengan mengadopsi pola pikir technopreneur dan mengamalkan nilai-nilai Profil Pelajar Pancasila, siswa tidak hanya disiapkan menjadi pekerja, tetapi juga menjadi pencipta peluang yang mampu bersaing di era digital.</p>
+
+            <div class="highlight-box">
+                <strong>📚 Daftar Pustaka:</strong><br>
+                • Meggs, P. B., & Purvis, A. W. (2012). <em>Meggs' History of Graphic Design</em>. John Wiley & Sons.<br>
+                • Ries, E. (2011). <em>The Lean Startup</em>. Crown Business.<br>
+                • Kemendikbudristek. (2022). <em>Capaian Pembelajaran Dasar-Dasar Desain Komunikasi Visual</em>.
+            </div>
+
+            <div class="nav-buttons no-print">
+                <a href="index.html" class="btn btn-outline">← Kembali ke Daftar Bab</a>
+                <a href="#top" class="btn btn-outline">↑ Ke Atas</a>
+                <a href="2.html" class="btn btn-primary">Bab 2: Keterampilan Menjelaskan →</a>
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="quiz-section" id="quiz">
+            <div class="quiz-header">
+                <span class="chapter-badge">EVALUASI PEMBELAJARAN</span>
+                <h2>📋 Uji Formatif 1: Profil Technopreneur & Pengenalan DKV</h2>
+                <p>⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu sebelum mengirim!</p>
+            </div>
+
+            <form id="quizForm">
+                <h3>📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Ujian *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas *</label>
+                        <input type="text" id="kelas" required placeholder="Contoh: X DKV 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester *</label>
+                        <select id="semester" required>
+                            <option value="">Pilih Semester</option>
+                            <option value="1" selected>Semester 1 (Ganjil)</option>
+                            <option value="2">Semester 2 (Genap)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">📋 Bagian A – Pilihan Ganda (Skor 10/soal)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                <div id="pg-questions">
+                    <!-- Soal akan di-generate oleh JavaScript agar rapi, atau bisa di-hardcode seperti di bawah -->
+                    <div class="question-block">
+                        <p>1. Kepanjangan dari DKV adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> a. Desain Karya Visual</label>
+                            <label><input type="radio" name="q1" value="b"> b. Desain Komunikasi Visual</label>
+                            <label><input type="radio" name="q1" value="c"> c. Dasar Komunikasi Video</label>
+                            <label><input type="radio" name="q1" value="d"> d. Desain Komputer Vektor</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>2. Technopreneur merupakan gabungan dari dua kata, yaitu...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> a. Teknologi dan Engineer</label>
+                            <label><input type="radio" name="q2" value="b"> b. Teknik dan Preneur</label>
+                            <label><input type="radio" name="q2" value="c"> c. Technology dan Entrepreneur</label>
+                            <label><input type="radio" name="q2" value="d"> d. Teori dan Practice</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>3. Berikut ini yang BUKAN merupakan unsur dasar visual dalam DKV adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> a. Titik dan Garis</label>
+                            <label><input type="radio" name="q3" value="b"> b. Bidang dan Warna</label>
+                            <label><input type="radio" name="q3" value="c"> c. Suara dan Aroma</label>
+                            <label><input type="radio" name="q3" value="d"> d. Ruang dan Tekstur</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>4. Salah satu ciri utama seorang technopreneur adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> a. Takut mencoba hal baru</label>
+                            <label><input type="radio" name="q4" value="b"> b. Inovatif dan berani mengambil risiko</label>
+                            <label><input type="radio" name="q4" value="c"> c. Hanya mengikuti tren tanpa modifikasi</label>
+                            <label><input type="radio" name="q4" value="d"> d. Menghindari penggunaan teknologi</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>5. Contoh profesi di bidang DKV adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> a. Dokter Spesialis</label>
+                            <label><input type="radio" name="q5" value="b"> b. Akuntan Publik</label>
+                            <label><input type="radio" name="q5" value="c"> c. UI/UX Designer</label>
+                            <label><input type="radio" name="q5" value="d"> d. Insinyur Sipil</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>6. Prinsip desain yang bertujuan untuk menciptakan kesan tidak ada bagian yang lebih menonjol secara tidak seimbang disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> a. Balance (Keseimbangan)</label>
+                            <label><input type="radio" name="q6" value="b"> b. Emphasis (Penekanan)</label>
+                            <label><input type="radio" name="q6" value="c"> c. Rhythm (Irama)</label>
+                            <label><input type="radio" name="q6" value="d"> d. Proportion (Proporsi)</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>7. Tujuan utama dari Desain Komunikasi Visual adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> a. Menghabiskan anggaran perusahaan</label>
+                            <label><input type="radio" name="q7" value="b"> b. Menyampaikan pesan secara efektif kepada khalayak</label>
+                            <label><input type="radio" name="q7" value="c"> c. Membuat gambar yang rumit dan sulit dipahami</label>
+                            <label><input type="radio" name="q7" value="d"> d. Menggantikan peran fotografi sepenuhnya</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>8. Dalam Profil Pelajar Pancasila, dimensi yang paling langsung terkait dengan kemampuan menghasilkan ide orisinal dalam DKV adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> a. Beriman dan Bertakwa</label>
+                            <label><input type="radio" name="q8" value="b"> b. Kreatif</label>
+                            <label><input type="radio" name="q8" value="c"> c. Bergotong Royong</label>
+                            <label><input type="radio" name="q8" value="d"> d. Berkebinekaan Global</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>9. Manfaat mempelajari DKV sejak dini bagi siswa SMK adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> a. Agar bisa bermain game lebih baik</label>
+                            <label><input type="radio" name="q9" value="b"> b. Membangun portofolio dan jiwa kewirausahaan sejak awal</label>
+                            <label><input type="radio" name="q9" value="c"> c. Menghindari pelajaran matematika</label>
+                            <label><input type="radio" name="q9" value="d"> d. Agar tidak perlu magang di industri</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>10. Berikut ini yang merupakan contoh produk DKV adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> a. Laporan Keuangan</label>
+                            <label><input type="radio" name="q10" value="b"> b. Poster, Logo, dan Kemasan Produk</label>
+                            <label><input type="radio" name="q10" value="c"> c. Mesin Pabrik</label>
+                            <label><input type="radio" name="q10" value="d"> d. Resep Masakan</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">✍️ Bagian B – Essay (Skor ditentukan oleh Guru)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon isi semua 5 soal essay dengan jelas dan runtut!</p>
+
+                <div class="question-block">
+                    <p>1. Jelaskan secara singkat pengertian Desain Komunikasi Visual (DKV) dan sebutkan 3 tujuannya!</p>
+                    <textarea name="essay1" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>2. Apa yang dimaksud dengan Technopreneur? Sebutkan dan jelaskan 3 ciri utama seorang technopreneur di bidang DKV!</p>
+                    <textarea name="essay2" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>3. Bagaimana hubungan antara kreativitas dalam DKV dengan jiwa kewirausahaan (technopreneur)? Berikan contoh sederhana!</p>
+                    <textarea name="essay3" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>4. Sebutkan dan jelaskan 3 unsur visual utama yang menjadi fondasi dalam karya Desain Komunikasi Visual!</p>
+                    <textarea name="essay4" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>5. Bagaimana penerapan dimensi "Kreatif" dan "Mandiri" dari Profil Pelajar Pancasila dalam proses pembelajaran DKV yang Anda lakukan?</p>
+                    <textarea name="essay5" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn-action btn-print" onclick="cetakPDF()">📥 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn-action btn-email" onclick="kirimEmail()">📧 KIRIM EMAIL KE GURU</button>
+                    <button type="button" class="btn-action btn-reset" onclick="resetForm()">🔄 MULAI ULANG</button>
+                </div>
+            </form>
+
+            <div class="result-box" id="resultBox">
+                <h3>Hasil Uji Formatif</h3>
+                <p id="studentInfoResult" style="margin-bottom: 20px; font-size: 1.1em;"></p>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian A (Pilihan Ganda)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);" id="scorePG">0/100</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian B (Essay)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);">Menunggu Penilaian Guru</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">*Nilai akhir akan dihitung setelah guru menilai bagian Essay.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: var(--dark-navy); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p>&copy; 2024 Surti Meli Hidayanti, S.Pd - SMK Negeri 1 Koto Balingka</p>
+        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">Email: surtimelihidayanti35@gmail.com</p>
+    </footer>
+
+    <script>
+        // Kunci Jawaban Pilihan Ganda
+        const kunciJawaban = {
+            q1: 'b', q2: 'c', q3: 'c', q4: 'b', q5: 'c',
+            q6: 'a', q7: 'b', q8: 'b', q9: 'b', q10: 'b'
+        };
+
+        function hitungNilai() {
+            // Validasi Form
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) {
+                alert("⚠️ Mohon lengkapi Data Siswa terlebih dahulu!");
+                return;
+            }
+
+            // Cek apakah semua PG sudah dijawab
+            let semuaTerjawab = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    semuaTerjawab = false;
+                    break;
+                }
+            }
+
+            if (!semuaTerjawab) {
+                alert("⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!");
+                return;
+            }
+
+            // Hitung Skor PG
+            let skor = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skor += 10;
+                }
+            }
+
+            // Tampilkan Hasil
+            document.getElementById('studentInfoResult').innerHTML = 
+                `<strong>${nama}</strong> (NIS: ${nis})<br>Kelas: ${kelas} | Tanggal: ${tanggal}`;
+            document.getElementById('scorePG').innerText = `${skor}/100`;
+            
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+            
+            // Scroll ke hasil
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil diproses!\nNilai Pilihan Ganda Anda: ${skor}/100\n\nSilakan unduh PDF atau kirim email ke guru sebagai bukti pengerjaan.`);
+        }
+
+        function cetakPDF() {
+            // Validasi sederhana sebelum cetak
+            if (!document.getElementById('nama').value) {
+                alert("⚠️ Mohon isi data diri dan kerjakan soal terlebih dahulu sebelum mengunduh PDF.");
+                return;
+            }
+            // Jika hasil belum keluar, munculkan dulu
+            if (document.getElementById('resultBox').style.display === 'none' || document.getElementById('resultBox').style.display === '') {
+                hitungNilai();
+            }
+            
+            // Trigger print browser (User bisa pilih "Save as PDF")
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Tengah Semester (UTS) - Dasar-Dasar DKV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-navy: #1a1a2e;
+            --light-navy: #16213e;
+            --white: #ffffff;
+            --cream: #f9f9f7;
+            --gray: #e8e8e8;
+            --text-dark: #333333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--cream); color: var(--text-dark); line-height: 1.7; }
+        .navbar { background: var(--dark-navy); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1000px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .nav-brand { color: var(--primary-gold); font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2em; text-decoration: none; }
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 20px; font-size: 0.9em; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-gold); }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; background: var(--white); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); overflow: hidden; }
+        .chapter-header { background: linear-gradient(135deg, var(--dark-navy), var(--light-navy)); color: var(--white); padding: 50px 40px; text-align: center; }
+        .chapter-badge { display: inline-block; background: var(--primary-gold); color: var(--dark-navy); padding: 5px 15px; border-radius: 50px; font-weight: 700; font-size: 0.85em; margin-bottom: 15px; }
+        .chapter-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5em; margin-bottom: 15px; }
+        .chapter-header p { font-size: 1.1em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        .content-body { padding: 40px; }
+        h2 { font-family: 'Playfair Display', serif; color: var(--dark-navy); font-size: 1.8em; margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid var(--primary-gold); padding-bottom: 10px; display: inline-block; }
+        h3 { color: var(--light-navy); font-size: 1.3em; margin-top: 25px; margin-bottom: 15px; }
+        p { margin-bottom: 15px; text-align: justify; }
+        .highlight-box { background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--primary-gold); padding: 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }
+        .instruction-box { background: var(--cream); border: 2px solid var(--primary-gold); padding: 25px; border-radius: 10px; margin: 25px 0; }
+        .instruction-box ul { margin-left: 20px; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--gray); flex-wrap: wrap; gap: 10px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .btn-primary { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-primary:hover { background: var(--secondary-gold); transform: translateY(-2px); }
+        .btn-outline { border: 2px solid var(--dark-navy); color: var(--dark-navy); }
+        .btn-outline:hover { background: var(--dark-navy); color: var(--white); }
+        .quiz-section { background: var(--cream); padding: 40px; margin-top: 50px; border-top: 4px solid var(--primary-gold); }
+        .quiz-header { text-align: center; margin-bottom: 30px; }
+        .quiz-header h2 { border: none; margin-top: 0; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--dark-navy); }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid var(--gray); border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 0.95em; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--primary-gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2); }
+        .question-block { background: var(--white); padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--gray); }
+        .question-block p { font-weight: 600; margin-bottom: 15px; text-align: left; }
+        .options label { display: block; padding: 10px; margin: 5px 0; background: var(--cream); border-radius: 6px; cursor: pointer; transition: background 0.2s; font-weight: 400; }
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"], .options input[type="checkbox"] { margin-right: 10px; }
+        .match-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed var(--gray); }
+        .match-row:last-child { border-bottom: none; }
+        .match-row select { width: 45%; padding: 10px; border: 1px solid var(--gray); border-radius: 6px; font-family: 'Poppins', sans-serif; }
+        .quiz-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+        .btn-action { padding: 15px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif; text-align: center; }
+        .btn-submit { background: var(--dark-navy); color: var(--primary-gold); }
+        .btn-print { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-email { background: #25D366; color: white; }
+        .btn-reset { background: #e74c3c; color: white; }
+        .btn-action:hover { opacity: 0.9; transform: translateY(-2px); }
+        .result-box { display: none; background: var(--dark-navy); color: var(--white); padding: 30px; border-radius: 10px; text-align: center; margin-top: 30px; }
+        .result-box h3 { color: var(--primary-gold); font-size: 2em; margin-bottom: 10px; }
+        @media print {
+            .navbar, .nav-buttons, .quiz-actions, .no-print { display: none !important; }
+            body { background: white; color: black; }
+            .container { box-shadow: none; max-width: 100%; }
+            .quiz-section { page-break-before: always; }
+        }
+        @media (max-width: 768px) {
+            .chapter-header h1 { font-size: 1.8em; }
+            .content-body { padding: 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+            .match-row { flex-direction: column; gap: 10px; align-items: flex-start; }
+            .match-row select { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">DKV Kelas X</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#kontak">Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="top">
+        <div class="chapter-header">
+            <span class="chapter-badge">EVALUASI SUMATIF</span>
+            <h1>Ujian Tengah Semester (UTS)</h1>
+            <p>Mencakup Materi Pertemuan 1 s.d. 7: Dasar-Dasar Desain Komunikasi Visual</p>
+        </div>
+
+        <div class="content-body">
+            <div class="nav-buttons no-print">
+                <a href="7.html" class="btn btn-outline">← Pertemuan 7</a>
+                <a href="#quiz" class="btn btn-primary">Mulai Mengerjakan</a>
+                <a href="9.html" class="btn btn-outline">Pertemuan 9 →</a>
+            </div>
+
+            <div class="instruction-box">
+                <h3>📋 Petunjuk Pengerjaan</h3>
+                <ul>
+                    <li>Waktu pengerjaan: <strong>90 Menit</strong>.</li>
+                    <li>Soal terdiri dari 4 bagian: <strong>Pilihan Ganda (20 soal)</strong>, <strong>Pilihan Ganda Kompleks (10 soal)</strong>, <strong>Benar/Salah (5 soal)</strong>, dan <strong>Menjodohkan (5 soal)</strong>.</li>
+                    <li><strong>Pilihan Ganda Kompleks:</strong> Pilih <em>lebih dari satu</em> jawaban yang benar (centang semua yang sesuai).</li>
+                    <li><strong>Menjodohkan:</strong> Pilih pasangan yang tepat dari menu <em>dropdown</em> di sebelah kanan.</li>
+                    <li>Isi data diri dengan lengkap dan jujur sebelum mengirim jawaban.</li>
+                    <li>Klik tombol <strong>"KIRIM JAWABAN & LIHAT HASIL"</strong> untuk melihat nilai otomatis Bagian A, C, dan D.</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 Tips Ujian:</strong> Kerjakan soal yang kamu anggap paling mudah terlebih dahulu. Untuk soal HOTS (Higher Order Thinking Skills), baca kasus dengan teliti sebelum menentukan pilihan. Tetap tenang dan kerjakan dengan integritas!
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="quiz-section" id="quiz">
+            <div class="quiz-header">
+                <span class="chapter-badge">LEMBAR JAWABAN UTS</span>
+                <h2>📝 Ujian Tengah Semester - Dasar-Dasar DKV</h2>
+                <p class="no-print" style="color: #e74c3c;">⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu!</p>
+            </div>
+
+            <form id="quizForm">
+                <h3>📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Ujian *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas *</label>
+                        <input type="text" id="kelas" required placeholder="Contoh: X DKV 1">
+                    </div>
+                </div>
+
+                <!-- BAGIAN A: PILIHAN GANDA -->
+                <h3 style="margin-top: 40px;">📋 Bagian A – Pilihan Ganda (20 Soal)</h3>
+                <p class="no-print" style="color: #666; font-size: 0.9em;">Pilihlah satu jawaban yang paling tepat. (Soal 16-20 adalah soal HOTS/Analisis).</p>
+
+                <div class="question-block"><p>1. Kepanjangan dari DKV adalah...</p><div class="options"><label><input type="radio" name="q1" value="a"> a. Desain Karya Visual</label><label><input type="radio" name="q1" value="b"> b. Desain Komunikasi Visual</label><label><input type="radio" name="q1" value="c"> c. Dasar Komunikasi Video</label><label><input type="radio" name="q1" value="d"> d. Desain Komputer Vektor</label></div></div>
+                <div class="question-block"><p>2. Technopreneur merupakan gabungan dari dua kata, yaitu...</p><div class="options"><label><input type="radio" name="q2" value="a"> a. Teknologi dan Engineer</label><label><input type="radio" name="q2" value="b"> b. Teknik dan Preneur</label><label><input type="radio" name="q2" value="c"> c. Technology dan Entrepreneur</label><label><input type="radio" name="q2" value="d"> d. Teori dan Practice</label></div></div>
+                <div class="question-block"><p>3. Profesi yang bertanggung jawab merancang antarmuka dan pengalaman pengguna aplikasi/website adalah...</p><div class="options"><label><input type="radio" name="q3" value="a"> a. Graphic Designer</label><label><input type="radio" name="q3" value="b"> b. UI/UX Designer</label><label><input type="radio" name="q3" value="c"> c. Illustrator</label><label><input type="radio" name="q3" value="d"> d. Photographer</label></div></div>
+                <div class="question-block"><p>4. Software yang paling umum digunakan untuk membuat motion graphic adalah...</p><div class="options"><label><input type="radio" name="q4" value="a"> a. Microsoft Word</label><label><input type="radio" name="q4" value="b"> b. Adobe After Effects</label><label><input type="radio" name="q4" value="c"> c. Adobe Acrobat</label><label><input type="radio" name="q4" value="d"> d. Notepad</label></div></div>
+                <div class="question-block"><p>5. Dimensi Profil Pelajar Pancasila yang paling langsung terkait dengan kemampuan menghasilkan ide orisinal dalam desain adalah...</p><div class="options"><label><input type="radio" name="q5" value="a"> a. Kreatif</label><label><input type="radio" name="q5" value="b"> b. Mandiri</label><label><input type="radio" name="q5" value="c"> c. Bernalar Kritis</label><label><input type="radio" name="q5" value="d"> d. Berkebinekaan Global</label></div></div>
+                <div class="question-block"><p>6. Asesmen yang dilakukan guru di awal pembelajaran untuk memetakan kompetensi awal siswa disebut...</p><div class="options"><label><input type="radio" name="q6" value="a"> a. Asesmen Sumatif</label><label><input type="radio" name="q6" value="b"> b. Asesmen Diagnostik</label><label><input type="radio" name="q6" value="c"> c. Asesmen Formatif</label><label><input type="radio" name="q6" value="d"> d. Ujian Akhir Semester</label></div></div>
+                <div class="question-block"><p>7. Tujuan utama penggunaan peta konsep dalam pembelajaran DKV adalah...</p><div class="options"><label><input type="radio" name="q7" value="a"> a. Menghias buku catatan</label><label><input type="radio" name="q7" value="b"> b. Memvisualisasikan hubungan hierarkis antar konsep secara terstruktur</label><label><input type="radio" name="q7" value="c"> c. Menggantikan peran guru</label><label><input type="radio" name="q7" value="d"> d. Menghafal definisi tanpa konteks</label></div></div>
+                <div class="question-block"><p>8. Teori belajar bermakna yang memperkenalkan konsep Advance Organizer dikemukakan oleh...</p><div class="options"><label><input type="radio" name="q8" value="a"> a. B.F. Skinner</label><label><input type="radio" name="q8" value="b"> b. Jean Piaget</label><label><input type="radio" name="q8" value="c"> c. David Ausubel</label><label><input type="radio" name="q8" value="d"> d. Lev Vygotsky</label></div></div>
+                <div class="question-block"><p>9. Platform online yang paling populer dan profesional untuk memamerkan portofolio desain grafis adalah...</p><div class="options"><label><input type="radio" name="q9" value="a"> a. Behance</label><label><input type="radio" name="q9" value="b"> b. Microsoft Excel</label><label><input type="radio" name="q9" value="c"> c. WhatsApp</label><label><input type="radio" name="q9" value="d"> d. Notepad</label></div></div>
+                <div class="question-block"><p>10. Lisensi yang memungkinkan karya digunakan orang lain dengan syarat utama menyebutkan pencipta aslinya adalah...</p><div class="options"><label><input type="radio" name="q10" value="a"> a. All Rights Reserved</label><label><input type="radio" name="q10" value="b"> b. Creative Commons (CC BY)</label><label><input type="radio" name="q10" value="c"> c. Patent</label><label><input type="radio" name="q10" value="d"> d. Trademark</label></div></div>
+                <div class="question-block"><p>11. Dokumen panduan dari klien yang berisi tujuan, target audiens, dan ekspektasi proyek desain disebut...</p><div class="options"><label><input type="radio" name="q11" value="a"> a. Invoice</label><label><input type="radio" name="q11" value="b"> b. Design Brief</label><label><input type="radio" name="q11" value="c"> c. Kontrak Kerja</label><label><input type="radio" name="q11" value="d"> d. Moodboard</label></div></div>
+                <div class="question-block"><p>12. Software yang memungkinkan kolaborasi desain UI/UX secara real-time adalah...</p><div class="options"><label><input type="radio" name="q12" value="a"> a. Adobe Photoshop</label><label><input type="radio" name="q12" value="b"> b. VLC Media Player</label><label><input type="radio" name="q12" value="c"> c. Figma</label><label><input type="radio" name="q12" value="d"> d. Microsoft Paint</label></div></div>
+                <div class="question-block"><p>13. Hak Kekayaan Intelektual (HKI) yang melindungi nama, logo, atau simbol pembeda produk adalah...</p><div class="options"><label><input type="radio" name="q13" value="a"> a. Hak Cipta</label><label><input type="radio" name="q13" value="b"> b. Paten</label><label><input type="radio" name="q13" value="c"> c. Merek Dagang</label><label><input type="radio" name="q13" value="d"> d. Rahasia Dagang</label></div></div>
+                <div class="question-block"><p>14. Kumpulan gambar, palet warna, dan referensi visual untuk memberikan arah suasana proyek desain disebut...</p><div class="options"><label><input type="radio" name="q14" value="a"> a. Moodboard</label><label><input type="radio" name="q14" value="b"> b. Spreadsheet</label><label><input type="radio" name="q14" value="c"> c. Flowchart</label><label><input type="radio" name="q14" value="d"> d. Database</label></div></div>
+                <div class="question-block"><p>15. Dimensi Profil Pelajar Pancasila yang tercermin saat siswa bekerja sama dalam tim kreatif menyelesaikan proyek desain adalah...</p><div class="options"><label><input type="radio" name="q15" value="a"> a. Beriman dan Bertakwa</label><label><input type="radio" name="q15" value="b"> b. Bergotong Royong</label><label><input type="radio" name="q15" value="c"> c. Mandiri</label><label><input type="radio" name="q15" value="d"> d. Bernalar Kritis</label></div></div>
+                
+                <!-- HOTS Questions -->
+                <div class="question-block"><p>16. <strong>(HOTS)</strong> Rina ingin membuka usaha jasa desain, namun ia tidak memiliki modal besar untuk menyewa studio. Berdasarkan materi peluang usaha DKV, strategi paling tepat yang dapat dilakukan Rina adalah...</p><div class="options"><label><input type="radio" name="q16" value="a"> a. Menunda usaha sampai memiliki modal miliaran rupiah</label><label><input type="radio" name="q16" value="b"> b. Meminjam uang ilegal untuk menyewa kantor mewah</label><label><input type="radio" name="q16" value="c"> c. Memulai sebagai freelancer digital dengan memanfaatkan laptop dan internet</label><label><input type="radio" name="q16" value="d"> d. Bekerja sebagai karyawan tetap di pabrik</label></div></div>
+                <div class="question-block"><p>17. <strong>(HOTS)</strong> Seorang siswa menemukan gambar ilustrasi menarik di Google Images, lalu langsung menggunakannya sebagai logo utama untuk produk klien komersial tanpa mengecek lisensi. Dampak paling fatal dari tindakan ini adalah...</p><div class="options"><label><input type="radio" name="q17" value="a"> a. Gambar tersebut akan terlihat buram</label><label><input type="radio" name="q17" value="b"> b. Terjadi pelanggaran Hak Kekayaan Intelektual (HKI) yang berpotensi dituntut secara hukum</label><label><input type="radio" name="q17" value="c"> c. Klien akan sangat senang karena prosesnya cepat</label><label><input type="radio" name="q17" value="d"> d. Tidak ada dampak apapun karena internet bersifat gratis</label></div></div>
+                <div class="question-block"><p>18. <strong>(HOTS)</strong> Sebuah UMKM menjual produk keripik pedas untuk target pasar anak muda (Gen Z). Desainer A membuat kemasan dengan font serif klasik, warna cokelat tua, dan gaya vintage. Analisis kesalahan utama Desainer A adalah...</p><div class="options"><label><input type="radio" name="q18" value="a"> a. Desainnya terlalu mahal untuk diproduksi</label><label><input type="radio" name="q18" value="b"> b. Tidak memahami Design Brief, khususnya ketidaksesuaian gaya visual dengan target audiens</label><label><input type="radio" name="q18" value="c"> c. Menggunakan software yang salah</label><label><input type="radio" name="q18" value="d"> d. Terlalu banyak menggunakan warna cerah</label></div></div>
+                <div class="question-block"><p>19. <strong>(HOTS)</strong> Dalam mengerjakan tugas kelompok, Budi menjiplak (copy-paste) karya desain dari internet dan mengakuinya sebagai karya orisinal kelompoknya. Selain melanggar etika, tindakan ini secara langsung bertentangan dengan dimensi Profil Pelajar Pancasila, yaitu...</p><div class="options"><label><input type="radio" name="q19" value="a"> a. Beriman, Bertakwa, dan Berakhlak Mulia serta Mandiri</label><label><input type="radio" name="q19" value="b"> b. Berkebinekaan Global</label><label><input type="radio" name="q19" value="c"> c. Bergotong Royong</label><label><input type="radio" name="q19" value="d"> d. Kreatif</label></div></div>
+                <div class="question-block"><p>20. <strong>(HOTS)</strong> Mengapa seorang technopreneur di bidang DKV tidak cukup hanya memiliki keterampilan teknis mendesain (hard skill), tetapi juga wajib memahami pasar dan komunikasi?</p><div class="options"><label><input type="radio" name="q20" value="a"> a. Agar bisa berbicara dengan lancar di depan umum</label><label><input type="radio" name="q20" value="b"> b. Agar karya yang dihasilkan tidak hanya estetis, tetapi juga memiliki nilai jual dan memecahkan masalah klien</label><label><input type="radio" name="q20" value="c"> c. Agar bisa menghindari pembayaran pajak</label><label><input type="radio" name="q20" value="d"> d. Karena hard skill tidak penting di era digital</label></div></div>
+
+                <!-- BAGIAN B: PILIHAN GANDA KOMPLEKS -->
+                <h3 style="margin-top: 40px;">📋 Bagian B – Pilihan Ganda Kompleks (10 Soal)</h3>
+                <p class="no-print" style="color: #666; font-size: 0.9em;">⚠️ <strong>Pilih LEBIH DARI SATU</strong> jawaban yang benar (centang semua opsi yang sesuai)!</p>
+
+                <div class="question-block"><p>1. Berikut ini yang merupakan ciri-ciri utama seorang Technopreneur di bidang DKV adalah... (Pilih 3)</p><div class="options"><label><input type="checkbox" name="qk1" value="a"> a. Inovatif dan kreatif dalam memecahkan masalah visual</label><label><input type="checkbox" name="qk1" value="b"> b. Menghindari penggunaan teknologi baru</label><label><input type="checkbox" name="qk1" value="c"> c. Melek teknologi dan menguasai tools digital</label><label><input type="checkbox" name="qk1" value="d"> d. Berani mengambil risiko dalam berbisnis</label></div></div>
+                <div class="question-block"><p>2. Manakah yang termasuk Hard Skill (keterampilan teknis) yang wajib dimiliki seorang Graphic Designer? (Pilih 3)</p><div class="options"><label><input type="checkbox" name="qk2" value="a"> a. Menguasai Adobe Illustrator dan Photoshop</label><label><input type="checkbox" name="qk2" value="b"> b. Kemampuan kepemimpinan (Leadership)</label><label><input type="checkbox" name="qk2" value="c"> c. Memahami teori warna dan tipografi</label><label><input type="checkbox" name="qk2" value="d"> d. Mampu melakukan layout dan komposisi</label></div></div>
+                <div class="question-block"><p>3. Berikut ini yang merupakan Soft Skill penting dalam kolaborasi tim kreatif adalah... (Pilih 3)</p><div class="options"><label><input type="checkbox" name="qk3" value="a"> a. Komunikasi yang efektif</label><label><input type="checkbox" name="qk3" value="b"> b. Menggambar vektor dengan cepat</label><label><input type="checkbox" name="qk3" value="c"> c. Manajemen waktu</label><label><input type="checkbox" name="qk3" value="d"> d. Kemampuan menerima kritik konstruktif</label></div></div>
+                <div class="question-block"><p>4. Manakah yang termasuk platform online profesional untuk eksplorasi dan portofolio karya DKV? (Pilih 3)</p><div class="options"><label><input type="checkbox" name="qk4" value="a"> a. Behance</label><label><input type="checkbox" name="qk4" value="b"> b. Dribbble</label><label><input type="checkbox" name="qk4" value="c"> c. Pinterest</label><label><input type="checkbox" name="qk4" value="d"> d. Microsoft Teams</label></div></div>
+                <div class="question-block"><p>5. Unsur-unsur dasar visual dalam Desain Komunikasi Visual meliputi... (Pilih 4)</p><div class="options"><label><input type="checkbox" name="qk5" value="a"> a. Titik dan Garis</label><label><input type="checkbox" name="qk5" value="b"> b. Bidang dan Warna</label><label><input type="checkbox" name="qk5" value="c"> c. Suara dan Aroma</label><label><input type="checkbox" name="qk5" value="d"> d. Ruang dan Tekstur</label></div></div>
+                <div class="question-block"><p>6. Elemen-elemen penting yang wajib ada dalam sebuah Design Brief adalah... (Pilih 4)</p><div class="options"><label><input type="checkbox" name="qk6" value="a"> a. Tujuan proyek</label><label><input type="checkbox" name="qk6" value="b"> b. Target audiens</label><label><input type="checkbox" name="qk6" value="c"> c. Timeline dan budget</label><label><input type="checkbox" name="qk6" value="d"> d. Nama lengkap keluarga klien</label></div></div>
+                <div class="question-block"><p>7. Sikap profesional dalam menerima kritik (feedback) terhadap karya desain adalah... (Pilih 3)</p><div class="options"><label><input type="checkbox" name="qk7" value="a"> a. Mendengarkan secara aktif tanpa memotong</label><label><input type="checkbox" name="qk7" value="b"> b. Memisahkan ego pribadi dari karya desain</label><label><input type="checkbox" name="qk7" value="c"> c. Menyerang balik karya orang yang mengkritik</label><label><input type="checkbox" name="qk7" value="d"> d. Mengajukan pertanyaan klarifikasi</label></div></div>
+                <div class="question-block"><p>8. Berikut ini yang merupakan jenis lisensi Hak Kekayaan Intelektual di dunia digital adalah... (Pilih 3)</p><div class="options"><label><input type="checkbox" name="qk8" value="a"> a. All Rights Reserved</label><label><input type="checkbox" name="qk8" value="b"> b. Creative Commons</label><label><input type="checkbox" name="qk8" value="c"> c. Public Domain</label><label><input type="checkbox" name="qk8" value="d"> d. Free Download Tanpa Aturan</label></div></div>
+                <div class="question-block"><p>9. Langkah strategis yang dapat dilakukan siswa SMK untuk memulai usaha DKV sejak dini adalah... (Pilih 3)</p><div class="options"><label><input type="checkbox" name="qk9" value="a"> a. Mengidentifikasi keahlian atau niche spesifik</label><label><input type="checkbox" name="qk9" value="b"> b. Membangun portofolio dari tugas sekolah</label><label><input type="checkbox" name="qk9" value="c"> c. Menunggu lulus sekolah baru mulai belajar desain</label><label><input type="checkbox" name="qk9" value="d"> d. Melakukan riset pasar sederhana di lingkungan sekitar</label></div></div>
+                <div class="question-block"><p>10. Metode "I Like, I Wish, I Wonder" digunakan untuk memberikan kritik konstruktif. Pernyataan yang sesuai dengan metode ini adalah... (Pilih 3)</p><div class="options"><label><input type="checkbox" name="qk10" value="a"> a. "I like pemilihan palet warnanya yang sangat harmonis."</label><label><input type="checkbox" name="qk10" value="b"> b. "I wish tipografinya lebih besar agar mudah dibaca."</label><label><input type="checkbox" name="qk10" value="c"> c. "Desainmu jelek dan tidak enak dilihat."</label><label><input type="checkbox" name="qk10" value="d"> d. "I wonder bagaimana jika kita tambahkan lebih banyak white space?"</label></div></div>
+
+                <!-- BAGIAN C: BENAR / SALAH -->
+                <h3 style="margin-top: 40px;"> Bagian C – Benar atau Salah (5 Soal)</h3>
+                <p class="no-print" style="color: #666; font-size: 0.9em;">Tentukan apakah pernyataan berikut Benar atau Salah.</p>
+
+                <div class="question-block"><p>1. DKV hanya berfokus pada seni murni (fine art) tanpa memperhatikan fungsi komunikasi dan pesan kepada audiens.</p><div class="options"><label><input type="radio" name="qb1" value="B"> Benar</label><label><input type="radio" name="qb1" value="S"> Salah</label></div></div>
+                <div class="question-block"><p>2. Asesmen diagnostik dilakukan oleh guru di awal pembelajaran untuk memetakan kompetensi awal dan kebutuhan siswa.</p><div class="options"><label><input type="radio" name="qb2" value="B"> Benar</label><label><input type="radio" name="qb2" value="S"> Salah</label></div></div>
+                <div class="question-block"><p>3. Menggunakan gambar berlisensi "All Rights Reserved" dari internet untuk iklan komersial tanpa izin tertulis adalah pelanggaran HKI.</p><div class="options"><label><input type="radio" name="qb3" value="B"> Benar</label><label><input type="radio" name="qb3" value="S"> Salah</label></div></div>
+                <div class="question-block"><p>4. Figma adalah aplikasi desain yang memungkinkan kolaborasi tim secara real-time dalam satu file yang sama.</p><div class="options"><label><input type="radio" name="qb4" value="B"> Benar</label><label><input type="radio" name="qb4" value="S"> Salah</label></div></div>
+                <div class="question-block"><p>5. Apersepsi bertujuan untuk mengaitkan pengetahuan atau pengalaman awal siswa dengan materi baru yang akan dipelajari.</p><div class="options"><label><input type="radio" name="qb5" value="B"> Benar</label><label><input type="radio" name="qb5" value="S"> Salah</label></div></div>
+
+                <!-- BAGIAN D: MENJODOHKAN -->
+                <h3 style="margin-top: 40px;"> Bagian D – Menjodohkan (5 Soal)</h3>
+                <p class="no-print" style="color: #666; font-size: 0.9em;">Pasangkan istilah di sebelah kiri dengan definisi yang tepat di sebelah kanan!</p>
+
+                <div class="question-block">
+                    <div class="match-row">
+                        <span><strong>1.</strong> UI/UX Designer</span>
+                        <select name="qm1"><option value="">-- Pilih Jawaban --</option><option value="A">A. Kerangka konseptual yang diberikan sebelum pembelajaran dimulai</option><option value="B">B. Bebas digunakan karena hak ciptanya telah habis atau dilepaskan</option><option value="C">C. Memimpin tim kreatif dan mengarahkan visi visual proyek</option><option value="D">D. Kumpulan referensi visual untuk menentukan arah suasana proyek</option><option value="E">E. Merancang antarmuka dan pengalaman pengguna aplikasi/website</option></select>
+                    </div>
+                    <div class="match-row">
+                        <span><strong>2.</strong> Advance Organizer</span>
+                        <select name="qm2"><option value="">-- Pilih Jawaban --</option><option value="A">A. Kerangka konseptual yang diberikan sebelum pembelajaran dimulai</option><option value="B">B. Bebas digunakan karena hak ciptanya telah habis atau dilepaskan</option><option value="C">C. Memimpin tim kreatif dan mengarahkan visi visual proyek</option><option value="D">D. Kumpulan referensi visual untuk menentukan arah suasana proyek</option><option value="E">E. Merancang antarmuka dan pengalaman pengguna aplikasi/website</option></select>
+                    </div>
+                    <div class="match-row">
+                        <span><strong>3.</strong> Moodboard</span>
+                        <select name="qm3"><option value="">-- Pilih Jawaban --</option><option value="A">A. Kerangka konseptual yang diberikan sebelum pembelajaran dimulai</option><option value="B">B. Bebas digunakan karena hak ciptanya telah habis atau dilepaskan</option><option value="C">C. Memimpin tim kreatif dan mengarahkan visi visual proyek</option><option value="D">D. Kumpulan referensi visual untuk menentukan arah suasana proyek</option><option value="E">E. Merancang antarmuka dan pengalaman pengguna aplikasi/website</option></select>
+                    </div>
+                    <div class="match-row">
+                        <span><strong>4.</strong> Art Director</span>
+                        <select name="qm4"><option value="">-- Pilih Jawaban --</option><option value="A">A. Kerangka konseptual yang diberikan sebelum pembelajaran dimulai</option><option value="B">B. Bebas digunakan karena hak ciptanya telah habis atau dilepaskan</option><option value="C">C. Memimpin tim kreatif dan mengarahkan visi visual proyek</option><option value="D">D. Kumpulan referensi visual untuk menentukan arah suasana proyek</option><option value="E">E. Merancang antarmuka dan pengalaman pengguna aplikasi/website</option></select>
+                    </div>
+                    <div class="match-row">
+                        <span><strong>5.</strong> Public Domain</span>
+                        <select name="qm5"><option value="">-- Pilih Jawaban --</option><option value="A">A. Kerangka konseptual yang diberikan sebelum pembelajaran dimulai</option><option value="B">B. Bebas digunakan karena hak ciptanya telah habis atau dilepaskan</option><option value="C">C. Memimpin tim kreatif dan mengarahkan visi visual proyek</option><option value="D">D. Kumpulan referensi visual untuk menentukan arah suasana proyek</option><option value="E">E. Merancang antarmuka dan pengalaman pengguna aplikasi/website</option></select>
+                    </div>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn-action btn-print" onclick="cetakPDF()"> UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn-action btn-email" onclick="kirimEmail()">📧 KIRIM EMAIL KE GURU</button>
+                    <button type="button" class="btn-action btn-reset" onclick="resetForm()">🔄 MULAI ULANG</button>
+                </div>
+            </form>
+
+            <div class="result-box" id="resultBox">
+                <h3>Hasil Ujian Tengah Semester</h3>
+                <p id="studentInfoResult" style="margin-bottom: 20px; font-size: 1.1em;"></p>
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                    <div><p style="font-size: 0.9em; opacity: 0.8;">Bagian A (PG)</p><p style="font-size: 2em; font-weight: 700; color: var(--primary-gold);" id="scoreA">0/50</p></div>
+                    <div><p style="font-size: 0.9em; opacity: 0.8;">Bagian B (PGK)</p><p style="font-size: 2em; font-weight: 700; color: var(--primary-gold);" id="scoreB">0/20</p></div>
+                    <div><p style="font-size: 0.9em; opacity: 0.8;">Bagian C (B/S)</p><p style="font-size: 2em; font-weight: 700; color: var(--primary-gold);" id="scoreC">0/10</p></div>
+                    <div><p style="font-size: 0.9em; opacity: 0.8;">Bagian D (Jodoh)</p><p style="font-size: 2em; font-weight: 700; color: var(--primary-gold);" id="scoreD">0/20</p></div>
+                </div>
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <p style="font-size: 0.9em; opacity: 0.8;">TOTAL NILAI OBJEKTIF</p>
+                    <p style="font-size: 3.5em; font-weight: 700; color: var(--primary-gold);" id="totalScore">0/100</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--dark-navy); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p>&copy; 2024 Surti Meli Hidayanti, S.Pd - SMK Negeri 1 Koto Balingka</p>
+        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">Email: surtimelihidayanti35@gmail.com</p>
+    </footer>
+
+    <script>
+        // KUNCI JAWABAN
+        const kunciPG = { q1:'b', q2:'c', q3:'b', q4:'b', q5:'a', q6:'b', q7:'b', q8:'c', q9:'a', q10:'b', q11:'b', q12:'c', q13:'c', q14:'a', q15:'b', q16:'c', q17:'b', q18:'b', q19:'a', q20:'b' };
+        
+        const kunciPGK = {
+            qk1: ['a','c','d'], qk2: ['a','c','d'], qk3: ['a','c','d'], qk4: ['a','b','c'], qk5: ['a','b','d'],
+            qk6: ['a','b','c'], qk7: ['a','b','d'], qk8: ['a','b','c'], qk9: ['a','b','d'], qk10: ['a','b','d']
+        };
+
+        const kunciBS = { qb1:'S', qb2:'B', qb3:'B', qb4:'B', qb5:'B' };
+        const kunciMatch = { qm1:'E', qm2:'A', qm3:'D', qm4:'C', qm5:'B' };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) { alert("⚠️ Mohon lengkapi Data Siswa terlebih dahulu!"); return; }
+
+            // Validasi PG
+            for (let i = 1; i <= 20; i++) { if (!document.querySelector(`input[name="q${i}"]:checked`)) { alert(`⚠️ Mohon lengkapi Bagian A (Pilihan Ganda) soal nomor ${i}!`); return; } }
+            // Validasi PGK
+            for (let i = 1; i <= 10; i++) { if (document.querySelectorAll(`input[name="qk${i}"]:checked`).length === 0) { alert(`⚠️ Mohon lengkapi Bagian B (Pilihan Ganda Kompleks) soal nomor ${i}!`); return; } }
+            // Validasi B/S
+            for (let i = 1; i <= 5; i++) { if (!document.querySelector(`input[name="qb${i}"]:checked`)) { alert(`⚠️ Mohon lengkapi Bagian C (Benar/Salah) soal nomor ${i}!`); return; } }
+            // Validasi Menjodohkan
+            for (let i = 1; i <= 5; i++) { if (!document.querySelector(`select[name="qm${i}"]`).value) { alert(`⚠️ Mohon lengkapi Bagian D (Menjodohkan) soal nomor ${i}!`); return; } }
+
+            // HITUNG SKOR
+            // Bagian A: 20 soal x 2.5 = 50
+            let skorA = 0;
+            for (let i = 1; i <= 20; i++) { if (document.querySelector(`input[name="q${i}"]:checked`).value === kunciPG[`q${i}`]) skorA += 2.5; }
+
+            // Bagian B: 10 soal x 2 = 20 (Harus benar semua pilihan, tidak kurang tidak lebih)
+            let skorB = 0;
+            for (let i = 1; i <= 10; i++) {
+                const checked = Array.from(document.querySelectorAll(`input[name="qk${i}"]:checked`)).map(el => el.value).sort();
+                const correct = kunciPGK[`qk${i}`].sort();
+                if (JSON.stringify(checked) === JSON.stringify(correct)) skorB += 2;
+            }
+
+            // Bagian C: 5 soal x 2 = 10
+            let skorC = 0;
+            for (let i = 1; i <= 5; i++) { if (document.querySelector(`input[name="qb${i}"]:checked`).value === kunciBS[`qb${i}`]) skorC += 2; }
+
+            // Bagian D: 5 soal x 4 = 20
+            let skorD = 0;
+            for (let i = 1; i <= 5; i++) { if (document.querySelector(`select[name="qm${i}"]`).value === kunciMatch[`qm${i}`]) skorD += 4; }
+
+            const total = skorA + skorB + skorC + skorD;
+
+            document.getElementById('studentInfoResult').innerHTML = `<strong>${nama}</strong> (NIS: ${nis})<br>Kelas: ${kelas} | Tanggal: ${tanggal}`;
+            document.getElementById('scoreA').innerText = `${skorA}/50`;
+            document.getElementById('scoreB').innerText = `${skorB}/20`;
+            document.getElementById('scoreC').innerText = `${skorC}/10`;
+            document.getElementById('scoreD').innerText = `${skorD}/20`;
+            document.getElementById('totalScore').innerText = `${total}/100`;
+            
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`✅ Jawaban berhasil diproses!\nTotal Nilai Objektif Anda: ${total}/100\n\nSilakan unduh PDF atau kirim email ke guru.`);
+        }
+
+        function cetakPDF() {
+            if (!document.getElementById('nama').value) { alert("⚠️ Mohon isi data diri dan kerjakan soal terlebih dahulu."); return; }
+            if (document.getElementById('resultBox').style.display === 'none' || document.getElementById('resultBox').style.display === '') hitungNilai();
+            setTimeout(() => window.print(), 500);
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value; const nis = document.getElementById('nis').value; const kelas = document.getElementById('kelas').value;
+            if (!nama || !nis) { alert("⚠️ Mohon lengkapi data diri terlebih dahulu!"); return; }
+            const total = document.getElementById('totalScore').innerText;
+            const subject = `Hasil UTS Dasar-Dasar DKV - ${nama} - Kelas ${kelas}`;
+            const body = `Yth. Ibu Surti Meli Hidayanti, S.Pd,\n\nBerikut adalah hasil Ujian Tengah Semester (UTS) Dasar-Dasar Desain Komunikasi Visual:\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\n\nRincian Nilai Objektif:\n- Bagian A (Pilihan Ganda): ${document.getElementById('scoreA').innerText}\n- Bagian B (PG Kompleks): ${document.getElementById('scoreB').innerText}\n- Bagian C (Benar/Salah): ${document.getElementById('scoreC').innerText}\n- Bagian D (Menjodohkan): ${document.getElementById('scoreD').innerText}\n\nTOTAL NILAI: ${total}\n\nTerima kasih.\nHormat saya,\n${nama}`;
+            window.location.href = `mailto:surtimelihidayanti35@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetForm() {
+            if (confirm("️ Apakah Anda yakin ingin mengosongkan semua jawaban?")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('quiz').offsetTop, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { document.getElementById('tanggal').value = new Date().toISOString().split('T')[0]; });
+    </script>
+</body>
+</html>

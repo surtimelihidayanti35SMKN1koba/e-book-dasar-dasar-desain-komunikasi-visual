@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1: Menjelajah Internet - Eksplorasi Karya DKV - Pertemuan 6</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-navy: #1a1a2e;
+            --light-navy: #16213e;
+            --white: #ffffff;
+            --cream: #f9f9f7;
+            --gray: #e8e8e8;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--dark-navy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
+            color: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-body {
+            padding: 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            color: var(--light-navy);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study {
+            background: var(--cream);
+            border: 1px solid var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .case-study h4 {
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        th {
+            background: var(--dark-navy);
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .video-placeholder {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--dark-navy);
+            color: var(--dark-navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--dark-navy);
+            color: var(--white);
+        }
+
+        .quiz-section {
+            background: var(--cream);
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quiz-header h2 {
+            border: none;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-navy);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .question-block {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray);
+        }
+
+        .question-block p {
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 400;
+        }
+
+        .options label:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .quiz-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-submit { background: var(--dark-navy); color: var(--primary-gold); }
+        .btn-print { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-email { background: #25D366; color: white; }
+        .btn-reset { background: #e74c3c; color: white; }
+
+        .btn-action:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .result-box {
+            display: none;
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .result-box h3 {
+            color: var(--primary-gold);
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            .navbar, .nav-buttons, .quiz-actions, .no-print {
+                display: none !important;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .quiz-section {
+                page-break-before: always;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h1 { font-size: 1.8em; }
+            .content-body { padding: 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">DKV Kelas X</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#kontak">Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="top">
+        <div class="chapter-header">
+            <span class="chapter-badge">BAB 1 - PERTEMUAN 6</span>
+            <h1>Menjelajah Internet: Eksplorasi Karya DKV</h1>
+            <p>Memanfaatkan platform digital untuk mencari inspirasi, membangun referensi visual, dan memahami etika Hak Kekayaan Intelektual (HKI) di dunia maya.</p>
+        </div>
+
+        <div class="content-body">
+            <div class="nav-buttons no-print">
+                <a href="5.html" class="btn btn-outline">← Pertemuan 5</a>
+                <a href="#sub1" class="btn btn-primary">Mulai Membaca</a>
+                <a href="7.html" class="btn btn-outline">Pertemuan 7 →</a>
+            </div>
+
+            <h2 id="sub1">Pendahuluan</h2>
+            <p>Di era digital saat ini, internet telah berubah menjadi perpustakaan visual terbesar di dunia. Bagi siswa Desain Komunikasi Visual (DKV), menjelajah internet bukan sekadar aktivitas browsing biasa, melainkan sebuah proses eksplorasi yang sistematis untuk mencari inspirasi, mempelajari tren desain terkini, dan memahami standar kualitas karya profesional global.</p>
+            <p>Namun, kemudahan akses ini juga membawa tantangan, terutama terkait etika penggunaan karya orang lain. Seorang desainer yang baik tidak hanya tahu di mana mencari referensi, tetapi juga memahami batasan antara "terinspirasi" dan "menjiplak" (plagiarisme), serta menghormati Hak Kekayaan Intelektual (HKI) para kreator.</p>
+
+            <div class="highlight-box">
+                <strong>🔑 Konsep Kunci:</strong><br>
+                • <strong>Eksplorasi Digital:</strong> Proses aktif mencari, mengumpulkan, dan menganalisis referensi visual dari berbagai platform online untuk menunjang proyek desain.<br>
+                • <strong>Moodboard:</strong> Kumpulan gambar, palet warna, tipografi, dan tekstur yang disusun untuk memberikan arah visual dan suasana (mood) sebuah proyek desain.<br>
+                • <strong>Hak Kekayaan Intelektual (HKI):</strong> Hak yang timbul dari hasil proses berpikir manusia yang menghasilkan suatu produk atau proses yang berguna bagi manusia, termasuk hak cipta atas karya seni dan desain.
+            </div>
+
+            <h2>6.1 Platform Eksplorasi Karya DKV</h2>
+            <p>Tidak semua platform di internet cocok untuk referensi desain profesional. Berikut adalah beberapa platform utama yang wajib dikenal oleh siswa DKV:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Fokus Utama</th>
+                        <th>Manfaat untuk Siswa DKV</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Behance</strong></td>
+                        <td>Portofolio profesional (Adobe)</td>
+                        <td>Melihat studi kasus lengkap (case study) dari konsep hingga hasil akhir proyek desain nyata.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dribbble</strong></td>
+                        <td>UI/UX, Ilustrasi, Branding</td>
+                        <td>Mendapatkan inspirasi potongan desain (shots) yang estetis dan tren antarmuka digital terkini.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pinterest</strong></td>
+                        <td>Kurasi visual & Moodboard</td>
+                        <td>Mengumpulkan dan mengorganisir referensi visual berdasarkan kategori atau proyek tertentu.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ArtStation</strong></td>
+                        <td>Seni digital, Game Art, 3D</td>
+                        <td>Mempelajari teknik ilustrasi digital, konsep art, dan pemodelan 3D tingkat industri.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Awwwards</strong></td>
+                        <td>Desain Website</td>
+                        <td>Menganalisis standar tertinggi dalam desain web, interaksi, dan pengalaman pengguna (UX).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="video-placeholder">
+                <h3>🎥 Video: Cara Riset dan Eksplorasi Desain di Internet</h3>
+                <p>Pelajari cara profesional melakukan riset visual dan membangun moodboard yang efektif untuk proyek desain.</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">(Sumber: Youtube / Kanal Tutorial Desain)</p>
+            </div>
+
+            <h2>6.2 Etika dan Hak Kekayaan Intelektual (HKI) di Dunia Digital</h2>
+            <p>Salah satu kesalahan terbesar pemula adalah menganggap semua yang ada di internet adalah "gratis" dan boleh digunakan sesuka hati. Memahami lisensi dan HKI adalah tanda profesionalisme seorang desainer.</p>
+
+            <h3>Jenis Lisensi yang Perlu Dikenali:</h3>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>All Rights Reserved (Hak Cipta Penuh):</strong> Karya tidak boleh digunakan, dimodifikasi, atau disebarluaskan tanpa izin tertulis dari pemilik.</li>
+                <li><strong>Creative Commons (CC):</strong> Lisensi fleksibel yang memungkinkan penggunaan dengan syarat tertentu. Contoh: <em>CC BY</em> (boleh digunakan asal menyebutkan sumber/kredit pencipta).</li>
+                <li><strong>Public Domain (CC0):</strong> Karya yang hak ciptanya telah habis atau sengaja dilepaskan oleh penciptanya, sehingga bebas digunakan untuk tujuan apa pun, termasuk komersial.</li>
+                <li><strong>Royalty-Free:</strong> Membayar sekali untuk menggunakan aset (seperti foto stok atau font) tanpa batas waktu, tetapi bukan berarti "gratis" (free).</li>
+            </ul>
+
+            <div class="case-study">
+                <h4>📖 Studi Kasus: Jeratan Plagiarisme dan Dampaknya</h4>
+                <p><strong>Kasus:</strong> Seorang desainer freelance memenangkan tender pembuatan logo untuk sebuah UMKM. Ia dengan cepat mengunduh vektor logo dari situs stok gratis, mengubah warnanya sedikit, dan menyerahkannya kepada klien. Beberapa bulan kemudian, pemilik asli vektor tersebut menemukan karya itu dan melaporkan pelanggaran hak cipta. Desainer tersebut tidak hanya kehilangan bayaran, tetapi juga reputasinya hancur dan berpotensi menghadapi tuntutan hukum.</p>
+                <p><strong>Pembelajaran:</strong> Inspirasi boleh diambil, tetapi eksekusi harus orisinal. Selalu periksa lisensi aset digital dan hindari praktik menjiplak (copy-paste) yang dapat merusak integritas profesional.</p>
+            </div>
+
+            <h2>6.3 Strategi Eksplorasi yang Efektif</h2>
+            <p>Agar penjelajahan internet tidak berubah menjadi sekadar "scrolling" tanpa tujuan, siswa perlu menerapkan strategi yang terstruktur:</p>
+
+            <ol style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Tentukan Kata Kunci (Keywords):</strong> Gunakan istilah spesifik dalam bahasa Inggris untuk hasil yang lebih baik (misal: "minimalist coffee shop branding" alih-alih "desain kopi").</li>
+                <li><strong>Bangun Moodboard:</strong> Kumpulkan 10-20 referensi yang memiliki kesamaan warna, gaya, atau suasana ke dalam satu papan (board) sebelum mulai mendesain.</li>
+                <li><strong>Analisis, Jangan Hanya Meniru:</strong> Tanyakan pada diri sendiri: "Mengapa desain ini bagus? Bagaimana komposisinya? Mengapa pemilihan font-nya tepat?"</li>
+                <li><strong>Verifikasi Sumber:</strong> Selalu catat URL atau nama kreator dari setiap referensi yang disimpan untuk keperluan atribusi di masa depan.</li>
+                <li><strong>Gunakan Fitur "Save" atau "Collection":</strong> Manfaatkan fitur pengorganisasian di Pinterest atau Behance untuk memisahkan referensi berdasarkan kategori proyek.</li>
+            </ol>
+
+            <div class="highlight-box">
+                <strong>💡 Refleksi untuk Siswa Indonesia:</strong><br>
+                Internet memungkinkan kita mengakses karya desainer kelas dunia. Namun, tantangannya adalah: bagaimana kita bisa menyaring pengaruh global tersebut dan tetap menghasilkan karya yang memiliki "jiwa" atau identitas lokal Indonesia? Eksplorasi yang bijak adalah yang mampu menggabungkan standar kualitas global dengan kekayaan budaya lokal.
+            </div>
+
+            <h2>Kesimpulan</h2>
+            <p>Menjelajah internet untuk eksplorasi karya DKV adalah keterampilan wajib di abad ke-21. Dengan memanfaatkan platform yang tepat, menerapkan strategi riset yang terstruktur, dan yang paling penting, menjunjung tinggi etika serta Hak Kekayaan Intelektual, siswa dapat membangun fondasi kreativitas yang kuat. Ingat, desainer hebat bukanlah penjiplak, melainkan pengamat yang tajam yang mampu mengolah inspirasi menjadi inovasi orisinal.</p>
+
+            <div class="highlight-box">
+                <strong>📚 Daftar Pustaka:</strong><br>
+                • Lupton, E. (2014). <em>Graphic Design: The New Basics</em>. Princeton Architectural Press.<br>
+                • WIPO. (2023). <em>Understanding Copyright and Related Rights</em>. World Intellectual Property Organization.<br>
+                • Kemendikbudristek. (2022). <em>Capaian Pembelajaran Dasar-Dasar Desain Komunikasi Visual</em>.<br>
+                • Supriadi. (2024). <em>Etika Digital dan HKI untuk Siswa SMK</em>. Bukittinggi: FTIK UIN Bukittinggi.
+            </div>
+
+            <div class="nav-buttons no-print">
+                <a href="5.html" class="btn btn-outline">← Pertemuan 5</a>
+                <a href="#top" class="btn btn-outline">↑ Ke Atas</a>
+                <a href="7.html" class="btn btn-primary">Pertemuan 7: Kolaborasi →</a>
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="quiz-section" id="quiz">
+            <div class="quiz-header">
+                <span class="chapter-badge">EVALUASI PEMBELAJARAN</span>
+                <h2>📋 Uji Formatif 6: Menjelajah Internet & Eksplorasi Karya DKV</h2>
+                <p>⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu sebelum mengirim!</p>
+            </div>
+
+            <form id="quizForm">
+                <h3>📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Ujian *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas *</label>
+                        <input type="text" id="kelas" required placeholder="Contoh: X DKV 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester *</label>
+                        <select id="semester" required>
+                            <option value="">Pilih Semester</option>
+                            <option value="1" selected>Semester 1 (Ganjil)</option>
+                            <option value="2">Semester 2 (Genap)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">📋 Bagian A – Pilihan Ganda (Skor 10/soal)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                <div id="pg-questions">
+                    <div class="question-block">
+                        <p>1. Platform online yang paling populer dan profesional untuk memamerkan portofolio desain grafis adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> a. Behance</label>
+                            <label><input type="radio" name="q1" value="b"> b. Microsoft Excel</label>
+                            <label><input type="radio" name="q1" value="c"> c. WhatsApp</label>
+                            <label><input type="radio" name="q1" value="d"> d. Notepad</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>2. Lisensi yang memungkinkan karya digunakan orang lain dengan syarat utama menyebutkan atau memberikan kredit kepada pencipta aslinya adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> a. All Rights Reserved</label>
+                            <label><input type="radio" name="q2" value="b"> b. Creative Commons (CC BY)</label>
+                            <label><input type="radio" name="q2" value="c"> c. Patent</label>
+                            <label><input type="radio" name="q2" value="d"> d. Trademark</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>3. Tindakan mengambil karya desain orang lain, mengubah sedikit, dan mengakuinya sebagai karya sendiri disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> a. Plagiarisme</label>
+                            <label><input type="radio" name="q3" value="b"> b. Inspirasi</label>
+                            <label><input type="radio" name="q3" value="c"> c. Kolaborasi</label>
+                            <label><input type="radio" name="q3" value="d"> d. Kurasi</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>4. Salah satu manfaat utama menjelajah internet bagi siswa DKV adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> a. Bermain game online</label>
+                            <label><input type="radio" name="q4" value="b"> b. Mendapatkan inspirasi dan referensi visual terkini</label>
+                            <label><input type="radio" name="q4" value="c"> c. Menghabiskan kuota internet</label>
+                            <label><input type="radio" name="q4" value="d"> d. Menghindari tugas sekolah</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>5. Istilah untuk kumpulan gambar, palet warna, dan ide yang dikumpulkan untuk memberikan panduan arah visual sebuah proyek desain adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> a. Moodboard</label>
+                            <label><input type="radio" name="q5" value="b"> b. Spreadsheet</label>
+                            <label><input type="radio" name="q5" value="c"> c. Flowchart</label>
+                            <label><input type="radio" name="q5" value="d"> d. Database</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>6. Saat menemukan karya di internet yang ingin dijadikan referensi, langkah pertama yang paling etis dan profesional adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> a. Langsung mengunduh dan mengklaim sebagai milik sendiri</label>
+                            <label><input type="radio" name="q6" value="b"> b. Memeriksa lisensi atau hak cipta karya tersebut</label>
+                            <label><input type="radio" name="q6" value="c"> c. Mengedit sedikit lalu memposting di media sosial</label>
+                            <label><input type="radio" name="q6" value="d"> d. Mengabaikan sumbernya sama sekali</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>7. Fitur "Save" atau "Pin" di platform seperti Pinterest sangat berguna untuk...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> a. Mengumpulkan dan mengorganisir referensi visual</label>
+                            <label><input type="radio" name="q7" value="b"> b. Menghapus akun secara permanen</label>
+                            <label><input type="radio" name="q7" value="c"> c. Memblokir pengguna lain</label>
+                            <label><input type="radio" name="q7" value="d"> d. Mengirim pesan spam</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>8. Berikut ini yang merupakan contoh pelanggaran Hak Kekayaan Intelektual (HKI) di dunia digital adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> a. Menggunakan gambar berlisensi Creative Commons dengan mencantumkan atribusi</label>
+                            <label><input type="radio" name="q8" value="b"> b. Mengunduh font berbayar secara ilegal (bajakan) dan menggunakannya untuk proyek komersial</label>
+                            <label><input type="radio" name="q8" value="c"> c. Membuat sketsa orisinal sendiri di atas kertas</label>
+                            <label><input type="radio" name="q8" value="d"> d. Memotret objek sendiri untuk dijadikan referensi desain</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>9. Dalam menganalisis karya DKV di internet, aspek "Tipografi" merujuk pada...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> a. Pemilihan dan kombinasi warna</label>
+                            <label><input type="radio" name="q9" value="b"> b. Pemilihan, ukuran, dan penataan huruf dalam desain</label>
+                            <label><input type="radio" name="q9" value="c"> c. Penggunaan ilustrasi atau fotografi</label>
+                            <label><input type="radio" name="q9" value="d"> d. Tata letak atau grid halaman</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>10. Tujuan utama melakukan kurasi referensi sebelum memulai proyek desain adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> a. Menunda-nunda pekerjaan utama</label>
+                            <label><input type="radio" name="q10" value="b"> b. Meniru karya orang lain secara persis (copy-paste)</label>
+                            <label><input type="radio" name="q10" value="c"> c. Memastikan arah visual proyek konsisten dan terarah</label>
+                            <label><input type="radio" name="q10" value="d"> d. Menghabiskan waktu tanpa tujuan yang jelas</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">✍️ Bagian B – Essay (Skor ditentukan oleh Guru)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon isi semua 5 soal essay dengan jelas dan runtut!</p>
+
+                <div class="question-block">
+                    <p>1. Jelaskan perbedaan mendasar antara "terinspirasi" oleh sebuah karya dan "melakukan plagiarisme"! Berikan contoh konkret dalam konteks desain grafis!</p>
+                    <textarea name="essay1" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>2. Sebutkan dan jelaskan minimal 3 (tiga) platform online yang dapat digunakan siswa DKV untuk mencari referensi dan membangun portofolio! Apa keunggulan masing-masing platform tersebut?</p>
+                    <textarea name="essay2" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>3. Apa yang dimaksud dengan lisensi Creative Commons (CC)? Jelaskan mengapa penting bagi seorang desainer untuk memahami jenis-jenis lisensi ini sebelum menggunakan aset dari internet!</p>
+                    <textarea name="essay3" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>4. Jelaskan langkah-langkah sistematis dalam membuat "Moodboard" yang efektif untuk sebuah proyek desain (misalnya: desain kemasan produk makanan lokal)!</p>
+                    <textarea name="essay4" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>5. Bagaimana cara kamu sebagai siswa DKV memastikan bahwa karya yang kamu hasilkan tetap memiliki identitas atau "jiwa" lokal Indonesia, meskipun kamu banyak mengeksplorasi tren desain global di internet?</p>
+                    <textarea name="essay5" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn-action btn-print" onclick="cetakPDF()">📥 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn-action btn-email" onclick="kirimEmail()">📧 KIRIM EMAIL KE GURU</button>
+                    <button type="button" class="btn-action btn-reset" onclick="resetForm()">🔄 MULAI ULANG</button>
+                </div>
+            </form>
+
+            <div class="result-box" id="resultBox">
+                <h3>Hasil Uji Formatif 6</h3>
+                <p id="studentInfoResult" style="margin-bottom: 20px; font-size: 1.1em;"></p>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian A (Pilihan Ganda)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);" id="scorePG">0/100</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian B (Essay)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);">Menunggu Penilaian Guru</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">*Nilai akhir akan dihitung setelah guru menilai bagian Essay.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--dark-navy); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p>&copy; 2024 Surti Meli Hidayanti, S.Pd - SMK Negeri 1 Koto Balingka</p>
+        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">Email: surtimelihidayanti35@gmail.com</p>
+    </footer>
+
+    <script>
+        const kunciJawaban = {
+            q1: 'a', q2: 'b', q3: 'a', q4: 'b', q5: 'a',
+            q6: 'b', q7: 'a', q8: 'b', q9: 'b', q10: 'c'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) {
+                alert("⚠️ Mohon lengkapi Data Siswa terlebih dahulu!");
+                return;
+            }
+
+            let semuaTerjawab = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    semuaTerjawab = false;
+                    break;
+                }
+            }
+
+            if (!semuaTerjawab) {
+                alert("⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!");
+                return;
+            }
+
+            let skor = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skor += 10;
+                }
+            }
+
+            document.getElementById('studentInfoResult').innerHTML = 
+                `<strong>${nama}</strong> (NIS: ${nis})<br>Kelas: ${kelas} | Tanggal: ${tanggal}`;
+            document.getElementById('scorePG').innerText = `${skor}/100`;
+            
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil diproses!\nNilai Pilihan Ganda Anda: ${skor}/100\n\nSilakan unduh PDF atau kirim email ke guru sebagai bukti pengerjaan.`);
+        }
+
+        function cetakPDF() {
+            if (!document.getElementById('nama').value) {
+                alert("⚠️ Mohon isi data diri dan kerjakan soal terlebih dahulu sebelum mengunduh PDF.");
+                return;
+            }
+            if (document.getElementById('resultBox').style.display === 'none' || document.getElementById('resultBox').style.display === '') {
+                hitungNilai();
+            }
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !nis) {
+                alert("⚠️ Mohon lengkapi data diri terlebih dahulu!");
+                return;
+            }
+
+            const skorText = document.getElementById('scorePG').innerText;
+            const skor = skorText !== '0/100' ? skorText : 'Belum dihitung';
+
+            const subject = `Hasil Uji Formatif 6 (Menjelajah Internet & Eksplorasi Karya DKV) - ${nama} - Kelas ${kelas}`;
+            const body = `Yth. Ibu Surti Meli Hidayanti, S.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 6 (Menjelajah Internet: Eksplorasi Karya DKV):\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${skor}\nNilai Essay: Menunggu penilaian guru\n\nTerima kasih.\n\nHormat saya,\n${nama}`;
+
+            const mailtoLink = `mailto:surtimelihidayanti35@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        function resetForm() {
+            if (confirm("⚠️ Apakah Anda yakin ingin mengosongkan semua jawaban? Tindakan ini tidak dapat dibatalkan.")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('quiz').offsetTop, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

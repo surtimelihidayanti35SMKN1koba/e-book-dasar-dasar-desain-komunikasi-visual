@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1: Kompetensi Awal dan Profil Pelajar Pancasila - Pertemuan 4</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-navy: #1a1a2e;
+            --light-navy: #16213e;
+            --white: #ffffff;
+            --cream: #f9f9f7;
+            --gray: #e8e8e8;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--dark-navy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
+            color: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-body {
+            padding: 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            color: var(--light-navy);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study {
+            background: var(--cream);
+            border: 1px solid var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .case-study h4 {
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        th {
+            background: var(--dark-navy);
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .video-placeholder {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--dark-navy);
+            color: var(--dark-navy);
+        }
+
+        .btn-outline:hover {
+            background: var(--dark-navy);
+            color: var(--white);
+        }
+
+        .quiz-section {
+            background: var(--cream);
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quiz-header h2 {
+            border: none;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-navy);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .question-block {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray);
+        }
+
+        .question-block p {
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 400;
+        }
+
+        .options label:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .quiz-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-submit { background: var(--dark-navy); color: var(--primary-gold); }
+        .btn-print { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-email { background: #25D366; color: white; }
+        .btn-reset { background: #e74c3c; color: white; }
+
+        .btn-action:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .result-box {
+            display: none;
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .result-box h3 {
+            color: var(--primary-gold);
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            .navbar, .nav-buttons, .quiz-actions, .no-print {
+                display: none !important;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .quiz-section {
+                page-break-before: always;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h1 { font-size: 1.8em; }
+            .content-body { padding: 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">DKV Kelas X</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#kontak">Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="top">
+        <div class="chapter-header">
+            <span class="chapter-badge">BAB 1 - PERTEMUAN 4</span>
+            <h1>Kompetensi Awal dan Profil Pelajar Pancasila</h1>
+            <p>Memahami kompetensi dasar yang harus dimiliki siswa sebelum mempelajari DKV serta mengimplementasikan 6 dimensi Profil Pelajar Pancasila dalam pembelajaran.</p>
+        </div>
+
+        <div class="content-body">
+            <div class="nav-buttons no-print">
+                <a href="3.html" class="btn btn-outline">← Pertemuan 3</a>
+                <a href="#sub1" class="btn btn-primary">Mulai Membaca</a>
+                <a href="5.html" class="btn btn-outline">Pertemuan 5 →</a>
+            </div>
+
+            <h2 id="sub1">Pendahuluan</h2>
+            <p>Setiap pembelajaran yang efektif selalu dimulai dari pemahaman terhadap kondisi awal peserta didik. Dalam Kurikulum Merdeka, konsep <strong>Kompetensi Awal</strong> menjadi fondasi penting untuk merancang pembelajaran yang sesuai dengan kebutuhan dan kemampuan siswa. Kompetensi awal merujuk pada pengetahuan, keterampilan, dan sikap yang sudah dimiliki siswa sebelum mereka memulai pembelajaran baru.</p>
+            <p>Di sisi lain, pendidikan di Indonesia tidak hanya berfokus pada penguasaan kompetensi teknis, tetapi juga pada pembentukan karakter. <strong>Profil Pelajar Pancasila</strong> yang dicanangkan oleh Kemendikbudristek menjadi kompas moral dan etika bagi seluruh peserta didik di Indonesia. Bagi siswa DKV, implementasi Profil Pelajar Pancasila tidak hanya terjadi di kelas teori, tetapi juga dalam setiap karya desain yang mereka hasilkan.</p>
+
+            <div class="highlight-box">
+                <strong>🔑 Konsep Kunci:</strong><br>
+                • <strong>Kompetensi Awal:</strong> Kemampuan dasar (pengetahuan, keterampilan, sikap) yang sudah dimiliki siswa sebelum memulai pembelajaran baru, menjadi titik tolak untuk merancang pembelajaran yang tepat.<br>
+                • <strong>Profil Pelajar Pancasila:</strong> Enam dimensi karakter yang ingin dibentuk dalam diri pelajar Indonesia: Beriman & Bertakwa, Berkebinekaan Global, Bergotong Royong, Mandiri, Bernalar Kritis, dan Kreatif.
+            </div>
+
+            <h2>4.1 Memahami Kompetensi Awal dalam Pembelajaran DKV</h2>
+            <p>Kompetensi awal siswa SMK kelas X pada mata pelajaran Dasar-Dasar DKV sangat beragam. Beberapa siswa mungkin sudah memiliki dasar menggambar dari SMP, sementara yang lain mungkin baru pertama kali mengenal dunia desain. Memetakan kompetensi awal ini penting agar guru dapat:</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Menyesuaikan tingkat kesulitan materi:</strong> Tidak terlalu mudah bagi yang sudah mahir, tidak terlalu sulit bagi yang pemula.</li>
+                <li><strong>Merancang pembelajaran diferensiasi:</strong> Memberikan perlakuan berbeda sesuai kebutuhan siswa.</li>
+                <li><strong>Membangun kepercayaan diri:</strong> Mengakui kemampuan yang sudah dimiliki siswa sebagai modal belajar.</li>
+                <li><strong>Mengidentifikasi gap kompetensi:</strong> Mengetahui apa yang perlu diperkuat sebelum masuk ke materi inti.</li>
+            </ul>
+
+            <h3>Kompetensi Awal yang Diharapkan pada Siswa DKV Kelas X</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspek Kompetensi</th>
+                        <th>Contoh Kompetensi Awal</th>
+                        <th>Indikator</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Pengetahuan</strong></td>
+                        <td>Mengenal unsur-unsur dasar visual (titik, garis, bidang, warna)</td>
+                        <td>Siswa dapat menyebutkan minimal 5 unsur visual dasar.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Keterampilan</strong></td>
+                        <td>Mampu menggambar bentuk dasar dengan tangan</td>
+                        <td>Siswa dapat membuat sketsa sederhana dengan proporsi yang cukup baik.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sikap</strong></td>
+                        <td>Memiliki rasa ingin tahu dan minat terhadap seni/desain</td>
+                        <td>Siswa menunjukkan antusiasme saat diperkenalkan dengan materi DKV.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Digital</strong></td>
+                        <td>Mampu mengoperasikan komputer/smartphone dasar</td>
+                        <td>Siswa dapat menggunakan aplikasi sederhana untuk tugas sekolah.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="video-placeholder">
+                <h3>🎥 Video: Memetakan Kompetensi Awal Siswa</h3>
+                <p>Pelajari cara guru profesional melakukan asesmen diagnostik untuk memetakan kompetensi awal siswa sebelum memulai pembelajaran baru.</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">(Sumber: Youtube / Kanal Guru Penggerak)</p>
+            </div>
+
+            <h2>4.2 Enam Dimensi Profil Pelajar Pancasila</h2>
+            <p>Profil Pelajar Pancasila merupakan perwujudan pelajar Indonesia sebagai pelajar sepanjang hayat yang memiliki kompetensi global dan berperilaku sesuai dengan nilai-nilai Pancasila. Enam dimensi ini menjadi roh dari seluruh proses pembelajaran, termasuk dalam mata pelajaran DKV.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dimensi</th>
+                        <th>Elemen Kunci</th>
+                        <th>Implementasi dalam DKV</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Beriman, Bertakwa kepada Tuhan YME, dan Berakhlak Mulia</strong></td>
+                        <td>Iman, takwa, akhlak mulia, akhlak pribadi, akhlak kepada manusia, alam, dan negara.</td>
+                        <td>Menghasilkan karya desain yang tidak melanggar norma, tidak mengandung unsur SARA, dan menghormati nilai-nilai budaya.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Berkebinekaan Global</strong></td>
+                        <td>Mengenal dan menghargai budaya, kemampuan komunikasi interkultural, refleksi dan tanggung jawab terhadap keberagaman.</td>
+                        <td>Mengangkat kekayaan budaya lokal (batik, wayang, tenun) ke dalam desain modern yang bisa diterima secara global.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Bergotong Royong</strong></td>
+                        <td>Kolaborasi, kepedulian, berbagi.</td>
+                        <td>Bekerja sama dalam tim kreatif (ilustrator, layouter, copywriter) untuk menyelesaikan proyek desain.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Mandiri</strong></td>
+                        <td>Pemahaman diri dan situasi, regulasi diri.</td>
+                        <td>Mampu mengelola proyek desain dari brief hingga finalisasi secara disiplin dan bertanggung jawab.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Bernalar Kritis</strong></td>
+                        <td>Memperoleh dan memproses informasi, menganalisis dan mengevaluasi, merefleksi pemikiran dan proses berpikir.</td>
+                        <td>Menganalisis brief klien, mengevaluasi efektivitas desain, dan memberikan solusi visual yang tepat.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Kreatif</strong></td>
+                        <td>Menghasilkan gagasan yang orisinal, menghasilkan karya dan tindakan yang orisinal, memiliki keluwesan berpikir.</td>
+                        <td>Menghasilkan ide desain yang orisinal, inovatif, dan belum pernah ada sebelumnya.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="case-study">
+                <h4>📖 Studi Kasus: Implementasi Profil Pelajar Pancasila dalam Proyek DKV</h4>
+                <p><strong>Kasus:</strong> Kelompok siswa kelas X DKV diberi tugas membuat poster kampanye pelestarian lingkungan. Mereka bekerja secara <strong>bergotong royong</strong> (dimensi 3) dengan membagi tugas: riset, sketsa, digitalisasi, dan presentasi. Dalam prosesnya, mereka <strong>bernalur kritis</strong> (dimensi 5) dengan menganalisis data sampah di lingkungan sekolah. Mereka juga <strong>kreatif</strong> (dimensi 6) dengan menggunakan motif batik lokal sebagai elemen visual poster. Hasilnya, poster tersebut tidak hanya indah, tetapi juga bermakna dan <strong>berakhlak mulia</strong> (dimensi 1) karena mengajak kebaikan.</p>
+                <p><strong>Pembelajaran:</strong> Satu proyek desain dapat mengintegrasikan seluruh dimensi Profil Pelajar Pancasila secara alami tanpa dipaksakan.</p>
+            </div>
+
+            <h2>4.3 Kaitan Kompetensi Awal dengan Profil Pelajar Pancasila</h2>
+            <p>Kompetensi awal dan Profil Pelajar Pancasila memiliki hubungan yang erat. Pemetaan kompetensi awal yang baik akan membantu guru merancang pembelajaran yang tidak hanya mengembangkan hard skill, tetapi juga soft skill dan karakter sesuai dimensi Profil Pelajar Pancasila.</p>
+
+            <div class="highlight-box">
+                <strong>🔗 Hubungan Simbiosis:</strong><br>
+                • Kompetensi awal yang kuat dalam <strong>kreativitas</strong> akan memudahkan siswa mengembangkan dimensi <strong>Kreatif</strong> dalam Profil Pelajar Pancasila.<br>
+                • Siswa dengan kompetensi awal <strong>kolaborasi</strong> yang baik akan lebih mudah mengimplementasikan dimensi <strong>Bergotong Royong</strong>.<br>
+                • Kompetensi awal <strong>literasi digital</strong> akan mendukung dimensi <strong>Bernalar Kritis</strong> dalam mengevaluasi informasi visual.
+            </div>
+
+            <h2>4.4 Strategi Implementasi dalam Pembelajaran DKV</h2>
+            <p>Berikut adalah strategi konkret untuk mengintegrasikan kompetensi awal dan Profil Pelajar Pancasila dalam pembelajaran DKV:</p>
+
+            <ol style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Asesmen Diagnostik di Awal Semester:</strong> Lakukan tes kemampuan menggambar, pengetahuan desain, dan sikap siswa untuk memetakan kompetensi awal.</li>
+                <li><strong>Pembelajaran Berbasis Proyek (PjBL):</strong> Gunakan proyek desain nyata yang membutuhkan kolaborasi, kreativitas, dan nalar kritis.</li>
+                <li><strong>Refleksi Berkala:</strong> Minta siswa merefleksikan perkembangan kompetensi dan karakter mereka setiap akhir pertemuan.</li>
+                <li><strong>Apresiasi Karya Bermakna:</strong> Berikan penghargaan tidak hanya pada karya yang indah, tetapi juga yang mengandung nilai Pancasila.</li>
+                <li><strong>Kolaborasi dengan Budaya Lokal:</strong> Libatkan unsur budaya daerah dalam tugas desain untuk menguatkan dimensi Berkebinekaan Global.</li>
+                <li><strong>Peer Assessment:</strong> Latih siswa untuk saling menilai karya dengan objektif dan konstruktif.</li>
+            </ol>
+
+            <div class="highlight-box">
+                <strong>💡 Refleksi untuk Siswa Indonesia:</strong><br>
+                Sebagai siswa DKV di Indonesia, kamu memiliki tanggung jawab ganda: menguasai keterampilan desain kelas dunia dan tetap berakar pada nilai-nilai Pancasila. Setiap karya yang kamu hasilkan adalah cerminan identitas bangsa. Bagaimana kamu akan memastikan karya desainmu tidak hanya indah secara visual, tetapi juga bermakna secara moral dan budaya?
+            </div>
+
+            <h2>Kesimpulan</h2>
+            <p>Kompetensi awal dan Profil Pelajar Pancasila adalah dua pilar yang tidak dapat dipisahkan dalam pembelajaran DKV. Kompetensi awal menjadi titik tolak untuk merancang pembelajaran yang efektif, sementara Profil Pelajar Pancasila menjadi kompas moral yang mengarahkan setiap karya dan tindakan siswa. Dengan memahami keduanya secara mendalam, siswa SMK tidak hanya akan menjadi desainer yang terampil, tetapi juga insan yang berkarakter, berbudaya, dan siap berkontribusi bagi bangsa.</p>
+
+            <div class="highlight-box">
+                <strong>📚 Daftar Pustaka:</strong><br>
+                • Kemendikbudristek. (2022). <em>Kerangka Dasar dan Struktur Kurikulum Merdeka</em>. Jakarta: Kemendikbudristek.<br>
+                • Kemendikbudristek. (2022). <em>Buku Saku Profil Pelajar Pancasila</em>. Jakarta: Kemendikbudristek.<br>
+                • Tomlinson, C. A. (2014). <em>The Differentiated Classroom: Responding to the Needs of All Learners</em>. ASCD.<br>
+                • Supriadi. (2024). <em>Asesmen Diagnostik dalam Kurikulum Merdeka</em>. Bukittinggi: FTIK UIN Bukittinggi.
+            </div>
+
+            <div class="nav-buttons no-print">
+                <a href="3.html" class="btn btn-outline">← Pertemuan 3</a>
+                <a href="#top" class="btn btn-outline">↑ Ke Atas</a>
+                <a href="5.html" class="btn btn-primary">Pertemuan 5: Peta Konsep →</a>
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="quiz-section" id="quiz">
+            <div class="quiz-header">
+                <span class="chapter-badge">EVALUASI PEMBELAJARAN</span>
+                <h2>📋 Uji Formatif 4: Kompetensi Awal dan Profil Pelajar Pancasila</h2>
+                <p>⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu sebelum mengirim!</p>
+            </div>
+
+            <form id="quizForm">
+                <h3>📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Ujian *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas *</label>
+                        <input type="text" id="kelas" required placeholder="Contoh: X DKV 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester *</label>
+                        <select id="semester" required>
+                            <option value="">Pilih Semester</option>
+                            <option value="1" selected>Semester 1 (Ganjil)</option>
+                            <option value="2">Semester 2 (Genap)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">📋 Bagian A – Pilihan Ganda (Skor 10/soal)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                <div id="pg-questions">
+                    <div class="question-block">
+                        <p>1. Kompetensi awal dalam pembelajaran merujuk pada...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> a. Target yang harus dicapai di akhir semester</label>
+                            <label><input type="radio" name="q1" value="b"> b. Kemampuan dasar yang sudah dimiliki siswa sebelum pembelajaran baru</label>
+                            <label><input type="radio" name="q1" value="c"> c. Nilai rapor semester sebelumnya</label>
+                            <label><input type="radio" name="q1" value="d"> d. Standar kompetensi lulusan</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>2. Berikut ini yang BUKAN merupakan dimensi Profil Pelajar Pancasila adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> a. Beriman dan Bertakwa kepada Tuhan YME</label>
+                            <label><input type="radio" name="q2" value="b"> b. Berkebinekaan Global</label>
+                            <label><input type="radio" name="q2" value="c"> c. Cerdas dan Berprestasi Akademik</label>
+                            <label><input type="radio" name="q2" value="d"> d. Bergotong Royong</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>3. Dimensi Profil Pelajar Pancasila yang paling langsung terkait dengan kemampuan menghasilkan ide orisinal dalam desain adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> a. Kreatif</label>
+                            <label><input type="radio" name="q3" value="b"> b. Mandiri</label>
+                            <label><input type="radio" name="q3" value="c"> c. Bernalar Kritis</label>
+                            <label><input type="radio" name="q3" value="d"> d. Berkebinekaan Global</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>4. Asesmen yang dilakukan guru di awal pembelajaran untuk memetakan kompetensi awal siswa disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> a. Asesmen Sumatif</label>
+                            <label><input type="radio" name="q4" value="b"> b. Asesmen Diagnostik</label>
+                            <label><input type="radio" name="q4" value="c"> c. Asesmen Formatif</label>
+                            <label><input type="radio" name="q4" value="d"> d. Ujian Akhir Semester</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>5. Implementasi dimensi "Berkebinekaan Global" dalam pembelajaran DKV dapat dilakukan dengan cara...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> a. Hanya meniru desain dari luar negeri</label>
+                            <label><input type="radio" name="q5" value="b"> b. Mengabaikan budaya lokal</label>
+                            <label><input type="radio" name="q5" value="c"> c. Mengangkat kekayaan budaya lokal ke dalam desain modern</label>
+                            <label><input type="radio" name="q5" value="d"> d. Fokus pada satu budaya saja</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>6. Siswa yang mampu mengelola proyek desain dari brief hingga finalisasi secara disiplin menunjukkan dimensi...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> a. Bergotong Royong</label>
+                            <label><input type="radio" name="q6" value="b"> b. Mandiri</label>
+                            <label><input type="radio" name="q6" value="c"> c. Kreatif</label>
+                            <label><input type="radio" name="q6" value="d"> d. Beriman dan Bertakwa</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>7. Tujuan utama pemetaan kompetensi awal adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> a. Memberi nilai rapor</label>
+                            <label><input type="radio" name="q7" value="b"> b. Merancang pembelajaran yang sesuai dengan kebutuhan siswa</label>
+                            <label><input type="radio" name="q7" value="c"> c. Menentukan siswa yang naik kelas</label>
+                            <label><input type="radio" name="q7" value="d"> d. Menghukum siswa yang belum mampu</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>8. Dimensi "Bernalar Kritis" dalam DKV terimplementasi ketika siswa...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> a. Menyalin desain dari internet</label>
+                            <label><input type="radio" name="q8" value="b"> b. Mengerjakan tugas asal selesai</label>
+                            <label><input type="radio" name="q8" value="c"> c. Mengikuti semua perintah guru tanpa pertanyaan</label>
+                            <label><input type="radio" name="q8" value="d"> d. Menganalisis brief klien dan mengevaluasi efektivitas desain</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>9. Pembelajaran Berbasis Proyek (PjBL) dalam DKV paling efektif untuk mengembangkan dimensi...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> a. Hanya dimensi Kreatif</label>
+                            <label><input type="radio" name="q9" value="b"> b. Hanya dimensi Mandiri</label>
+                            <label><input type="radio" name="q9" value="c"> c. Seluruh dimensi Profil Pelajar Pancasila secara terintegrasi</label>
+                            <label><input type="radio" name="q9" value="d"> d. Tidak ada dimensi yang terpengaruh</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>10. Salah satu strategi mengintegrasikan Profil Pelajar Pancasila dalam pembelajaran DKV adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> a. Mengajarkan nilai Pancasila secara terpisah dari materi desain</label>
+                            <label><input type="radio" name="q10" value="b"> b. Melibatkan unsur budaya daerah dalam tugas desain</label>
+                            <label><input type="radio" name="q10" value="c"> c. Menghindari diskusi tentang nilai moral dalam desain</label>
+                            <label><input type="radio" name="q10" value="d"> d. Fokus hanya pada aspek teknis desain</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">✍️ Bagian B – Essay (Skor ditentukan oleh Guru)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon isi semua 5 soal essay dengan jelas dan runtut!</p>
+
+                <div class="question-block">
+                    <p>1. Jelaskan pengertian kompetensi awal dan mengapa pemetaan kompetensi awal sangat penting dalam pembelajaran DKV di SMK! Berikan contoh konkret!</p>
+                    <textarea name="essay1" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>2. Sebutkan dan jelaskan keenam dimensi Profil Pelajar Pancasila! Berikan contoh implementasi masing-masing dimensi dalam pembelajaran DKV!</p>
+                    <textarea name="essay2" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>3. Analisislah hubungan antara kompetensi awal dengan Profil Pelajar Pancasila! Bagaimana pemahaman terhadap kompetensi awal dapat membantu guru mengimplementasikan Profil Pelajar Pancasila secara efektif?</p>
+                    <textarea name="essay3" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>4. Rancanglah sebuah proyek desain sederhana yang mengintegrasikan minimal 3 dimensi Profil Pelajar Pancasila! Jelaskan bagaimana setiap dimensi terimplementasi dalam proyek tersebut!</p>
+                    <textarea name="essay4" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>5. Sebagai siswa DKV, bagaimana kamu akan memastikan bahwa karya desain yang kamu hasilkan tidak hanya indah secara visual, tetapi juga mencerminkan nilai-nilai Pancasila? Berikan contoh nyata!</p>
+                    <textarea name="essay5" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn-action btn-print" onclick="cetakPDF()">📥 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn-action btn-email" onclick="kirimEmail()">📧 KIRIM EMAIL KE GURU</button>
+                    <button type="button" class="btn-action btn-reset" onclick="resetForm()">🔄 MULAI ULANG</button>
+                </div>
+            </form>
+
+            <div class="result-box" id="resultBox">
+                <h3>Hasil Uji Formatif 4</h3>
+                <p id="studentInfoResult" style="margin-bottom: 20px; font-size: 1.1em;"></p>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian A (Pilihan Ganda)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);" id="scorePG">0/100</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian B (Essay)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);">Menunggu Penilaian Guru</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">*Nilai akhir akan dihitung setelah guru menilai bagian Essay.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--dark-navy); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p>&copy; 2024 Surti Meli Hidayanti, S.Pd - SMK Negeri 1 Koto Balingka</p>
+        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">Email: surtimelihidayanti35@gmail.com</p>
+    </footer>
+
+    <script>
+        const kunciJawaban = {
+            q1: 'b', q2: 'c', q3: 'a', q4: 'b', q5: 'c',
+            q6: 'b', q7: 'b', q8: 'd', q9: 'c', q10: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) {
+                alert("️ Mohon lengkapi Data Siswa terlebih dahulu!");
+                return;
+            }
+
+            let semuaTerjawab = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    semuaTerjawab = false;
+                    break;
+                }
+            }
+
+            if (!semuaTerjawab) {
+                alert("⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!");
+                return;
+            }
+
+            let skor = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skor += 10;
+                }
+            }
+
+            document.getElementById('studentInfoResult').innerHTML = 
+                `<strong>${nama}</strong> (NIS: ${nis})<br>Kelas: ${kelas} | Tanggal: ${tanggal}`;
+            document.getElementById('scorePG').innerText = `${skor}/100`;
+            
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil diproses!\nNilai Pilihan Ganda Anda: ${skor}/100\n\nSilakan unduh PDF atau kirim email ke guru sebagai bukti pengerjaan.`);
+        }
+
+        function cetakPDF() {
+            if (!document.getElementById('nama').value) {
+                alert("⚠️ Mohon isi data diri dan kerjakan soal terlebih dahulu sebelum mengunduh PDF.");
+                return;
+            }
+            if (document.getElementById('resultBox').style.display === 'none' || document.getElementById('resultBox').style.display === '') {
+                hitungNilai();
+            }
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !nis) {
+                alert("⚠️ Mohon lengkapi data diri terlebih dahulu!");
+                return;
+            }
+
+            const skorText = document.getElementById('scorePG').innerText;
+            const skor = skorText !== '0/100' ? skorText : 'Belum dihitung';
+
+            const subject = `Hasil Uji Formatif 4 (Kompetensi Awal & Profil Pelajar Pancasila) - ${nama} - Kelas ${kelas}`;
+            const body = `Yth. Ibu Surti Meli Hidayanti, S.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 4 (Kompetensi Awal dan Profil Pelajar Pancasila):\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${skor}\nNilai Essay: Menunggu penilaian guru\n\nTerima kasih.\n\nHormat saya,\n${nama}`;
+
+            const mailtoLink = `mailto:surtimelihidayanti35@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        function resetForm() {
+            if (confirm("⚠️ Apakah Anda yakin ingin mengosongkan semua jawaban? Tindakan ini tidak dapat dibatalkan.")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('quiz').offsetTop, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>

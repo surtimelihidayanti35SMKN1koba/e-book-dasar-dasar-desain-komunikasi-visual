@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 4: Metode Perancangan Desain & Produksi Multimedia - Pertemuan 15</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --secondary-gold: #C5A028;
+            --dark-navy: #1a1a2e;
+            --light-navy: #16213e;
+            --white: #ffffff;
+            --cream: #f9f9f7;
+            --gray: #e8e8e8;
+            --text-dark: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            background: var(--dark-navy);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-brand {
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary-gold); }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background: linear-gradient(135deg, var(--dark-navy), var(--light-navy));
+            color: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--dark-navy);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-body { padding: 40px; }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        h3 {
+            color: var(--light-navy);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p { margin-bottom: 15px; text-align: justify; }
+
+        .highlight-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-study {
+            background: var(--cream);
+            border: 1px solid var(--gray);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .case-study h4 {
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        th {
+            background: var(--dark-navy);
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        tr:hover { background: rgba(212, 175, 55, 0.05); }
+
+        .video-placeholder {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-primary:hover { background: var(--secondary-gold); transform: translateY(-2px); }
+        .btn-outline { border: 2px solid var(--dark-navy); color: var(--dark-navy); }
+        .btn-outline:hover { background: var(--dark-navy); color: var(--white); }
+
+        .quiz-section {
+            background: var(--cream);
+            padding: 40px;
+            margin-top: 50px;
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .quiz-header { text-align: center; margin-bottom: 30px; }
+        .quiz-header h2 { border: none; margin-top: 0; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-navy);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .question-block {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray);
+        }
+
+        .question-block p { font-weight: 600; margin-bottom: 15px; text-align: left; }
+
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: var(--cream);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 400;
+        }
+
+        .options label:hover { background: rgba(212, 175, 55, 0.2); }
+        .options input[type="radio"] { margin-right: 10px; }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .quiz-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-action {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-submit { background: var(--dark-navy); color: var(--primary-gold); }
+        .btn-print { background: var(--primary-gold); color: var(--dark-navy); }
+        .btn-email { background: #25D366; color: white; }
+        .btn-reset { background: #e74c3c; color: white; }
+        .btn-action:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        .result-box {
+            display: none;
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .result-box h3 { color: var(--primary-gold); font-size: 2em; margin-bottom: 10px; }
+
+        @media print {
+            .navbar, .nav-buttons, .quiz-actions, .no-print { display: none !important; }
+            body { background: white; color: black; }
+            .container { box-shadow: none; max-width: 100%; }
+            .quiz-section { page-break-before: always; }
+        }
+
+        @media (max-width: 768px) {
+            .chapter-header h1 { font-size: 1.8em; }
+            .content-body { padding: 20px; }
+            .nav-container { flex-direction: column; text-align: center; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">DKV Kelas X</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#kontak">Penulis</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="top">
+        <div class="chapter-header">
+            <span class="chapter-badge">BAB 4 - PERTEMUAN 15</span>
+            <h1>Metode Perancangan Desain & Produksi Multimedia</h1>
+            <p>Menguasai alur kerja sistematis (Design Thinking) dan tahapan produksi multimedia (Pre-production, Production, Post-production) untuk menciptakan karya yang solutif dan profesional.</p>
+        </div>
+
+        <div class="content-body">
+            <div class="nav-buttons no-print">
+                <a href="14.html" class="btn btn-outline">← Pertemuan 14</a>
+                <a href="#sub1" class="btn btn-primary">Mulai Membaca</a>
+                <a href="16.html" class="btn btn-outline">Pertemuan 16 (UAS) →</a>
+            </div>
+
+            <h2 id="sub1">Pendahuluan</h2>
+            <p>Sebuah karya Desain Komunikasi Visual (DKV) yang hebat jarang sekali lahir hanya dari "inspirasi sesaat". Di balik karya yang memukau, terdapat metode perancangan yang sistematis dan alur produksi yang terstruktur. Tanpa metode, desain berisiko menjadi sekadar hiasan yang tidak memecahkan masalah. Tanpa alur produksi yang jelas, proyek multimedia (seperti video, animasi, atau aplikasi interaktif) berisiko mangkrak, melebihi anggaran, atau tidak selesai tepat waktu.</p>
+            <p>Pertemuan ini akan membekali siswa dengan dua kerangka kerja fundamental: <strong>Design Thinking</strong> sebagai metode perancangan yang berpusat pada manusia (human-centered), dan <strong>Pipeline Produksi Multimedia</strong> sebagai panduan teknis untuk mengeksekusi proyek dari nol hingga menjadi produk jadi. Penguasaan kedua hal ini adalah tanda transisi dari seorang "hobiis" menjadi seorang "desainer profesional".</p>
+
+            <div class="highlight-box">
+                <strong>🔑 Konsep Kunci:</strong><br>
+                • <strong>Design Thinking:</strong> Metode pemecahan masalah kreatif yang berfokus pada kebutuhan pengguna, terdiri dari 5 tahap: Empathize, Define, Ideate, Prototype, dan Test.<br>
+                • <strong>Pre-production:</strong> Tahap perencanaan sebelum produksi dimulai (riset, skrip, storyboard, scheduling).<br>
+                • <strong>Production:</strong> Tahap eksekusi atau pengambilan materi utama (shooting, recording, ilustrasi).<br>
+                • <strong>Post-production:</strong> Tahap penyuntingan, penambahan efek, audio mixing, dan rendering akhir.
+            </div>
+
+            <h2>15.1 Metode Perancangan: Design Thinking</h2>
+            <p>Design Thinking, yang dipopulerkan oleh Hasso Plattner Institute of Design di Stanford (d.school), adalah pendekatan iteratif (berulang) untuk memahami pengguna, menantang asumsi, dan mendefinisikan ulang masalah. Dalam DKV, ini memastikan desain kita benar-benar berguna dan mudah digunakan.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tahap Design Thinking</th>
+                        <th>Aktivitas Utama dalam DKV</th>
+                        <th>Output</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Empathize (Empati)</strong></td>
+                        <td>Melakukan riset pengguna, wawancara, observasi untuk memahami masalah dan kebutuhan mereka secara mendalam.</td>
+                        <td>Data pengguna, persona, empathy map.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Define (Definisi)</strong></td>
+                        <td>Menganalisis data untuk merumuskan masalah inti (core problem) yang harus dipecahkan melalui desain.</td>
+                        <td>Pernyataan masalah (Problem Statement).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Ideate (Ideasi)</strong></td>
+                        <td>Brainstorming berbagai solusi kreatif tanpa batas. Kuantitas ide lebih diutamakan daripada kualitas di tahap ini.</td>
+                        <td>Sketsa kasar, mind map, daftar ide.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Prototype (Prototipe)</strong></td>
+                        <td>Membuat representasi sederhana dan cepat dari ide terpilih (bisa berupa sketsa di kertas, wireframe digital, atau mockup).</td>
+                        <td>Prototipe low-fidelity atau high-fidelity.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Test (Uji Coba)</strong></td>
+                        <td>Menguji prototipe kepada pengguna asli, mengumpulkan umpan balik, dan melakukan perbaikan (iterasi).</td>
+                        <td>Desain final yang telah divalidasi.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="video-placeholder">
+                <h3> Video: 5 Tahap Design Thinking untuk Desainer Pemula</h3>
+                <p>Pelajari bagaimana menerapkan Design Thinking dalam proyek desain grafis atau multimedia sederhana.</p>
+                <p style="font-size: 0.9em; opacity: 0.7;">(Sumber: Youtube / Kanal Design Thinking Indonesia)</p>
+            </div>
+
+            <h2>15.2 Alur Proses Produksi Multimedia</h2>
+            <p>Berbeda dengan desain grafis statis (seperti poster), produksi multimedia (video, animasi, game, aplikasi interaktif) melibatkan banyak aset dan tim. Oleh karena itu, alur produksi (pipeline) yang ketat sangat diperlukan untuk menghindari kekacauan.</p>
+
+            <h3>A. Pre-Production (Pra-Produksi) - "Think Before You Make"</h3>
+            <p>Tahap ini adalah fondasi. Kesalahan di tahap ini akan berlipat ganda biayanya di tahap produksi. Aktivitasnya meliputi:</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Concept & Script:</strong> Menentukan tema, pesan utama, dan menulis naskah (script) atau narasi.</li>
+                <li><strong>Storyboarding:</strong> Menggambar sketsa panel demi panel seperti komik untuk memvisualisasikan alur video/animasi.</li>
+                <li><strong>Asset Planning:</strong> Mendata apa saja yang dibutuhkan (lokasi, talent, properti, software, musik).</li>
+                <li><strong>Scheduling & Budgeting:</strong> Membuat jadwal syuting/produksi dan rencana anggaran biaya.</li>
+            </ul>
+
+            <h3>B. Production (Produksi) - "Action!"</h3>
+            <p>Tahap eksekusi di mana semua materi mentah (footage) dikumpulkan:</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Shooting/Recording:</strong> Pengambilan gambar video, foto, atau rekaman suara (voice over).</li>
+                <li><strong>Illustration/Modeling:</strong> Pembuatan aset visual (menggambar ilustrasi, modeling 3D, scanning tekstur).</li>
+                <li><strong>Directing:</strong> Mengarahkan talent atau tim agar sesuai dengan visi storyboard.</li>
+            </ul>
+
+            <h3>C. Post-Production (Pasca-Produksi) - "The Magic Happens"</h3>
+            <p>Tahap merakit semua materi mentah menjadi produk akhir yang utuh:</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Editing:</strong> Memotong, menyusun, dan mengatur tempo video/animasi.</li>
+                <li><strong>Visual Effects (VFX) & Motion Graphics:</strong> Menambahkan efek khusus, teks berjalan, atau animasi grafis.</li>
+                <li><strong>Audio Mixing & Mastering:</strong> Menyesuaikan level suara, menambahkan musik latar (backsound), dan efek suara (SFX).</li>
+                <li><strong>Rendering & Exporting:</strong> Mengubah proyek menjadi file final (MP4, MOV, dll.) dengan format yang sesuai untuk target platform (YouTube, Instagram, Bioskop).</li>
+            </ul>
+
+            <div class="case-study">
+                <h4>📖 Studi Kasus: Produksi Video Profil Sekolah</h4>
+                <p><strong>Kasus:</strong> Sebuah tim siswa DKV ditugaskan membuat video profil sekolah untuk Penerimaan Peserta Didik Baru (PPDB). Awalnya, mereka langsung merekam tanpa rencana (skip pre-production). Hasilnya: banyak footage yang goyang, pencahayaan buruk, dan narasi tidak nyambung. Mereka harus mengulang syuting (reshoot) yang membuang waktu 2 minggu.</p>
+                <p><strong>Solusi:</strong> Pada percobaan kedua, mereka menerapkan pipeline lengkap. Mereka membuat storyboard detail, membuat shot list, dan melakukan gladi resik. Hasilnya, proses syuting selesai dalam 1 hari, dan editing berjalan sangat cepat karena semua materi sudah terencana. Video final berhasil dipublikasikan tepat waktu dan mendapat ribuan views.</p>
+                <p><strong>Pembelajaran:</strong> "Fail to plan is planning to fail." Pre-production yang matang adalah kunci efisiensi produksi multimedia.</p>
+            </div>
+
+            <h2>15.3 Integrasi Budaya Lokal dalam Produksi Multimedia</h2>
+            <p>Sebagai desainer Indonesia, kita memiliki keunggulan kompetitif berupa kekayaan budaya. Mengintegrasikan elemen lokal ke dalam metode perancangan dan produksi multimedia tidak hanya melestarikan budaya, tetapi juga menciptakan karya yang unik di mata global.</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Visual:</strong> Menggunakan motif batik, ukiran, atau warna alam Nusantara dalam aset grafis.</li>
+                <li><strong>Audio:</strong> Memanfaatkan instrumen musik tradisional (gamelan, angklung, sasando) sebagai backsound atau SFX.</li>
+                <li><strong>Narasi:</strong> Mengangkat cerita rakyat, kearifan lokal, atau nilai-nilai gotong royong dalam skrip.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>💡 Refleksi untuk Siswa Indonesia:</strong><br>
+                Teknologi multimedia (software editing, kamera, AI) adalah alat yang universal. Namun, "jiwa" dari karya tersebut haruslah mencerminkan identitas kita. Bagaimana kamu bisa menggunakan storyboard dan teknik editing modern untuk menceritakan kisah tentang tradisi lokal di daerahmu agar menarik bagi generasi Gen Z?
+            </div>
+
+            <h2>Kesimpulan</h2>
+            <p>Metode perancangan seperti Design Thinking memastikan bahwa karya DKV kita solutif dan berpusat pada manusia, sementara alur produksi multimedia (Pre-production, Production, Post-production) menjamin eksekusi teknis yang efisien dan profesional. Dengan menguasai kedua kerangka kerja ini, siswa SMK tidak hanya siap membuat karya yang indah, tetapi juga karya yang terstruktur, tepat guna, dan layak jual di industri kreatif.</p>
+
+            <div class="highlight-box">
+                <strong>📚 Daftar Pustaka:</strong><br>
+                • Plattner, H., Meinel, C., & Leifer, L. (2011). <em>Design Thinking: Understand – Improve – Apply</em>. Springer.<br>
+                • Shaffer, K. (2013). <em>Multimedia Design and Production</em>. Pearson.<br>
+                • Kemendikbudristek. (2022). <em>Capaian Pembelajaran Dasar-Dasar Desain Komunikasi Visual</em>.<br>
+                • Supriadi. (2024). <em>Manajemen Produksi Multimedia untuk Siswa SMK</em>. Bukittinggi: FTIK UIN Bukittinggi.
+            </div>
+
+            <div class="nav-buttons no-print">
+                <a href="14.html" class="btn btn-outline">← Pertemuan 14</a>
+                <a href="#top" class="btn btn-outline">↑ Ke Atas</a>
+                <a href="16.html" class="btn btn-primary">Pertemuan 16: UAS →</a>
+            </div>
+        </div>
+
+        <!-- QUIZ SECTION -->
+        <div class="quiz-section" id="quiz">
+            <div class="quiz-header">
+                <span class="chapter-badge">EVALUASI PEMBELAJARAN</span>
+                <h2>📋 Uji Formatif 15: Metode Perancangan & Produksi Multimedia</h2>
+                <p>️ Mohon lengkapi semua data dan jawaban terlebih dahulu sebelum mengirim!</p>
+            </div>
+
+            <form id="quizForm">
+                <h3>📋 Data Siswa</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">NIS *</label>
+                        <input type="text" id="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Ujian *</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kelas">Kelas *</label>
+                        <input type="text" id="kelas" required placeholder="Contoh: X DKV 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester *</label>
+                        <select id="semester" required>
+                            <option value="">Pilih Semester</option>
+                            <option value="1" selected>Semester 1 (Ganjil)</option>
+                            <option value="2">Semester 2 (Genap)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">📋 Bagian A – Pilihan Ganda (Skor 10/soal)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                <div id="pg-questions">
+                    <div class="question-block">
+                        <p>1. Metode perancangan yang berfokus pada kebutuhan pengguna dan terdiri dari 5 tahap (Empathize, Define, Ideate, Prototype, Test) disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> a. Waterfall Model</label>
+                            <label><input type="radio" name="q1" value="b"> b. Design Thinking</label>
+                            <label><input type="radio" name="q1" value="c"> c. Agile Scrum</label>
+                            <label><input type="radio" name="q1" value="d"> d. Lean Manufacturing</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>2. Tahap pertama dalam Design Thinking di mana desainer melakukan riset dan observasi untuk memahami masalah pengguna adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> a. Ideate</label>
+                            <label><input type="radio" name="q2" value="b"> b. Prototype</label>
+                            <label><input type="radio" name="q2" value="c"> c. Empathize</label>
+                            <label><input type="radio" name="q2" value="d"> d. Test</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>3. Dalam alur produksi multimedia, kegiatan membuat storyboard, menulis skrip, dan membuat jadwal syuting termasuk dalam tahap...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> a. Pre-production</label>
+                            <label><input type="radio" name="q3" value="b"> b. Production</label>
+                            <label><input type="radio" name="q3" value="c"> c. Post-production</label>
+                            <label><input type="radio" name="q3" value="d"> d. Distribution</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>4. Tahap di mana pengambilan gambar (shooting), rekaman suara, atau pembuatan aset ilustrasi dilakukan disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> a. Pre-production</label>
+                            <label><input type="radio" name="q4" value="b"> b. Production</label>
+                            <label><input type="radio" name="q4" value="c"> c. Post-production</label>
+                            <label><input type="radio" name="q4" value="d"> d. Planning</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>5. Kegiatan editing video, penambahan efek visual (VFX), dan audio mixing dilakukan pada tahap...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> a. Pre-production</label>
+                            <label><input type="radio" name="q5" value="b"> b. Production</label>
+                            <label><input type="radio" name="q5" value="c"> c. Post-production</label>
+                            <label><input type="radio" name="q5" value="d"> d. Storyboarding</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>6. Mengapa tahap Pre-production sangat krusial dalam produksi multimedia?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> a. Karena tahap ini paling menyenangkan</label>
+                            <label><input type="radio" name="q6" value="b"> b. Untuk mencegah kesalahan fatal, menghemat waktu, dan mengendalikan anggaran saat produksi berlangsung</label>
+                            <label><input type="radio" name="q6" value="c"> c. Agar bisa langsung mengedit video tanpa syuting</label>
+                            <label><input type="radio" name="q6" value="d"> d. Karena pre-production tidak memerlukan keterampilan khusus</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>7. Dalam Design Thinking, tahap "Prototype" bertujuan untuk...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> a. Membuat produk final yang siap dijual</label>
+                            <label><input type="radio" name="q7" value="b"> b. Membuat representasi sederhana dari ide untuk diuji dan divalidasi</label>
+                            <label><input type="radio" name="q7" value="c"> c. Menghitung modal usaha</label>
+                            <label><input type="radio" name="q7" value="d"> d. Mempromosikan produk ke media sosial</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>8. Berikut ini yang merupakan contoh integrasi budaya lokal dalam produksi multimedia adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> a. Menggunakan musik pop barat untuk semua video</label>
+                            <label><input type="radio" name="q8" value="b"> b. Menggunakan instrumen gamelan sebagai backsound dan motif batik sebagai aset visual</label>
+                            <label><input type="radio" name="q8" value="c"> c. Meniru gaya film Hollywood secara utuh</label>
+                            <label><input type="radio" name="q8" value="d"> d. Menghapus semua unsur lokal agar terlihat internasional</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>9. Tahap "Test" dalam Design Thinking penting dilakukan untuk...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> a. Memberi nilai kepada pengguna</label>
+                            <label><input type="radio" name="q9" value="b"> b. Mendapatkan umpan balik dari pengguna nyata agar desain dapat diperbaiki (iterasi)</label>
+                            <label><input type="radio" name="q9" value="c"> c. Menghabiskan sisa anggaran proyek</label>
+                            <label><input type="radio" name="q9" value="d"> d. Menunjukkan bahwa desainer lebih pintar dari pengguna</label>
+                        </div>
+                    </div>
+                    <div class="question-block">
+                        <p>10. Dokumen visual berupa sketsa panel demi panel yang menggambarkan alur adegan dalam video atau animasi disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> a. Moodboard</label>
+                            <label><input type="radio" name="q10" value="b"> b. Storyboard</label>
+                            <label><input type="radio" name="q10" value="c"> c. Flowchart</label>
+                            <label><input type="radio" name="q10" value="d"> d. Gantt Chart</label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">✍️ Bagian B – Essay (Skor ditentukan oleh Guru)</h3>
+                <p class="no-print" style="color: #e74c3c; font-size: 0.9em;">⚠️ Mohon isi semua 5 soal essay dengan jelas dan runtut!</p>
+
+                <div class="question-block">
+                    <p>1. Jelaskan 5 (lima) tahapan dalam metode Design Thinking! Mengapa pendekatan ini disebut "berpusat pada manusia" (human-centered)?</p>
+                    <textarea name="essay1" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>2. Analisislah perbedaan mendasar antara tahap Pre-production, Production, dan Post-production dalam pembuatan sebuah video pendek! Berikan contoh aktivitas konkret di masing-masing tahap!</p>
+                    <textarea name="essay2" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>3. Mengapa banyak proyek multimedia pemula yang gagal atau tidak selesai tepat waktu? Jelaskan bagaimana penerapan alur produksi yang sistematis dapat mencegah kegagalan tersebut!</p>
+                    <textarea name="essay3" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>4. Bagaimana cara kamu mengintegrasikan elemen budaya lokal (misalnya: cerita rakyat, motif tradisional, atau musik daerah) ke dalam sebuah proyek multimedia modern agar tetap relevan bagi generasi muda?</p>
+                    <textarea name="essay4" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+                <div class="question-block">
+                    <p>5. Rancanglah sebuah ide proyek multimedia sederhana (misalnya: video promosi UMKM lokal atau animasi pendek) dengan menerapkan konsep Design Thinking! Jelaskan secara singkat bagaimana kamu akan menjalankan tahap Empathize hingga Test!</p>
+                    <textarea name="essay5" required placeholder="Jawaban Anda..."></textarea>
+                </div>
+
+                <div class="quiz-actions no-print">
+                    <button type="button" class="btn-action btn-submit" onclick="hitungNilai()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                    <button type="button" class="btn-action btn-print" onclick="cetakPDF()">📥 UNDUH PDF LENGKAP</button>
+                    <button type="button" class="btn-action btn-email" onclick="kirimEmail()">📧 KIRIM EMAIL KE GURU</button>
+                    <button type="button" class="btn-action btn-reset" onclick="resetForm()">🔄 MULAI ULANG</button>
+                </div>
+            </form>
+
+            <div class="result-box" id="resultBox">
+                <h3>Hasil Uji Formatif 15</h3>
+                <p id="studentInfoResult" style="margin-bottom: 20px; font-size: 1.1em;"></p>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian A (Pilihan Ganda)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);" id="scorePG">0/100</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.9em; opacity: 0.8;">Bagian B (Essay)</p>
+                        <p style="font-size: 2.5em; font-weight: 700; color: var(--primary-gold);">Menunggu Penilaian Guru</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">*Nilai akhir akan dihitung setelah guru menilai bagian Essay.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--dark-navy); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p>&copy; 2024 Surti Meli Hidayanti, S.Pd - SMK Negeri 1 Koto Balingka</p>
+        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px;">Email: surtimelihidayanti35@gmail.com</p>
+    </footer>
+
+    <script>
+        const kunciJawaban = {
+            q1: 'b', q2: 'c', q3: 'a', q4: 'b', q5: 'c',
+            q6: 'b', q7: 'b', q8: 'b', q9: 'b', q10: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) {
+                alert("⚠️ Mohon lengkapi Data Siswa terlebih dahulu!");
+                return;
+            }
+
+            let semuaTerjawab = true;
+            for (let i = 1; i <= 10; i++) {
+                if (!document.querySelector(`input[name="q${i}"]:checked`)) {
+                    semuaTerjawab = false;
+                    break;
+                }
+            }
+
+            if (!semuaTerjawab) {
+                alert("⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!");
+                return;
+            }
+
+            let skor = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skor += 10;
+                }
+            }
+
+            document.getElementById('studentInfoResult').innerHTML = 
+                `<strong>${nama}</strong> (NIS: ${nis})<br>Kelas: ${kelas} | Tanggal: ${tanggal}`;
+            document.getElementById('scorePG').innerText = `${skor}/100`;
+            
+            const resultBox = document.getElementById('resultBox');
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil diproses!\nNilai Pilihan Ganda Anda: ${skor}/100\n\nSilakan unduh PDF atau kirim email ke guru sebagai bukti pengerjaan.`);
+        }
+
+        function cetakPDF() {
+            if (!document.getElementById('nama').value) {
+                alert("⚠️ Mohon isi data diri dan kerjakan soal terlebih dahulu sebelum mengunduh PDF.");
+                return;
+            }
+            if (document.getElementById('resultBox').style.display === 'none' || document.getElementById('resultBox').style.display === '') {
+                hitungNilai();
+            }
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            
+            if (!nama || !nis) {
+                alert("⚠️ Mohon lengkapi data diri terlebih dahulu!");
+                return;
+            }
+
+            const skorText = document.getElementById('scorePG').innerText;
+            const skor = skorText !== '0/100' ? skorText : 'Belum dihitung';
+
+            const subject = `Hasil Uji Formatif 15 (Metode Perancangan & Produksi Multimedia) - ${nama} - Kelas ${kelas}`;
+            const body = `Yth. Ibu Surti Meli Hidayanti, S.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 15 (Metode Perancangan Desain & Produksi Multimedia):\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${skor}\nNilai Essay: Menunggu penilaian guru\n\nTerima kasih.\n\nHormat saya,\n${nama}`;
+
+            const mailtoLink = `mailto:surtimelihidayanti35@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        function resetForm() {
+            if (confirm("⚠️ Apakah Anda yakin ingin mengosongkan semua jawaban? Tindakan ini tidak dapat dibatalkan.")) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('resultBox').style.display = 'none';
+                window.scrollTo({ top: document.getElementById('quiz').offsetTop, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>
